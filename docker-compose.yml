@@ -1,0 +1,30 @@
+#version: "3.9"
+services:
+  app_web:
+    container_name: serenity_web
+    image: serenity-9:latest
+    restart: unless-stopped
+    environment:
+      TZ: Asia/Tehran
+    ports:
+      - 5000:8080
+    expose:
+      - 5000
+    healthcheck:
+      test: timeout 1 bash -c 'cat < /dev/null > /dev/tcp/127.0.0.1/8080'
+      interval: 10s
+      timeout: 3s
+      retries: 10
+      start_period: 10s
+    #volumes:
+    #  - /home/jahan/application/app/App_Data:/App_Data
+    networks:
+      - internal
+
+networks:
+  internal:
+
+
+#volumes:
+#  app:
+#    driver: local      

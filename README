@@ -1,0 +1,3 @@
+This simple project is a showcase for the Racing-Bars React demo in the dashboard of an admin panel.
+For the backend, I used the default Serenity demo (It is a straightforward TypeScript/.NET Core framework with useful demos).
+You can customize its Dockerfile and docker-compose.yml to use it in Dockerized environments as well.
