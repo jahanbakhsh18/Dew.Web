@@ -2,7 +2,7 @@
 @inject ITextLocalizer Localizer
 @{
     ViewData["Title"] = "Dashboard";
-ViewData["PageId"] = "Dashboard";
+    ViewData["PageId"] = "Dashboard";
 }
 
 @section Head {
@@ -80,7 +80,7 @@ ViewData["PageId"] = "Dashboard";
 .s-dashboard-card-sm .icon {
     transition: all 0.3s linear;
     position: absolute;
-    top: 13px;
+    top: 30px;
     color: #fff;
     opacity: 0.9;
     right: 10px;
@@ -230,7 +230,8 @@ ViewData["PageId"] = "Dashboard";
         </div>
 
         <div class="card s-dashboard-card">
-            <div class="card-body p-0">
+            <div id="race" style="height: 40vh"></div>
+            @* <div class="card-body p-0">
                 <div id="calendar" style="width: 100%"></div>
             </div>
             <div class="card-footer py-4">
@@ -268,7 +269,7 @@ ViewData["PageId"] = "Dashboard";
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> *@
         </div>
     </section>
 </div>
@@ -489,4 +490,38 @@ ViewData["PageId"] = "Dashboard";
             salesByTypeChart.update();
         });
     });
+</script>
+
+<script type="module">
+  import { race } from "https://cdn.jsdelivr.net/npm/racing-bars";
+
+const data = 
+[
+  { "date": "2017-01-01", "name": "Egypt", "value": 26.44, "icon": "https://flagsapi.com/EG/flat/64.png", "group": "Africa" },
+  { "date": "2017-01-01", "name": "Singapore", "value": 5.61, "icon": "https://flagsapi.com/SG/flat/64.png", "group": "Asia" },
+  { "date": "2017-01-01", "name": "Greece", "value": 10.75, "icon": "https://flagsapi.com/GR/flat/64.png", "group": "Europe" },
+  { "date": "2017-01-01", "name": "Panama", "value": 4.11, "icon": "https://flagsapi.com/PA/flat/64.png", "group": "North America" },
+  { "date": "2017-01-01", "name": "Canada", "value": 16.54, "icon": "https://flagsapi.com/CA/flat/64.png", "group": "North America" },
+
+  { "date": "2018-01-01", "name": "Egypt", "value": 28.42, "icon": "https://flagsapi.com/EG/flat/64.png", "group": "Africa" },
+  { "date": "2018-01-01", "name": "Singapore", "value": 5.64, "icon": "https://flagsapi.com/SG/flat/64.png", "group": "Asia" },
+  { "date": "2018-01-01", "name": "Greece", "value": 10.73, "icon": "https://flagsapi.com/GR/flat/64.png", "group": "Europe" },
+  { "date": "2018-01-01", "name": "Panama", "value": 4.18, "icon": "https://flagsapi.com/PA/flat/64.png", "group": "North America" },
+  { "date": "2018-01-01", "name": "Canada", "value": 17.54, "icon": "https://flagsapi.com/CA/flat/64.png", "group": "North America" },
+   
+  { "date": "2019-01-01", "name": "Egypt", "value": 25.42, "icon": "https://flagsapi.com/EG/flat/64.png", "group": "Africa" },
+  { "date": "2019-01-01", "name": "Singapore", "value": 8.64, "icon": "https://flagsapi.com/SG/flat/64.png", "group": "Asia" },
+  { "date": "2019-01-01", "name": "Greece", "value": 9.73, "icon": "https://flagsapi.com/GR/flat/64.png", "group": "Europe" },  
+  { "date": "2019-01-01", "name": "Panama", "value": 6.18, "icon": "https://flagsapi.com/PA/flat/64.png", "group": "North America"  },
+  { "date": "2019-01-01", "name": "Canada", "value": 19.54, "icon": "https://flagsapi.com/CA/flat/64.png", "group": "North America" },
+
+  { "date": "2020-01-01", "name": "Egypt", "value": 23.42, "icon": "https://flagsapi.com/EG/flat/64.png", "group": "Africa" },
+  { "date": "2020-01-01", "name": "Singapore", "value": 7.64, "icon": "https://flagsapi.com/SG/flat/64.png", "group": "Asia" },
+  { "date": "2020-01-01", "name": "Greece", "value": 7.73, "icon": "https://flagsapi.com/GR/flat/64.png", "group": "Europe" },
+  { "date": "2020-01-01", "name": "Panama", "value": 6.18, "icon": "https://flagsapi.com/PA/flat/64.png", "group": "North America" },
+  { "date": "2020-01-01", "name": "Canada", "value": 18.54, "icon": "https://flagsapi.com/CA/flat/64.png", "group": "North America" }
+]
+
+race(data, "#race", {  topN: 5 });
+
 </script>
