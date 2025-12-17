@@ -5,7 +5,13 @@ namespace App.Common.Pages;
 public class DashboardPage : Controller
 {
     [PageAuthorize, HttpGet, Route("~/")]
-    public ActionResult Index([FromServices] ITwoLevelCache cache, [FromServices] ISqlConnections sqlConnections)
+    public ActionResult Index()
+    {
+        return View(MVC.Views.Common.Dashboard.DashboardIndex);
+    }
+
+    [PageAuthorize, HttpGet]
+    public DashboardPageModel GetDashboardStatistics([FromServices] ITwoLevelCache cache, [FromServices] ISqlConnections sqlConnections)
     {
         ArgumentNullException.ThrowIfNull(cache);
 
@@ -31,6 +37,7 @@ public class DashboardPage : Controller
                 }
                 return model;
             });
-        return View(MVC.Views.Common.Dashboard.DashboardIndex, cachedModel);
+
+        return cachedModel;
     }
 }

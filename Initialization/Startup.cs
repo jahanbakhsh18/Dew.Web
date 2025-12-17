@@ -53,6 +53,11 @@ public partial class Startup
                     .PersistKeysToFileSystem(new DirectoryInfo(dataProtectionKeysFolder));
         }
 
+        /*services.AddCors(options =>
+        {
+            options.AddPolicy("AllowAllOrigin", builder => builder.AllowAnyOrigin());
+        });*/
+
         services.AddAntiforgery(options => options.HeaderName = "X-CSRF-TOKEN");
         services.Configure<KestrelServerOptions>(options => options.AllowSynchronousIO = true);
         services.Configure<IISServerOptions>(options => options.AllowSynchronousIO = true);
