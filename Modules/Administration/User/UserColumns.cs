@@ -1,4 +1,4 @@
-﻿namespace App.Administration.Columns;
+﻿namespace Ticketing.Administration.Columns;
 
 [ColumnsScript("Administration.User")]
 [BasedOnRow(typeof(UserRow), CheckNames = true)]

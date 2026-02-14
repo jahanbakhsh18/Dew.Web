@@ -1,4 +1,4 @@
-﻿namespace App.Administration.Pages;
+﻿namespace Ticketing.Administration.Pages;
 
 [PageAuthorize(typeof(LanguageRow))]
 public class LanguagePage : Controller

@@ -1,9 +1,9 @@
-namespace App;
+namespace Ticketing;
 
 [NestedLocalTexts(Prefix = "Forms.Membership.SignUp.")]
 public static class SignUpFormTexts
 {
-    public static readonly LocalText ActivateEmailSubject = "Activate Your App Account";
+    public static readonly LocalText ActivateEmailSubject = "Activate Your Ticketing Account";
     public static readonly LocalText ActivationCompleteMessage = "Your account is now activated. Use the email and password you used while signing up to login.";
     public static readonly LocalText ConfirmEmail = "Confirm Email";
     public static readonly LocalText ConfirmPassword = "Confirm Password";

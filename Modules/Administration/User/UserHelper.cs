@@ -1,8 +1,8 @@
 using Serenity.Web.Providers;
 using System.Data;
-using MyRow = App.Administration.UserRow;
+using MyRow = Ticketing.Administration.UserRow;
 
-namespace App.Administration;
+namespace Ticketing.Administration;
 
 public static class UserHelper
 {

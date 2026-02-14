@@ -1,6 +1,6 @@
-using App.Administration;
+using Ticketing.Administration;
 
-namespace App.Membership.Pages;
+namespace Ticketing.Membership.Pages;
 
 [Route("Account/[action]")]
 public class AccountPasswordActionsPage : AccountPasswordActionsPageBase<UserRow>

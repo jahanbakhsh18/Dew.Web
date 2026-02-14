@@ -1,6 +1,6 @@
-using MyRow = App.Administration.LanguageRow;
+using MyRow = Ticketing.Administration.LanguageRow;
 
-namespace App.Administration;
+namespace Ticketing.Administration;
 
 public interface ILanguageDeleteHandler : IDeleteHandler<MyRow> { }
 

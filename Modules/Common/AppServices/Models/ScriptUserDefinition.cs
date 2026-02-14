@@ -1,4 +1,4 @@
-﻿namespace App;
+﻿namespace Ticketing;
 
 /// <summary>
 /// This data will be available from script code using a dynamic script.

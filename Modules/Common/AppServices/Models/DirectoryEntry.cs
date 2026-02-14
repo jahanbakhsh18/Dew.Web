@@ -1,5 +1,5 @@
 
-namespace App.AppServices;
+namespace Ticketing.AppServices;
 
 public class DirectoryEntry
 {

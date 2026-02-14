@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Localization;
 
-namespace App.AppServices;
+namespace Ticketing.AppServices;
 
 public class UserCultureProvider : RequestCultureProvider
 {

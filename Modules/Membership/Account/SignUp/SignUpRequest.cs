@@ -1,4 +1,4 @@
-namespace App.Membership;
+namespace Ticketing.Membership;
 
 public class SignUpRequest : ServiceRequest
 {

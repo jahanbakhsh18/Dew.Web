@@ -1,6 +1,6 @@
-using MyRow = App.Administration.UserRow;
+using MyRow = Ticketing.Administration.UserRow;
 
-namespace App.AppServices;
+namespace Ticketing.AppServices;
 
 public class UserRetrieveService(ITwoLevelCache cache, ISqlConnections sqlConnections)
     : BaseUserRetrieveService<MyRow>(cache, sqlConnections)

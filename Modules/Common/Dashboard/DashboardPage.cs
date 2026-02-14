@@ -1,5 +1,5 @@
 
-namespace App.Common.Pages;
+namespace Ticketing.Common.Pages;
 
 [Route("Dashboard/[action]")]
 public class DashboardPage : Controller
@@ -13,7 +13,7 @@ public class DashboardPage : Controller
     [PageAuthorize, HttpGet]
     public DashboardPageModel GetDashboardStatistics([FromServices] ITwoLevelCache cache, [FromServices] ISqlConnections sqlConnections)
     {
-        ArgumentNullException.ThrowIfNull(cache);
+        /*ArgumentNullException.ThrowIfNull(cache);
 
         ArgumentNullException.ThrowIfNull(sqlConnections);
 
@@ -38,6 +38,8 @@ public class DashboardPage : Controller
                 return model;
             });
 
-        return cachedModel;
+        return cachedModel;*/
+
+        return new DashboardPageModel();
     }
 }

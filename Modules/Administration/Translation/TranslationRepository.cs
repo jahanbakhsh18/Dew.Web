@@ -5,7 +5,7 @@ using Serenity.Localization;
 using System.IO;
 using System.Reflection;
 
-namespace App.Administration.Repositories;
+namespace Ticketing.Administration.Repositories;
 
 public class TranslationRepository(IRequestContext context, IWebHostEnvironment hostEnvironment,
     ILocalTextRegistry localTextRegistry, ITypeSource typeSource) : BaseRepository(context)

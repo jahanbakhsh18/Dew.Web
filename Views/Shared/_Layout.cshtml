@@ -9,7 +9,7 @@ var sidebarPaneCollapsed = Context?.Request?.Cookies?["SidebarPaneCollapsed"] ==
 <head>
     <partial name="@MVC.Views.Shared._LayoutHead" />
     @RenderSection("Head", false)
-    <title>@(ViewData["Title"]) - App</title>
+    <title>@(ViewData["Title"]) - Ticketing</title>
 </head>
 <body id="s-@(ViewData["PageId"])Page" class="@(ViewData["BodyClass"]) @(sidebarPaneCollapsed)">
 <div id="PageBackground" style="display: none"></div>

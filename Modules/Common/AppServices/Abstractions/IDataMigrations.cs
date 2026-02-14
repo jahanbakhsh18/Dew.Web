@@ -1,4 +1,4 @@
-namespace App;
+namespace Ticketing;
 
 public interface IDataMigrations
 {

@@ -1,4 +1,4 @@
-namespace App;
+namespace Ticketing;
 
 [Serializable]
 public class UserDefinition : IUserDefinition, IHasPassword

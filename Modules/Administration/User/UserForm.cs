@@ -1,4 +1,4 @@
-namespace App.Administration.Forms;
+namespace Ticketing.Administration.Forms;
 
 [FormScript("Administration.User")]
 [BasedOnRow(typeof(UserRow), CheckNames = true)]

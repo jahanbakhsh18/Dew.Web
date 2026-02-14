@@ -1,4 +1,4 @@
-﻿namespace App.Administration.Forms;
+﻿namespace Ticketing.Administration.Forms;
 
 [ColumnsScript("Administration.Role")]
 [BasedOnRow(typeof(RoleRow), CheckNames = true)]

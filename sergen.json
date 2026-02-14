@@ -1,6 +1,6 @@
 {
   "Extends": "defaults@9.0.0",
-  "RootNamespace": "App",
+  "RootNamespace": "Ticketing",
   "UpgradeInfo": {
     "InitialType": "Community",
     "InitialVersion": "9.1.1.1"

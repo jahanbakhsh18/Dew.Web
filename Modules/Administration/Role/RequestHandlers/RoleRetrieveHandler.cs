@@ -1,6 +1,6 @@
-using MyRow = App.Administration.RoleRow;
+using MyRow = Ticketing.Administration.RoleRow;
 
-namespace App.Administration;
+namespace Ticketing.Administration;
 
 public interface IRoleRetrieveHandler : IRetrieveHandler<MyRow> { }
 public class RoleRetrieveHandler(IRequestContext context)

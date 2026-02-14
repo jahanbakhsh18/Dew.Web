@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Http;
 using System.Security.Claims;
 
-namespace App.AppServices;
+namespace Ticketing.AppServices;
 
 public class UserAccessor(IHttpContextAccessor httpContextAccessor) : IUserAccessor, IImpersonator
 {

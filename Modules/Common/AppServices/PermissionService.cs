@@ -1,7 +1,7 @@
-using App.Administration;
+using Ticketing.Administration;
 using System.Security.Claims;
 
-namespace App.AppServices;
+namespace Ticketing.AppServices;
 
 public class PermissionService(ITwoLevelCache cache,
     ISqlConnections sqlConnections,

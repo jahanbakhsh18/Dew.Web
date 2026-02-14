@@ -1,7 +1,7 @@
-﻿using MyRepository = App.Administration.Repositories.UserRoleRepository;
-using MyRow = App.Administration.UserRoleRow;
+﻿using MyRepository = Ticketing.Administration.Repositories.UserRoleRepository;
+using MyRow = Ticketing.Administration.UserRoleRow;
 
-namespace App.Administration.Endpoints;
+namespace Ticketing.Administration.Endpoints;
 
 [Route("Services/Administration/UserRole/[action]")]
 [ConnectionKey(typeof(MyRow)), ServiceAuthorize(typeof(MyRow))]

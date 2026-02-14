@@ -1,4 +1,4 @@
-namespace App.Common;
+namespace Ticketing.Common;
 
 [NestedLocalTexts(Prefix = "Validation.")]
 public static partial class SqlExceptionHelperTexts

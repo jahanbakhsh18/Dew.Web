@@ -1,4 +1,4 @@
-using Administration = App.Administration.Pages;
+using Administration = Ticketing.Administration.Pages;
 
 [assembly: NavigationMenu(9000, "Administration", icon: "fa-wrench")]
 [assembly: NavigationLink(9100, "Administration/Languages", typeof(Administration.LanguagePage), icon: "fa-comments")]

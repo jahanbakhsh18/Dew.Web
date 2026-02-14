@@ -1,7 +1,7 @@
 using System.Data;
-using MyRow = App.Administration.RolePermissionRow;
+using MyRow = Ticketing.Administration.RolePermissionRow;
 
-namespace App.Administration.Repositories;
+namespace Ticketing.Administration.Repositories;
 
 public class RolePermissionRepository(IRequestContext context) : BaseRepository(context)
 {

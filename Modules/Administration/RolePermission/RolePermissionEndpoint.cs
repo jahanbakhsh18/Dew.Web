@@ -1,7 +1,7 @@
-﻿using MyRepository = App.Administration.Repositories.RolePermissionRepository;
-using MyRow = App.Administration.RolePermissionRow;
+﻿using MyRepository = Ticketing.Administration.Repositories.RolePermissionRepository;
+using MyRow = Ticketing.Administration.RolePermissionRow;
 
-namespace App.Administration.Endpoints;
+namespace Ticketing.Administration.Endpoints;
 
 [Route("Services/Administration/RolePermission/[action]")]
 [ConnectionKey(typeof(MyRow)), ServiceAuthorize(typeof(MyRow))]

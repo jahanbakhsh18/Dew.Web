@@ -1,4 +1,4 @@
-namespace App.Administration;
+namespace Ticketing.Administration;
 
 public class RolePermissionUpdateRequest : ServiceRequest
 {

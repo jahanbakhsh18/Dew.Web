@@ -1,4 +1,4 @@
-namespace App.Membership;
+namespace Ticketing.Membership;
 
 [FormScript("Membership.SignUp")]
 public class SignUpForm

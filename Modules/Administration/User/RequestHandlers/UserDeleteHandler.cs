@@ -1,7 +1,7 @@
 using Serenity.Extensions.Entities;
-using MyRow = App.Administration.UserRow;
+using MyRow = Ticketing.Administration.UserRow;
 
-namespace App.Administration;
+namespace Ticketing.Administration;
 
 public interface IUserDeleteHandler : IDeleteHandler<MyRow> { }
 

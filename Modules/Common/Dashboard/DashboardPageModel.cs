@@ -1,5 +1,5 @@
 ﻿
-namespace App.Common;
+namespace Ticketing.Common;
 
 public class DashboardPageModel
 {

@@ -1,4 +1,4 @@
-namespace App.Administration.Pages;
+namespace Ticketing.Administration.Pages;
 
 [PageAuthorize(PermissionKeys.Translation)]
 public class TranslationPage : Controller

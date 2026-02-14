@@ -81,6 +81,46 @@ namespace texts {
                 export const Username: string;
             }
         }
+        namespace WorkFlow {
+            export function asKey(): typeof WorkFlow;
+            export function asTry(): typeof WorkFlow;
+            namespace Action {
+                export function asKey(): typeof Action;
+                export function asTry(): typeof Action;
+                export const EntityPlural: string;
+                export const EntitySingular: string;
+                export const Id: string;
+                export const Name: string;
+                export const UpdateDate: string;
+            }
+            namespace Rule {
+                export function asKey(): typeof Rule;
+                export function asTry(): typeof Rule;
+                export const ActionId: string;
+                export const ActionName: string;
+                export const CurrentStatusId: string;
+                export const CurrentStatusName: string;
+                export const EntityPlural: string;
+                export const EntitySingular: string;
+                export const Id: string;
+                export const IsFinalState: string;
+                export const NextStatusId: string;
+                export const NextStatusName: string;
+                export const RoleId: string;
+                export const RoleName: string;
+                export const UpdateDate: string;
+                export const Version: string;
+            }
+            namespace Status {
+                export function asKey(): typeof Status;
+                export function asTry(): typeof Status;
+                export const EntityPlural: string;
+                export const EntitySingular: string;
+                export const Id: string;
+                export const Name: string;
+                export const UpdateDate: string;
+            }
+        }
     }
     export declare namespace Forms {
         export function asKey(): typeof Forms;
@@ -187,6 +227,11 @@ const Texts: typeof texts = proxyTexts({}, '', {
             User: {},
             UserPermission: {},
             UserRole: {}
+        },
+        WorkFlow: {
+            Action: {},
+            Rule: {},
+            Status: {}
         }
     },
     Forms: {

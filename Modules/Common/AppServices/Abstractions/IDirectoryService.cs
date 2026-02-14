@@ -1,5 +1,5 @@
 
-namespace App;
+namespace Ticketing;
 
 public interface IDirectoryService
 {

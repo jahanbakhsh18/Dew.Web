@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Http;
 
-namespace App.Common.Pages;
+namespace Ticketing.Common.Pages;
 
 public class FilePage(IUploadStorage uploadStorage, IUploadProcessor uploadProcessor) : Controller
 {

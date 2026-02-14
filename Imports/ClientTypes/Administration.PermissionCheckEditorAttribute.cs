@@ -1,8 +1,8 @@
-﻿namespace App.Administration;
+﻿namespace Ticketing.Administration;
 
 public partial class PermissionCheckEditorAttribute : CustomEditorAttribute
 {
-    public const string Key = "App.Administration.PermissionCheckEditor";
+    public const string Key = "Ticketing.Administration.PermissionCheckEditor";
 
     public PermissionCheckEditorAttribute()
         : base(Key)

@@ -1,6 +1,6 @@
-﻿using MyRow = App.Administration.LanguageRow;
+﻿using MyRow = Ticketing.Administration.LanguageRow;
 
-namespace App.Administration.Endpoints;
+namespace Ticketing.Administration.Endpoints;
 
 [Route("Services/Administration/Language/[action]")]
 [ConnectionKey(typeof(MyRow)), ServiceAuthorize(typeof(MyRow))]

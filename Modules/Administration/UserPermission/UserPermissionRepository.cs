@@ -1,8 +1,8 @@
 using System.Data;
-using MyRow = App.Administration.UserPermissionRow;
+using MyRow = Ticketing.Administration.UserPermissionRow;
 using Microsoft.Extensions.Caching.Memory;
 
-namespace App.Administration.Repositories;
+namespace Ticketing.Administration.Repositories;
 
 public class UserPermissionRepository(IRequestContext context) : BaseRepository(context)
 {

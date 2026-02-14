@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using System.IO;
 
-namespace App.AppServices;
+namespace Ticketing.AppServices;
 
 public class DataMigrations(ITypeSource typeSource,
     ISqlConnections sqlConnections,
@@ -14,7 +14,7 @@ public class DataMigrations(ITypeSource typeSource,
 {
     private static readonly string[] databaseKeys = [
         "Default"
-        , "Northwind"
+        //, "Northwind"
     ];
 
     private readonly ITypeSource typeSource = typeSource ?? throw new ArgumentNullException(nameof(typeSource));

@@ -1,4 +1,4 @@
-﻿namespace App.Administration.Forms;
+﻿namespace Ticketing.Administration.Forms;
 
 [ColumnsScript("Administration.Language")]
 [BasedOnRow(typeof(LanguageRow), CheckNames = true)]

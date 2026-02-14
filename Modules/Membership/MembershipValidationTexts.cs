@@ -1,4 +1,4 @@
-namespace App.Membership;
+namespace Ticketing.Membership;
 
 [NestedLocalTexts(Prefix = "Validation.")]
 public static class MembershipValidationTexts

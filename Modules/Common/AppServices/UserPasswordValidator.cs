@@ -1,6 +1,6 @@
-using App.Administration;
+using Ticketing.Administration;
 
-namespace App.AppServices;
+namespace Ticketing.AppServices;
 
 public class UserPasswordValidator(ITwoLevelCache cache, ISqlConnections sqlConnections, IUserRetrieveService userRetriever,
     ILogger<UserPasswordValidator> log = null, IDirectoryService directoryService = null) : IUserPasswordValidator

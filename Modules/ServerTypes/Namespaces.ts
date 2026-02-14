@@ -1,4 +1,6 @@
-﻿export const AdministrationNS: "App.Administration" = "App.Administration";
-export const nsAdministration: "App.Administration." = "App.Administration.";
-export const MembershipNS: "App.Membership" = "App.Membership";
-export const nsMembership: "App.Membership." = "App.Membership.";
+﻿export const AdministrationNS: "Ticketing.Administration" = "Ticketing.Administration";
+export const nsAdministration: "Ticketing.Administration." = "Ticketing.Administration.";
+export const MembershipNS: "Ticketing.Membership" = "Ticketing.Membership";
+export const nsMembership: "Ticketing.Membership." = "Ticketing.Membership.";
+export const WorkFlowNS: "WorkFlow" = "WorkFlow";
+export const nsWorkFlow: "WorkFlow." = "WorkFlow.";

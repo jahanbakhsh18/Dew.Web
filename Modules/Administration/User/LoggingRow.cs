@@ -1,4 +1,4 @@
-namespace App.Administration.Entities;
+namespace Ticketing.Administration.Entities;
 
 /// <summary>
 /// This is a sample base class for rows that does insert/update date and user audit logging automatically.

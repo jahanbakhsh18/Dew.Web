@@ -1,6 +1,6 @@
 using Microsoft.Extensions.Caching.Memory;
 
-namespace App.Administration;
+namespace Ticketing.Administration;
 
 [DataScript("Administration.ImplicitPermissions", Permission = PermissionKeys.Security)]
 public class ImplicitPermissionsDataScript(IMemoryCache cache, ITypeSource typeSource) : DataScript<IDictionary<string, HashSet<string>>>

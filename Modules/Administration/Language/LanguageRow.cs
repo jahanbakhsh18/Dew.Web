@@ -1,4 +1,4 @@
-namespace App.Administration;
+namespace Ticketing.Administration;
 
 [ConnectionKey("Default"), Module("Administration"), TableName("Languages")]
 [DisplayName("Languages"), InstanceName("Language")]

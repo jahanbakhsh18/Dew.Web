@@ -1,6 +1,6 @@
-using App.Administration;
+using Ticketing.Administration;
 
-namespace App.AppServices;
+namespace Ticketing.AppServices;
 
 public class RolePermissionService(ITwoLevelCache cache, ISqlConnections sqlConnections, ITypeSource typeSource)
     : BaseRolePermissionService<RolePermissionRow>(cache, sqlConnections, typeSource)

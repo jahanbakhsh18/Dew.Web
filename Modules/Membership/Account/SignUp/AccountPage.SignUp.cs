@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.DataProtection;
-using App.Administration;
+using Ticketing.Administration;
 using System.IO;
 
-namespace App.Membership.Pages;
+namespace Ticketing.Membership.Pages;
 
 public partial class AccountPage : Controller
 {

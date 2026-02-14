@@ -1,4 +1,4 @@
-namespace App.Administration;
+namespace Ticketing.Administration;
 
 /// <summary>
 /// This declares a dynamic script with key 'UserData' that will be available from client side.

@@ -1,8 +1,7 @@
 {
-  "name": "app.web",
+  "name": "ticketing.web",
   "dependencies": {
     "@serenity-is/corelib": "./node_modules/.dotnet/serenity.corelib",
-    "@serenity-is/demo.northwind": "./node_modules/.dotnet/serenity.demo.northwind",
     "@serenity-is/domwise": "./node_modules/.dotnet/serenity.domwise",
     "@serenity-is/extensions": "./node_modules/.dotnet/serenity.extensions",
     "@serenity-is/sleekgrid": "./node_modules/.dotnet/serenity.sleekgrid",

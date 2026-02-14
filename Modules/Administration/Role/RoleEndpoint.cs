@@ -1,6 +1,6 @@
-﻿using MyRow = App.Administration.RoleRow;
+﻿using MyRow = Ticketing.Administration.RoleRow;
 
-namespace App.Administration.Endpoints;
+namespace Ticketing.Administration.Endpoints;
 
 [Route("Services/Administration/Role/[action]")]
 [ConnectionKey(typeof(MyRow)), ServiceAuthorize(typeof(MyRow))]

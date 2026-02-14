@@ -1,5 +1,5 @@
 ﻿
-namespace App.MVC;
+namespace Ticketing.MVC;
 
 public static partial class Views
 {

@@ -1,6 +1,6 @@
-using App.Administration;
+using Ticketing.Administration;
 
-namespace App.AppServices;
+namespace Ticketing.AppServices;
 
 public class PermissionKeyLister(ITwoLevelCache cache, ITypeSource typeSource)
     : BasePermissionKeyLister(cache, typeSource)

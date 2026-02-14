@@ -1,4 +1,4 @@
-namespace App.Common;
+namespace Ticketing.Common;
 
 [NestedLocalTexts(Prefix = "Site.AccessDenied.")]
 public static partial class AccessDeniedViewTexts

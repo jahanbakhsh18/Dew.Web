@@ -1,4 +1,4 @@
-namespace App.AppServices;
+namespace Ticketing.AppServices;
 
 internal class DynamicDataGenerator : BaseDynamicDataGenerator
 {

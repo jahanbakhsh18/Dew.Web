@@ -1,7 +1,7 @@
-namespace App;
+namespace Ticketing;
 
 [NestedLocalTexts(Prefix = "Forms.")]
 public static partial class SiteFormTexts
 {
-    public static readonly LocalText SiteTitle = "App";
+    public static readonly LocalText SiteTitle = "Ticketing";
 }
