@@ -10,17 +10,17 @@ public class DefaultDB_20250301_1212_WorkFlow : AutoReversingMigration
         Create.Schema("wf");
 
         Create.Table("Action").InSchema("wf")
-            .WithColumn("Id").AsInt32().NotNullable().PrimaryKey().Identity()
+            .WithColumn("Id").AsInt32().IdentityKey(this)
             .WithColumn("Name").AsString(63).NotNullable()
             .WithColumn("UpdateDate").AsDateTime().Nullable();
 
         Create.Table("Status").InSchema("wf")
-            .WithColumn("Id").AsInt32().NotNullable().PrimaryKey().Identity()
+            .WithColumn("Id").AsInt32().IdentityKey(this)
             .WithColumn("Name").AsString(63).NotNullable()
             .WithColumn("UpdateDate").AsDateTime().Nullable();
 
         Create.Table("Rule").InSchema("wf")
-            .WithColumn("Id").AsInt32().NotNullable().PrimaryKey().Identity()
+            .WithColumn("Id").AsInt32().IdentityKey(this)
             .WithColumn("ActionId").AsInt32().NotNullable()
                 .ForeignKey("FK_Rule_ActionId", "wf", "Action", "Id")
             .WithColumn("CurrentStatusId").AsInt32().NotNullable()

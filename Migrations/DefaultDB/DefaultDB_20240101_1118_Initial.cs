@@ -8,7 +8,7 @@ public class DefaultDB_20240101_1118_Initial : AutoReversingMigration
     public override void Up()
     {
         Create.Table("Country")
-            .WithColumn("Id").AsInt32().NotNullable().PrimaryKey().IdentityKey(this)
+            .WithColumn("Id").AsInt32().IdentityKey(this)
             .WithColumn("Name").AsString(31).NotNullable();
 
         Create.Table("Users")

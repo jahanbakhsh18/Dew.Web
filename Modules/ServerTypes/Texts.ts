@@ -81,6 +81,114 @@ namespace texts {
                 export const Username: string;
             }
         }
+        namespace Ticket {
+            export function asKey(): typeof Ticket;
+            export function asTry(): typeof Ticket;
+            namespace Comment {
+                export function asKey(): typeof Comment;
+                export function asTry(): typeof Comment;
+                export const Comment: string;
+                export const DateCreated: string;
+                export const EntityPlural: string;
+                export const EntitySingular: string;
+                export const Id: string;
+                export const TicketId: string;
+                export const TicketTitle: string;
+                export const UserId: string;
+                export const Username: string;
+            }
+            namespace Log {
+                export function asKey(): typeof Log;
+                export function asTry(): typeof Log;
+                export const ActionId: string;
+                export const ActionName: string;
+                export const DateCreated: string;
+                export const EntityPlural: string;
+                export const EntitySingular: string;
+                export const Id: string;
+                export const StatusId: string;
+                export const StatusName: string;
+                export const TicketId: string;
+                export const TicketTitle: string;
+                export const UserId: string;
+                export const Username: string;
+            }
+            namespace Priority {
+                export function asKey(): typeof Priority;
+                export function asTry(): typeof Priority;
+                export const Color: string;
+                export const Description: string;
+                export const DueTime: string;
+                export const EntityPlural: string;
+                export const EntitySingular: string;
+                export const IconName: string;
+                export const Id: string;
+                export const Name: string;
+            }
+            namespace Problem {
+                export function asKey(): typeof Problem;
+                export function asTry(): typeof Problem;
+                export const EntityPlural: string;
+                export const EntitySingular: string;
+                export const Id: string;
+                export const Name: string;
+                export const PriorityId: string;
+                export const PriorityName: string;
+                export const SystemId: string;
+                export const SystemName: string;
+            }
+            namespace System {
+                export function asKey(): typeof System;
+                export function asTry(): typeof System;
+                export const Description: string;
+                export const EntityPlural: string;
+                export const EntitySingular: string;
+                export const Id: string;
+                export const Name: string;
+            }
+            namespace Ticket {
+                export function asKey(): typeof Ticket;
+                export function asTry(): typeof Ticket;
+                export const CreatorUserId: string;
+                export const CreatorUserUsername: string;
+                export const DateClosed: string;
+                export const DateCreated: string;
+                export const DateUpdated: string;
+                export const Description: string;
+                export const EntityPlural: string;
+                export const EntitySingular: string;
+                export const ExpireDate: string;
+                export const FilesPath: string;
+                export const Id: string;
+                export const IsDeleted: string;
+                export const IsDomestic: string;
+                export const IsValid: string;
+                export const LastActionId: string;
+                export const LastActionName: string;
+                export const ProblemId: string;
+                export const ProblemName: string;
+                export const StatusId: string;
+                export const StatusName: string;
+                export const SystemId: string;
+                export const SystemName: string;
+                export const TicketNumber: string;
+                export const TimeFlagId: string;
+                export const TimeFlagName: string;
+                export const Title: string;
+            }
+            namespace TimeFlag {
+                export function asKey(): typeof TimeFlag;
+                export function asTry(): typeof TimeFlag;
+                export const Color: string;
+                export const Description: string;
+                export const DuePercent: string;
+                export const EntityPlural: string;
+                export const EntitySingular: string;
+                export const IconName: string;
+                export const Id: string;
+                export const Name: string;
+            }
+        }
         namespace WorkFlow {
             export function asKey(): typeof WorkFlow;
             export function asTry(): typeof WorkFlow;
@@ -227,6 +335,15 @@ const Texts: typeof texts = proxyTexts({}, '', {
             User: {},
             UserPermission: {},
             UserRole: {}
+        },
+        Ticket: {
+            Comment: {},
+            Log: {},
+            Priority: {},
+            Problem: {},
+            System: {},
+            Ticket: {},
+            TimeFlag: {}
         },
         WorkFlow: {
             Action: {},

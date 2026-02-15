@@ -10,7 +10,7 @@ public class DefaultDB_20250414_1601_Ticket : AutoReversingMigration
         Create.Schema("tkt");
 
         Create.Table("System").InSchema("tkt")
-            .WithColumn("Id").AsInt32().NotNullable().PrimaryKey().IdentityKey(this)
+            .WithColumn("Id").AsInt32().IdentityKey(this)
             .WithColumn("Name").AsString(127).NotNullable()
             .WithColumn("Description").AsString(int.MaxValue).Nullable();
 
@@ -19,7 +19,7 @@ public class DefaultDB_20250414_1601_Ticket : AutoReversingMigration
                 .ForeignKey("FK_Ticket_SystemId", "tkt", "System", "Id");
 
         Create.Table("Priority").InSchema("tkt")
-            .WithColumn("Id").AsInt32().NotNullable().PrimaryKey().Identity()
+            .WithColumn("Id").AsInt32().IdentityKey(this)
             .WithColumn("DueTime").AsInt16().NotNullable()
             .WithColumn("Name").AsString(127).NotNullable()
             .WithColumn("IconName").AsString(63).Nullable()
@@ -27,7 +27,7 @@ public class DefaultDB_20250414_1601_Ticket : AutoReversingMigration
             .WithColumn("Description").AsString(int.MaxValue).Nullable();
 
         Create.Table("Problem").InSchema("tkt")
-            .WithColumn("Id").AsInt32().NotNullable().PrimaryKey().Identity()
+            .WithColumn("Id").AsInt32().IdentityKey(this)
             .WithColumn("Name").AsString(127).NotNullable()
             .WithColumn("SystemId").AsInt32().NotNullable()
                 .ForeignKey("FK_Problem_SystemId", "tkt", "System", "Id")
@@ -35,7 +35,7 @@ public class DefaultDB_20250414_1601_Ticket : AutoReversingMigration
                 .ForeignKey("FK_Problem_PriorityId", "tkt", "Priority", "Id");
 
         Create.Table("TimeFlag").InSchema("tkt")
-            .WithColumn("Id").AsInt32().NotNullable().PrimaryKey().Identity()
+            .WithColumn("Id").AsInt32().IdentityKey(this)
             .WithColumn("Name").AsString(127).Nullable()
             .WithColumn("DuePercent").AsInt32().NotNullable()
             .WithColumn("IconName").AsString(63).Nullable()
@@ -43,7 +43,7 @@ public class DefaultDB_20250414_1601_Ticket : AutoReversingMigration
             .WithColumn("Description").AsString(int.MaxValue).Nullable();
 
         Create.Table("Ticket").InSchema("tkt")
-            .WithColumn("Id").AsInt32().NotNullable().PrimaryKey().Identity()
+            .WithColumn("Id").AsInt32().IdentityKey(this)
             .WithColumn("TicketNumber").AsInt32().Nullable()
             .WithColumn("Title").AsString(127).Nullable()
             .WithColumn("Description").AsString(int.MaxValue).Nullable()
@@ -69,7 +69,7 @@ public class DefaultDB_20250414_1601_Ticket : AutoReversingMigration
             .WithColumn("IsDomestic").AsBoolean().NotNullable().WithDefaultValue(true);
 
         Create.Table("Comment").InSchema("tkt")
-            .WithColumn("Id").AsInt32().NotNullable().PrimaryKey().Identity()
+            .WithColumn("Id").AsInt32().IdentityKey(this)
             .WithColumn("Comment").AsString(int.MaxValue).Nullable()
             .WithColumn("TicketId").AsInt32().NotNullable()
                 .ForeignKey("FK_Comment_TicketId", "tkt", "Ticket", "Id")
@@ -78,7 +78,7 @@ public class DefaultDB_20250414_1601_Ticket : AutoReversingMigration
             .WithColumn("DateCreated").AsDateTime().NotNullable();
 
         Create.Table("Log").InSchema("tkt")
-            .WithColumn("Id").AsInt32().NotNullable().PrimaryKey().Identity()
+            .WithColumn("Id").AsInt32().IdentityKey(this)
             .WithColumn("StatusId").AsInt32().NotNullable()
                 .ForeignKey("FK_Log_StatusId", "wf", "Status", "Id")
             .WithColumn("ActionId").AsInt32().NotNullable()
@@ -90,13 +90,13 @@ public class DefaultDB_20250414_1601_Ticket : AutoReversingMigration
             .WithColumn("DateCreated").AsDateTime().NotNullable();
 
         Create.Table("Message")
-            .WithColumn("Id").AsInt32().NotNullable().PrimaryKey().Identity()
+            .WithColumn("Id").AsInt32().IdentityKey(this)
             .WithColumn("Text").AsString(int.MaxValue).NotNullable()
             .WithColumn("ModuleName").AsString(31).Nullable()
             .WithColumn("DateCreated").AsDateTime().Nullable();
 
         Create.Table("MessageRoles")
-            .WithColumn("Id").AsInt32().NotNullable().PrimaryKey().Identity()
+            .WithColumn("Id").AsInt32().IdentityKey(this)
             .WithColumn("RoleId").AsInt32().NotNullable()
                 .ForeignKey("FK_MessageRoles_RoleId", "Roles", "RoleId")
             .WithColumn("MessageId").AsInt32().NotNullable()
