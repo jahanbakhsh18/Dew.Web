@@ -4,9 +4,9 @@
 [BasedOnRow(typeof(PriorityRow), CheckNames = true)]
 public class PriorityForm
 {
-    public short DueTime { get; set; }
     public string Name { get; set; }
-    public string IconName { get; set; }
+    [ColorPickerEditor]
     public string Color { get; set; }
     public string Description { get; set; }
+    public short DueTime { get; set; }
 }

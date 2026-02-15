@@ -1,10 +1,9 @@
-﻿import { fieldsProxy } from "@serenity-is/corelib";
+﻿import { fieldsProxy, getLookup, getLookupAsync } from "@serenity-is/corelib";
 
 export interface PriorityRow {
     Id?: number;
     DueTime?: number;
     Name?: string;
-    IconName?: string;
     Color?: string;
     Description?: string;
 }
@@ -13,10 +12,16 @@ export abstract class PriorityRow {
     static readonly idProperty = 'Id';
     static readonly nameProperty = 'Name';
     static readonly localTextPrefix = 'Ticket.Priority';
-    static readonly deletePermission = 'Ticketing:Ticket';
-    static readonly insertPermission = 'Ticketing:Ticket';
-    static readonly readPermission = 'Ticketing:Ticket';
-    static readonly updatePermission = 'Ticketing:Ticket';
+    static readonly lookupKey = 'Ticketing.Priority';
+
+    /** @deprecated use getLookupAsync instead */
+    static getLookup() { return getLookup<PriorityRow>('Ticketing.Priority') }
+    static async getLookupAsync() { return getLookupAsync<PriorityRow>('Ticketing.Priority') }
+
+    static readonly deletePermission = 'Ticketing:Ticket:View';
+    static readonly insertPermission = 'Ticketing:Ticket:Admin';
+    static readonly readPermission = 'Ticketing:Ticket:View';
+    static readonly updatePermission = 'Ticketing:Ticket:Admin';
 
     static readonly Fields = fieldsProxy<PriorityRow>();
 }

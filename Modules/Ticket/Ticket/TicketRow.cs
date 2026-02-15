@@ -16,7 +16,7 @@ public sealed class TicketRow : Row<TicketRow.RowFields>, IIdRow, INameRow
     const string jTimeFlag = nameof(jTimeFlag);
     const string jCreatorUser = nameof(jCreatorUser);
 
-    [DisplayName("Id"), NotNull, IdProperty]
+    [DisplayName("Id"), NotNull, IdProperty, Identity]
     public int? Id { get => fields.Id[this]; set => fields.Id[this] = value; }
 
     [DisplayName("Ticket Number")]

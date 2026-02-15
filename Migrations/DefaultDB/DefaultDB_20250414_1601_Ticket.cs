@@ -22,7 +22,6 @@ public class DefaultDB_20250414_1601_Ticket : AutoReversingMigration
             .WithColumn("Id").AsInt32().IdentityKey(this)
             .WithColumn("DueTime").AsInt16().NotNullable()
             .WithColumn("Name").AsString(127).NotNullable()
-            .WithColumn("IconName").AsString(63).Nullable()
             .WithColumn("Color").AsString(63).NotNullable()
             .WithColumn("Description").AsString(int.MaxValue).Nullable();
 
@@ -38,7 +37,6 @@ public class DefaultDB_20250414_1601_Ticket : AutoReversingMigration
             .WithColumn("Id").AsInt32().IdentityKey(this)
             .WithColumn("Name").AsString(127).Nullable()
             .WithColumn("DuePercent").AsInt32().NotNullable()
-            .WithColumn("IconName").AsString(63).Nullable()
             .WithColumn("Color").AsString(63).NotNullable()
             .WithColumn("Description").AsString(int.MaxValue).Nullable();
 

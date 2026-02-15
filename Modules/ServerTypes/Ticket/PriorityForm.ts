@@ -1,11 +1,11 @@
 ﻿import { initFormType, IntegerEditor, PrefixedContext, StringEditor } from "@serenity-is/corelib";
+import { ColorPickerEditor } from "../../Ticket/Priority/ColorPickerEditor";
 
 export interface PriorityForm {
-    DueTime: IntegerEditor;
     Name: StringEditor;
-    IconName: StringEditor;
-    Color: StringEditor;
+    Color: ColorPickerEditor;
     Description: StringEditor;
+    DueTime: IntegerEditor;
 }
 
 export class PriorityForm extends PrefixedContext {
@@ -18,15 +18,15 @@ export class PriorityForm extends PrefixedContext {
         if (!PriorityForm.init) {
             PriorityForm.init = true;
 
-            var w0 = IntegerEditor;
-            var w1 = StringEditor;
+            var w0 = StringEditor;
+            var w1 = ColorPickerEditor;
+            var w2 = IntegerEditor;
 
             initFormType(PriorityForm, [
-                'DueTime', w0,
-                'Name', w1,
-                'IconName', w1,
+                'Name', w0,
                 'Color', w1,
-                'Description', w1
+                'Description', w0,
+                'DueTime', w2
             ]);
         }
     }

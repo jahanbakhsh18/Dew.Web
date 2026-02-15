@@ -4,7 +4,6 @@ export interface TimeFlagRow {
     Id?: number;
     Name?: string;
     DuePercent?: number;
-    IconName?: string;
     Color?: string;
     Description?: string;
 }

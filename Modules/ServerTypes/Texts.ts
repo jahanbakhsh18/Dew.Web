@@ -121,7 +121,6 @@ namespace texts {
                 export const DueTime: string;
                 export const EntityPlural: string;
                 export const EntitySingular: string;
-                export const IconName: string;
                 export const Id: string;
                 export const Name: string;
             }
@@ -184,7 +183,6 @@ namespace texts {
                 export const DuePercent: string;
                 export const EntityPlural: string;
                 export const EntitySingular: string;
-                export const IconName: string;
                 export const Id: string;
                 export const Name: string;
             }

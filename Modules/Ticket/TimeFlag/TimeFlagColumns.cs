@@ -6,10 +6,11 @@ public class TimeFlagColumns
 {
     [EditLink, DisplayName("Db.Shared.RecordId"), AlignRight]
     public int Id { get; set; }
-    [EditLink]
+    [EditLink, Width(400)]
     public string Name { get; set; }
+    [Width(150)]
     public int DuePercent { get; set; }
-    public string IconName { get; set; }
+    [TimeFlagFormatter]
     public string Color { get; set; }
     public string Description { get; set; }
 }

@@ -1,10 +1,10 @@
 ﻿import { initFormType, IntegerEditor, PrefixedContext, StringEditor } from "@serenity-is/corelib";
+import { ColorPickerEditor } from "../../Ticket/Priority/ColorPickerEditor";
 
 export interface TimeFlagForm {
     Name: StringEditor;
     DuePercent: IntegerEditor;
-    IconName: StringEditor;
-    Color: StringEditor;
+    Color: ColorPickerEditor;
     Description: StringEditor;
 }
 
@@ -20,12 +20,12 @@ export class TimeFlagForm extends PrefixedContext {
 
             var w0 = StringEditor;
             var w1 = IntegerEditor;
+            var w2 = ColorPickerEditor;
 
             initFormType(TimeFlagForm, [
                 'Name', w0,
                 'DuePercent', w1,
-                'IconName', w0,
-                'Color', w0,
+                'Color', w2,
                 'Description', w0
             ]);
         }

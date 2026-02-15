@@ -10,7 +10,7 @@ public sealed class ProblemRow : Row<ProblemRow.RowFields>, IIdRow, INameRow
     const string jSystem = nameof(jSystem);
     const string jPriority = nameof(jPriority);
 
-    [DisplayName("Id"), NotNull, IdProperty]
+    [DisplayName("Id"), NotNull, IdProperty, Identity]
     public int? Id { get => fields.Id[this]; set => fields.Id[this] = value; }
 
     [DisplayName("Name"), Size(127), NotNull, QuickSearch, NameProperty]

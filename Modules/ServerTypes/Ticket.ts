@@ -6,6 +6,7 @@ export * from "./Ticket/LogColumns";
 export * from "./Ticket/LogForm";
 export * from "./Ticket/LogRow";
 export * from "./Ticket/LogService";
+export * from "./Ticket/PermissionKeys";
 export * from "./Ticket/PriorityColumns";
 export * from "./Ticket/PriorityForm";
 export * from "./Ticket/PriorityRow";

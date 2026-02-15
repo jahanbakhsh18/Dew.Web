@@ -6,7 +6,7 @@ public class TimeFlagForm
 {
     public string Name { get; set; }
     public int DuePercent { get; set; }
-    public string IconName { get; set; }
+    [ColorPickerEditor]
     public string Color { get; set; }
     public string Description { get; set; }
 }
