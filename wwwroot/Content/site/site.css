@@ -11,3 +11,9 @@
 .s-PermissionCheckEditor {
   min-height: 450px;
 }
+
+.size-240 {
+    .select2-container {
+        width: 240px !important;
+    }
+}

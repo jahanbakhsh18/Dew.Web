@@ -18,9 +18,6 @@ export interface TicketColumns {
     FilesPath: Column<TicketRow>;
     CreatorUserUsername: Column<TicketRow>;
     ExpireDate: Column<TicketRow>;
-    IsDeleted: Column<TicketRow>;
-    IsValid: Column<TicketRow>;
-    IsDomestic: Column<TicketRow>;
 }
 
 export class TicketColumns extends ColumnsBase<TicketRow> {

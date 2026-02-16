@@ -6,7 +6,8 @@ public class SystemColumns
 {
     [EditLink, DisplayName("Db.Shared.RecordId"), AlignRight]
     public int Id { get; set; }
-    [EditLink]
+    [EditLink, Width(300)]
     public string Name { get; set; }
+    [Width(400)]
     public string Description { get; set; }
 }

@@ -7,7 +7,7 @@
 [ServiceLookupPermission("Ticketing:Ticket")]
 public sealed class TimeFlagRow : Row<TimeFlagRow.RowFields>, IIdRow, INameRow
 {
-    [DisplayName("Id"), NotNull, IdProperty, Identity]
+    [DisplayName("Id"), NotNull, IdProperty, Identity, SortOrder(1, false)]
     public int? Id { get => fields.Id[this]; set => fields.Id[this] = value; }
 
     [DisplayName("Name"), Size(127), QuickSearch, NameProperty]

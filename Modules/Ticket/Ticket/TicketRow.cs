@@ -67,15 +67,6 @@ public sealed class TicketRow : Row<TicketRow.RowFields>, IIdRow, INameRow
     [DisplayName("Expire Date"), NotNull]
     public DateTime? ExpireDate { get => fields.ExpireDate[this]; set => fields.ExpireDate[this] = value; }
 
-    [DisplayName("Is Deleted"), NotNull]
-    public Stream IsDeleted { get => fields.IsDeleted[this]; set => fields.IsDeleted[this] = value; }
-
-    [DisplayName("Is Valid"), NotNull]
-    public Stream IsValid { get => fields.IsValid[this]; set => fields.IsValid[this] = value; }
-
-    [DisplayName("Is Domestic"), NotNull]
-    public Stream IsDomestic { get => fields.IsDomestic[this]; set => fields.IsDomestic[this] = value; }
-
     [DisplayName("System Name"), Expression($"{jSystem}.[Name]")]
     public string SystemName { get => fields.SystemName[this]; set => fields.SystemName[this] = value; }
 
@@ -111,9 +102,6 @@ public sealed class TicketRow : Row<TicketRow.RowFields>, IIdRow, INameRow
         public StringField FilesPath;
         public Int32Field CreatorUserId;
         public DateTimeField ExpireDate;
-        public StreamField IsDeleted;
-        public StreamField IsValid;
-        public StreamField IsDomestic;
 
         public StringField SystemName;
         public StringField ProblemName;

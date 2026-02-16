@@ -23,7 +23,4 @@ public class TicketColumns
     public string FilesPath { get; set; }
     public string CreatorUserUsername { get; set; }
     public DateTime ExpireDate { get; set; }
-    public Stream IsDeleted { get; set; }
-    public Stream IsValid { get; set; }
-    public Stream IsDomestic { get; set; }
 }

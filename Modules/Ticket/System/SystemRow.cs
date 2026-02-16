@@ -2,12 +2,13 @@
 
 [ConnectionKey("Default"), Module("Ticket"), TableName("[tkt].[System]")]
 [DisplayName("System"), InstanceName("System")]
-[ReadPermission("Ticketing:Ticket")]
-[ModifyPermission("Ticketing:Ticket")]
+[ReadPermission(PermissionKeys.Ticket.View)]
+[ModifyPermission(PermissionKeys.Ticket.Update)]
 [ServiceLookupPermission("Ticketing:Ticket")]
+[LookupScript("Ticketing.System")]
 public sealed class SystemRow : Row<SystemRow.RowFields>, IIdRow, INameRow
 {
-    [DisplayName("Id"), NotNull, IdProperty, Identity]
+    [DisplayName("Id"), NotNull, IdProperty, Identity, SortOrder(1, false)]
     public int? Id { get => fields.Id[this]; set => fields.Id[this] = value; }
 
     [DisplayName("Name"), Size(127), NotNull, QuickSearch, NameProperty]

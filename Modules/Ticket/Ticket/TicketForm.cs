@@ -6,21 +6,13 @@ namespace Ticketing.Ticket.Forms;
 [BasedOnRow(typeof(TicketRow), CheckNames = true)]
 public class TicketForm
 {
-    public int TicketNumber { get; set; }
-    public string Title { get; set; }
-    public string Description { get; set; }
-    public DateTime DateCreated { get; set; }
-    public DateTime DateUpdated { get; set; }
-    public DateTime DateClosed { get; set; }
+    [Width(200)]
     public int SystemId { get; set; }
-    public int ProblemId { get; set; }
+    [Width(500)]
+    public int ProblemId { get; set; }    
+    [TextAreaEditor(Rows = 3)]
+    public string Description { get; set; }
     public int StatusId { get; set; }
-    public int LastActionId { get; set; }
-    public int TimeFlagId { get; set; }
-    public string FilesPath { get; set; }
-    public int CreatorUserId { get; set; }
-    public DateTime ExpireDate { get; set; }
-    public Stream IsDeleted { get; set; }
-    public Stream IsValid { get; set; }
-    public Stream IsDomestic { get; set; }
+    public int LastActionId { get; set; }    
+    //public string FilesPath { get; set; }
 }

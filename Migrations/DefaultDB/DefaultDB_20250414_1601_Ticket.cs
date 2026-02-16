@@ -61,10 +61,7 @@ public class DefaultDB_20250414_1601_Ticket : AutoReversingMigration
             .WithColumn("FilesPath").AsString(short.MaxValue).Nullable()
             .WithColumn("CreatorUserId").AsInt32().NotNullable()
                 .ForeignKey("FK_Ticket_CreatorUserId", "Users", "UserId")
-            .WithColumn("ExpireDate").AsDateTime().NotNullable()
-            .WithColumn("IsDeleted").AsBoolean().NotNullable().WithDefaultValue(false)
-            .WithColumn("IsValid").AsBoolean().NotNullable().WithDefaultValue(false)
-            .WithColumn("IsDomestic").AsBoolean().NotNullable().WithDefaultValue(true);
+            .WithColumn("ExpireDate").AsDateTime().NotNullable();
 
         Create.Table("Comment").InSchema("tkt")
             .WithColumn("Id").AsInt32().IdentityKey(this)

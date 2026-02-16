@@ -16,9 +16,6 @@ export interface TicketRow {
     FilesPath?: string;
     CreatorUserId?: number;
     ExpireDate?: string;
-    IsDeleted?: number[];
-    IsValid?: number[];
-    IsDomestic?: number[];
     SystemName?: string;
     ProblemName?: string;
     StatusName?: string;

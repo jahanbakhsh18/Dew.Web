@@ -131,6 +131,7 @@ namespace texts {
                 export const EntitySingular: string;
                 export const Id: string;
                 export const Name: string;
+                export const PriorityColor: string;
                 export const PriorityId: string;
                 export const PriorityName: string;
                 export const SystemId: string;
@@ -159,9 +160,6 @@ namespace texts {
                 export const ExpireDate: string;
                 export const FilesPath: string;
                 export const Id: string;
-                export const IsDeleted: string;
-                export const IsDomestic: string;
-                export const IsValid: string;
                 export const LastActionId: string;
                 export const LastActionName: string;
                 export const ProblemId: string;

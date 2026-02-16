@@ -20,11 +20,11 @@ public class PermissionKeys
         [Description("Update"), ImplicitPermission(View), ImplicitPermission(General)]
         public const string Update = "Ticketing:Ticket:Update";
 
-        [Description("[Admin]"), ImplicitPermission(Update), ImplicitPermission(View), ImplicitPermission(General)]
+        [Description("Admin"), ImplicitPermission(Update), ImplicitPermission(View), ImplicitPermission(General)]
         public const string Admin = "Ticketing:Ticket:Admin";
     }
 
     //L1
-    [Description("[General]")]
+    [Description("General")]
     public const string General = "Ticketing:General";
 }

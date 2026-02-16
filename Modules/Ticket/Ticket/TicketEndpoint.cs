@@ -13,6 +13,13 @@ public class TicketEndpoint : ServiceEndpoint
     public SaveResponse Create(IUnitOfWork uow, SaveRequest<MyRow> request,
         [FromServices] ITicketSaveHandler handler)
     {
+        // TODO Set in handlers 
+        request.Entity.DateCreated = DateTime.Now;
+        request.Entity.TimeFlagId = 1;
+        request.Entity.CreatorUserId = 1;
+        request.Entity.ExpireDate = DateTime.Now.AddHours(72);
+        // TODO Use Workflow
+
         return handler.Create(uow, request);
     }
 
@@ -20,6 +27,8 @@ public class TicketEndpoint : ServiceEndpoint
     public SaveResponse Update(IUnitOfWork uow, SaveRequest<MyRow> request,
         [FromServices] ITicketSaveHandler handler)
     {
+        request.Entity.DateUpdated = DateTime.Now;
+
         return handler.Update(uow, request);
     }
  

@@ -2,9 +2,10 @@
 
 [ConnectionKey("Default"), Module("Ticket"), TableName("[tkt].[Problem]")]
 [DisplayName("Problem"), InstanceName("Problem")]
-[ReadPermission("Ticketing:Ticket")]
-[ModifyPermission("Ticketing:Ticket")]
+[ReadPermission(PermissionKeys.Ticket.View)]
+[ModifyPermission(PermissionKeys.Ticket.Update)]
 [ServiceLookupPermission("Ticketing:Ticket")]
+[LookupScript("Ticketing.Problem")]
 public sealed class ProblemRow : Row<ProblemRow.RowFields>, IIdRow, INameRow
 {
     const string jSystem = nameof(jSystem);
@@ -29,6 +30,9 @@ public sealed class ProblemRow : Row<ProblemRow.RowFields>, IIdRow, INameRow
 
     [DisplayName("Priority Name"), Expression($"{jPriority}.[Name]")]
     public string PriorityName { get => fields.PriorityName[this]; set => fields.PriorityName[this] = value; }
+    
+    [DisplayName("Color"), Expression($"{jPriority}.[Color]")]
+    public string PriorityColor { get => fields.PriorityColor[this]; set => fields.PriorityColor[this] = value; }
 
     public class RowFields : RowFieldsBase
     {
@@ -39,5 +43,6 @@ public sealed class ProblemRow : Row<ProblemRow.RowFields>, IIdRow, INameRow
 
         public StringField SystemName;
         public StringField PriorityName;
+        public StringField PriorityColor;
     }
 }
