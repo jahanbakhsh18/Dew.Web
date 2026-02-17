@@ -20,8 +20,8 @@ export interface TicketRow {
     ProblemName?: string;
     StatusName?: string;
     LastActionName?: string;
-    TimeFlagName?: string;
-    CreatorUserUsername?: string;
+    TimeFlagColor?: string;
+    CreatorUsername?: string;
 }
 
 export abstract class TicketRow {

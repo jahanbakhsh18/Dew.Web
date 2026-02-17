@@ -13,15 +13,11 @@ export class ProblemGrid extends EntityGrid<ProblemRow> {
     protected override getQuickFilters(): QuickFilter<Widget<any>, any>[] {
         var filters = super.getQuickFilters();
 
-        console.log(filters);
-
         var fld = ProblemRow.Fields;
 
         var systemFilter = tryFirst(filters, f => f.field == fld.SystemId);
-        console.log(systemFilter);
         systemFilter.cssClass = 'size-240';
 
         return filters;
     }
-
 }

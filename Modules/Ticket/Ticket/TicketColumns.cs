@@ -1,5 +1,4 @@
-﻿using System.IO;
-
+﻿
 namespace Ticketing.Ticket.Columns;
 
 [ColumnsScript("Ticket.Ticket")]
@@ -8,19 +7,21 @@ public class TicketColumns
 {
     [EditLink, DisplayName("Db.Shared.RecordId"), AlignRight]
     public int Id { get; set; }
-    public int TicketNumber { get; set; }
-    [EditLink]
-    public string Title { get; set; }
-    public string Description { get; set; }
-    public DateTime DateCreated { get; set; }
-    public DateTime DateUpdated { get; set; }
-    public DateTime DateClosed { get; set; }
+    [QuickFilter]
     public string SystemName { get; set; }
+    [QuickFilter]
+    [QuickFilterOption("CascadeFrom", "SystemId"), QuickFilterOption("CascadeField", "SystemId")]
     public string ProblemName { get; set; }
-    public string StatusName { get; set; }
-    public string LastActionName { get; set; }
-    public string TimeFlagName { get; set; }
-    public string FilesPath { get; set; }
-    public string CreatorUserUsername { get; set; }
+    [Width(150)]
+    public string CreatorUsername { get; set; }
+    [Width(150), SortOrder(1, true)]
+    public DateTime DateCreated { get; set; }
+    [Width(150)]
     public DateTime ExpireDate { get; set; }
+    [Width(100), TimeFlagFormatter]
+    public String TimeFlagColor { get; set; }
+    [Width(150), QuickFilter]
+    public String StatusName { get; set; }
+    [Width(150)]
+    public DateTime DateClosed { get; set; }
 }

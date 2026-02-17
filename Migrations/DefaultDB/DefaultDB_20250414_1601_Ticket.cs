@@ -1,4 +1,5 @@
-﻿using FluentMigrator;
+﻿using System.Data;
+using FluentMigrator;
 
 namespace Ticketing.Migrations.DefaultDB;
 
@@ -42,8 +43,8 @@ public class DefaultDB_20250414_1601_Ticket : AutoReversingMigration
 
         Create.Table("Ticket").InSchema("tkt")
             .WithColumn("Id").AsInt32().IdentityKey(this)
-            .WithColumn("TicketNumber").AsInt32().Nullable()
-            .WithColumn("Title").AsString(127).Nullable()
+            .WithColumn("TicketNumber").AsInt32().Nullable()    // Remove?
+            .WithColumn("Title").AsString(127).Nullable()       // Remove?
             .WithColumn("Description").AsString(int.MaxValue).Nullable()
             .WithColumn("DateCreated").AsDateTime().NotNullable()
             .WithColumn("DateUpdated").AsDateTime().Nullable()
@@ -67,7 +68,7 @@ public class DefaultDB_20250414_1601_Ticket : AutoReversingMigration
             .WithColumn("Id").AsInt32().IdentityKey(this)
             .WithColumn("Comment").AsString(int.MaxValue).Nullable()
             .WithColumn("TicketId").AsInt32().NotNullable()
-                .ForeignKey("FK_Comment_TicketId", "tkt", "Ticket", "Id")
+                .ForeignKey("FK_Comment_TicketId", "tkt", "Ticket", "Id").OnDelete(Rule.Cascade)
             .WithColumn("UserId").AsInt32().NotNullable()
                 .ForeignKey("FK_Comment_UserId", "Users", "UserId")
             .WithColumn("DateCreated").AsDateTime().NotNullable();
@@ -79,7 +80,7 @@ public class DefaultDB_20250414_1601_Ticket : AutoReversingMigration
             .WithColumn("ActionId").AsInt32().NotNullable()
                 .ForeignKey("FK_Log_ActionId", "wf", "Action", "Id")
             .WithColumn("TicketId").AsInt32().NotNullable()
-                .ForeignKey("FK_Log_TicketId", "tkt", "Ticket", "Id")
+                .ForeignKey("FK_Log_TicketId", "tkt", "Ticket", "Id").OnDelete(Rule.Cascade)
             .WithColumn("UserId").AsInt32().NotNullable()
                 .ForeignKey("FK_Log_UserId", "Users", "UserId")
             .WithColumn("DateCreated").AsDateTime().NotNullable();

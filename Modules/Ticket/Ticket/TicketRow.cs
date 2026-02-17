@@ -53,7 +53,7 @@ public sealed class TicketRow : Row<TicketRow.RowFields>, IIdRow, INameRow
     [TextualField(nameof(LastActionName)), LookupEditor(typeof(WorkFlow.ActionRow), Async = true)]
     public int? LastActionId { get => fields.LastActionId[this]; set => fields.LastActionId[this] = value; }
 
-    [DisplayName("Time Flag"), NotNull, ForeignKey(typeof(TimeFlagRow)), LeftJoin(jTimeFlag), TextualField(nameof(TimeFlagName))]
+    [DisplayName("Time Flag"), NotNull, ForeignKey(typeof(TimeFlagRow)), LeftJoin(jTimeFlag), TextualField(nameof(TimeFlagColor))]
     [ServiceLookupEditor(typeof(TimeFlagRow))]
     public int? TimeFlagId { get => fields.TimeFlagId[this]; set => fields.TimeFlagId[this] = value; }
 
@@ -61,7 +61,7 @@ public sealed class TicketRow : Row<TicketRow.RowFields>, IIdRow, INameRow
     public string FilesPath { get => fields.FilesPath[this]; set => fields.FilesPath[this] = value; }
 
     [DisplayName("Creator User"), NotNull, ForeignKey(typeof(Administration.UserRow)), LeftJoin(jCreatorUser)]
-    [TextualField(nameof(CreatorUserUsername)), LookupEditor(typeof(Administration.UserRow), Async = true)]
+    [TextualField(nameof(CreatorUsername)), LookupEditor(typeof(Administration.UserRow), Async = true)]
     public int? CreatorUserId { get => fields.CreatorUserId[this]; set => fields.CreatorUserId[this] = value; }
 
     [DisplayName("Expire Date"), NotNull]
@@ -79,11 +79,11 @@ public sealed class TicketRow : Row<TicketRow.RowFields>, IIdRow, INameRow
     [DisplayName("Last Action Name"), Expression($"{jLastAction}.[Name]")]
     public string LastActionName { get => fields.LastActionName[this]; set => fields.LastActionName[this] = value; }
 
-    [DisplayName("Time Flag Name"), Expression($"{jTimeFlag}.[Name]")]
-    public string TimeFlagName { get => fields.TimeFlagName[this]; set => fields.TimeFlagName[this] = value; }
+    [DisplayName("Time Flag"), Expression($"{jTimeFlag}.[Color]")]
+    public string TimeFlagColor { get => fields.TimeFlagColor[this]; set => fields.TimeFlagColor[this] = value; }
 
     [DisplayName("Creator User Username"), Origin(jCreatorUser, nameof(Administration.UserRow.Username))]
-    public string CreatorUserUsername { get => fields.CreatorUserUsername[this]; set => fields.CreatorUserUsername[this] = value; }
+    public string CreatorUsername { get => fields.CreatorUsername[this]; set => fields.CreatorUsername[this] = value; }
 
     public class RowFields : RowFieldsBase
     {
@@ -107,7 +107,7 @@ public sealed class TicketRow : Row<TicketRow.RowFields>, IIdRow, INameRow
         public StringField ProblemName;
         public StringField StatusName;
         public StringField LastActionName;
-        public StringField TimeFlagName;
-        public StringField CreatorUserUsername;
+        public StringField TimeFlagColor;
+        public StringField CreatorUsername;
     }
 }

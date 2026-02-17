@@ -1,7 +1,7 @@
 ﻿using MyPages = WorkFlow.Pages;
 
-[assembly: NavigationMenu(int.MaxValue, "WorkFlow", icon: "fa-exchange")]
+[assembly: NavigationMenu(3000, "WorkFlow", icon: "fa-exchange")]
 
-[assembly: NavigationLink(int.MaxValue, "WorkFlow/Action", typeof(MyPages.ActionPage), icon: "fa-play-circle")]
-[assembly: NavigationLink(int.MaxValue, "WorkFlow/Rule", typeof(MyPages.RulePage), icon: "fa-question-circle")]
-[assembly: NavigationLink(int.MaxValue, "WorkFlow/Status", typeof(MyPages.StatusPage), icon: "fa-tags")]
+[assembly: NavigationLink(3100, "WorkFlow/Status", typeof(MyPages.StatusPage), icon: "fa-tags")]
+[assembly: NavigationLink(3200, "WorkFlow/Action", typeof(MyPages.ActionPage), icon: "fa-play-circle")]
+[assembly: NavigationLink(3300, "WorkFlow/Rule", typeof(MyPages.RulePage), icon: "fa-question-circle")]

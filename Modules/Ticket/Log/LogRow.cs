@@ -22,7 +22,7 @@ public sealed class LogRow : Row<LogRow.RowFields>, IIdRow
     [LookupEditor(typeof(WorkFlow.ActionRow), Async = true)]
     public int? ActionId { get => fields.ActionId[this]; set => fields.ActionId[this] = value; }
 
-    [DisplayName("Ticket"), NotNull, ForeignKey(typeof(TicketRow)), LeftJoin(jTicket), TextualField(nameof(TicketTitle))]
+    [DisplayName("Ticket Id"), NotNull, ForeignKey(typeof(TicketRow)), LeftJoin(jTicket), TextualField(nameof(TicketTitle))]
     [ServiceLookupEditor(typeof(TicketRow))]
     public int? TicketId { get => fields.TicketId[this]; set => fields.TicketId[this] = value; }
 

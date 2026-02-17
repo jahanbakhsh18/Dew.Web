@@ -8,5 +8,6 @@ public class StatusColumns
     public int Id { get; set; }
     [EditLink, Width(250)]
     public string Name { get; set; }
+    [Width(150)]
     public DateTime UpdateDate { get; set; }
 }

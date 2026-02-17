@@ -150,7 +150,7 @@ namespace texts {
                 export function asKey(): typeof Ticket;
                 export function asTry(): typeof Ticket;
                 export const CreatorUserId: string;
-                export const CreatorUserUsername: string;
+                export const CreatorUsername: string;
                 export const DateClosed: string;
                 export const DateCreated: string;
                 export const DateUpdated: string;
@@ -169,8 +169,8 @@ namespace texts {
                 export const SystemId: string;
                 export const SystemName: string;
                 export const TicketNumber: string;
+                export const TimeFlagColor: string;
                 export const TimeFlagId: string;
-                export const TimeFlagName: string;
                 export const Title: string;
             }
             namespace TimeFlag {
