@@ -139,5 +139,13 @@
   "Validation.InvalidResetToken": "رمز شما برای بازنشانی رمز عبور شما نامعتبر است یا منقضی شده است!",
   "Validation.MinRequiredPasswordLength": "رمز عبور وارد شده کافی نمی باشد (حداقل {0})!",
   "Validation.PasswordConfirmMismatch": "رمزهای وارد شده یکسان نیستند!",
-  "Validation.SavePrimaryKeyError": null
+  "Validation.SavePrimaryKeyError": null,
+
+  "Db.Ticket.Ticket.EntityPlural": "تیکت",
+  "Db.Ticket.Ticket.EntitySingular": "تیکت",
+  "Db.Ticket.Ticket.Id": "شناسه",
+
+  "Db.Ticket.Log.EntityPlural": "لاگ",
+  "Db.Ticket.Log.EntitySingular": "لاگ",
+  "Db.Ticket.Log.Id": "شناسه"
 }
