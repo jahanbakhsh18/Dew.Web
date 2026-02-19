@@ -5,7 +5,7 @@
 [ReadPermission(PermissionKeys.Ticket.View)]
 [ModifyPermission(PermissionKeys.Ticket.Update)]
 [ServiceLookupPermission("Ticketing:Ticket")]
-[LookupScript("Ticketing.Problem")]
+[LookupScript]
 public sealed class ProblemRow : Row<ProblemRow.RowFields>, IIdRow, INameRow
 {
     const string jSystem = nameof(jSystem);
@@ -18,14 +18,14 @@ public sealed class ProblemRow : Row<ProblemRow.RowFields>, IIdRow, INameRow
     public string Name { get => fields.Name[this]; set => fields.Name[this] = value; }
 
     [DisplayName("System"), NotNull, ForeignKey(typeof(SystemRow)), LeftJoin(jSystem), TextualField(nameof(SystemName))]
-    [ServiceLookupEditor(typeof(SystemRow))]
+    [LookupEditor(typeof(SystemRow)), LookupInclude]
     public int? SystemId { get => fields.SystemId[this]; set => fields.SystemId[this] = value; }
 
     [DisplayName("Priority"), NotNull, ForeignKey(typeof(PriorityRow)), LeftJoin(jPriority), TextualField(nameof(PriorityName))]
-    [ServiceLookupEditor(typeof(PriorityRow))]
+    [LookupEditor(typeof(PriorityRow))]
     public int? PriorityId { get => fields.PriorityId[this]; set => fields.PriorityId[this] = value; }
 
-    [DisplayName("System Name"), Expression($"{jSystem}.[Name]")]
+    [DisplayName("System Name"), Expression($"{jSystem}.[Name]"), LookupInclude]
     public string SystemName { get => fields.SystemName[this]; set => fields.SystemName[this] = value; }
 
     [DisplayName("Priority Name"), Expression($"{jPriority}.[Name]")]

@@ -6,7 +6,6 @@ export interface CommentRow {
     TicketId?: number;
     UserId?: number;
     DateCreated?: string;
-    TicketTitle?: string;
     Username?: string;
 }
 

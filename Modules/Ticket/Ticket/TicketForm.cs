@@ -1,18 +1,26 @@
-﻿using System.IO;
-
-namespace Ticketing.Ticket.Forms;
+﻿namespace Ticketing.Ticket.Forms;
 
 [FormScript("Ticket.Ticket")]
 [BasedOnRow(typeof(TicketRow), CheckNames = true)]
 public class TicketForm
 {
-    [Width(200)]
+    [Category("Problem")]
+    [HalfWidth]
     public int SystemId { get; set; }
-    [Width(500)]
-    public int ProblemId { get; set; }    
+    [HalfWidth]
+    public int ProblemId { get; set; }
     [TextAreaEditor(Rows = 3)]
     public string Description { get; set; }
+
+    [Category("Attachments")]
+    [CommentListEditor, HalfWidth]
+    public List<CommentRow> CommentList { get; set; }
+    [HalfWidth]
+    public string FilesPath { get; set; }
+
+    [Category("Workflow")]
+    [HalfWidth]
     public int StatusId { get; set; }
-    public int LastActionId { get; set; }    
-    //public string FilesPath { get; set; }
+    [HalfWidth]
+    public int LastActionId { get; set; }
 }

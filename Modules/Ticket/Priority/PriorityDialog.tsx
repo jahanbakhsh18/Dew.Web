@@ -1,7 +1,7 @@
-﻿import { EntityDialog } from '@serenity-is/corelib';
-import { PriorityForm, PriorityRow, PriorityService } from '../../ServerTypes/Ticket';
+﻿import { PriorityForm, PriorityRow, PriorityService } from '../../ServerTypes/Ticket';
+import { BaseEntityDialog } from '../../Common/Helpers/BaseEntityDialog';
 
-export class PriorityDialog extends EntityDialog<PriorityRow, any> {
+export class PriorityDialog extends BaseEntityDialog<PriorityRow, any> {
     static override [Symbol.typeInfo] = this.registerClass("Ticketing.Ticket.");
 
     protected override getFormKey() { return PriorityForm.formKey; }

@@ -10,14 +10,13 @@ public sealed class CommentRow : Row<CommentRow.RowFields>, IIdRow, INameRow
     const string jTicket = nameof(jTicket);
     const string jUser = nameof(jUser);
 
-    [DisplayName("Id"), NotNull, IdProperty]
+    [DisplayName("Id"), NotNull, Identity, IdProperty]
     public int? Id { get => fields.Id[this]; set => fields.Id[this] = value; }
 
     [DisplayName("Comment"), QuickSearch, NameProperty]
     public string Comment { get => fields.Comment[this]; set => fields.Comment[this] = value; }
 
-    [DisplayName("Ticket"), NotNull, ForeignKey(typeof(TicketRow)), LeftJoin(jTicket), TextualField(nameof(TicketTitle))]
-    [ServiceLookupEditor(typeof(TicketRow))]
+    [DisplayName("Ticket"), NotNull]
     public int? TicketId { get => fields.TicketId[this]; set => fields.TicketId[this] = value; }
 
     [DisplayName("User"), NotNull, ForeignKey(typeof(Administration.UserRow)), LeftJoin(jUser), TextualField(nameof(Username))]
@@ -26,9 +25,6 @@ public sealed class CommentRow : Row<CommentRow.RowFields>, IIdRow, INameRow
 
     [DisplayName("Date Created"), NotNull]
     public DateTime? DateCreated { get => fields.DateCreated[this]; set => fields.DateCreated[this] = value; }
-
-    [DisplayName("Ticket Title"), Expression($"{jTicket}.[Title]")]
-    public string TicketTitle { get => fields.TicketTitle[this]; set => fields.TicketTitle[this] = value; }
 
     [DisplayName("User Username"), Origin(jUser, nameof(Administration.UserRow.Username))]
     public string Username { get => fields.Username[this]; set => fields.Username[this] = value; }
@@ -41,7 +37,6 @@ public sealed class CommentRow : Row<CommentRow.RowFields>, IIdRow, INameRow
         public Int32Field UserId;
         public DateTimeField DateCreated;
 
-        public StringField TicketTitle;
         public StringField Username;
     }
 }

@@ -5,8 +5,8 @@ import { LogRow } from "./LogRow";
 export interface LogColumns {
     Id: Column<LogRow>;
     TicketId: Column<LogRow>;
-    StatusName: Column<LogRow>;
     ActionName: Column<LogRow>;
+    StatusName: Column<LogRow>;
     Username: Column<LogRow>;
     DateCreated: Column<LogRow>;
 }

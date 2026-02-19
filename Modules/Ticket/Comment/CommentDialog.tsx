@@ -1,7 +1,7 @@
-﻿import { EntityDialog } from '@serenity-is/corelib';
-import { CommentForm, CommentRow, CommentService } from '../../ServerTypes/Ticket';
+﻿import { CommentForm, CommentRow, CommentService } from '../../ServerTypes/Ticket';
+import { GridEditorDialog } from '@serenity-is/extensions';
 
-export class CommentDialog extends EntityDialog<CommentRow, any> {
+export class CommentDialog extends GridEditorDialog<CommentRow, any> {
     static override [Symbol.typeInfo] = this.registerClass("Ticketing.Ticket.");
 
     protected override getFormKey() { return CommentForm.formKey; }

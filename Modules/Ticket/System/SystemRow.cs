@@ -5,7 +5,7 @@
 [ReadPermission(PermissionKeys.Ticket.View)]
 [ModifyPermission(PermissionKeys.Ticket.Update)]
 [ServiceLookupPermission("Ticketing:Ticket")]
-[LookupScript("Ticketing.System")]
+[LookupScript]
 public sealed class SystemRow : Row<SystemRow.RowFields>, IIdRow, INameRow
 {
     [DisplayName("Id"), NotNull, IdProperty, Identity, SortOrder(1, false)]

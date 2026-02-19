@@ -38,11 +38,12 @@ public sealed class TicketRow : Row<TicketRow.RowFields>, IIdRow, INameRow
     public DateTime? DateClosed { get => fields.DateClosed[this]; set => fields.DateClosed[this] = value; }
 
     [DisplayName("System"), NotNull, ForeignKey(typeof(SystemRow)), LeftJoin(jSystem), TextualField(nameof(SystemName))]
-    [ServiceLookupEditor(typeof(SystemRow))]
+    [LookupEditor(typeof(SystemRow))]
     public int? SystemId { get => fields.SystemId[this]; set => fields.SystemId[this] = value; }
 
     [DisplayName("Problem"), NotNull, ForeignKey(typeof(ProblemRow)), LeftJoin(jProblem), TextualField(nameof(ProblemName))]
-    [ServiceLookupEditor(typeof(ProblemRow))]
+
+    [LookupEditor(typeof(ProblemRow), CascadeFrom = "SystemId", CascadeField = "SystemId")]
     public int? ProblemId { get => fields.ProblemId[this]; set => fields.ProblemId[this] = value; }
 
     [DisplayName("Status"), NotNull, ForeignKey(typeof(WorkFlow.StatusRow)), LeftJoin(jStatus), TextualField(nameof(StatusName))]
@@ -57,7 +58,7 @@ public sealed class TicketRow : Row<TicketRow.RowFields>, IIdRow, INameRow
     [ServiceLookupEditor(typeof(TimeFlagRow))]
     public int? TimeFlagId { get => fields.TimeFlagId[this]; set => fields.TimeFlagId[this] = value; }
 
-    [DisplayName("Files Path"), Size(32767)]
+    [DisplayName("Files"), MultipleFileUploadEditor(FilenameFormat = "TicketFiles/~", CopyToHistory = true), Size(32767)]
     public string FilesPath { get => fields.FilesPath[this]; set => fields.FilesPath[this] = value; }
 
     [DisplayName("Creator User"), NotNull, ForeignKey(typeof(Administration.UserRow)), LeftJoin(jCreatorUser)]
@@ -85,6 +86,10 @@ public sealed class TicketRow : Row<TicketRow.RowFields>, IIdRow, INameRow
     [DisplayName("Creator User Username"), Origin(jCreatorUser, nameof(Administration.UserRow.Username))]
     public string CreatorUsername { get => fields.CreatorUsername[this]; set => fields.CreatorUsername[this] = value; }
 
+    [DisplayName("Comments"), MasterDetailRelation(foreignKey: nameof(CommentRow.TicketId)), NotMapped]
+    [MinSelectLevel(SelectLevel.Explicit)]
+    public List<CommentRow> CommentList { get => fields.CommentList[this]; set => fields.CommentList[this] = value; }
+
     public class RowFields : RowFieldsBase
     {
         public Int32Field Id;
@@ -109,5 +114,6 @@ public sealed class TicketRow : Row<TicketRow.RowFields>, IIdRow, INameRow
         public StringField LastActionName;
         public StringField TimeFlagColor;
         public StringField CreatorUsername;
+        public RowListField<CommentRow> CommentList;
     }
 }

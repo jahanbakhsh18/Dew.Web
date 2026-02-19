@@ -1,9 +1,9 @@
-﻿import { initFormType, PrefixedContext, ServiceLookupEditor, StringEditor } from "@serenity-is/corelib";
+﻿import { initFormType, LookupEditor, PrefixedContext, StringEditor } from "@serenity-is/corelib";
 
 export interface ProblemForm {
     Name: StringEditor;
-    SystemId: ServiceLookupEditor;
-    PriorityId: ServiceLookupEditor;
+    SystemId: LookupEditor;
+    PriorityId: LookupEditor;
 }
 
 export class ProblemForm extends PrefixedContext {
@@ -17,7 +17,7 @@ export class ProblemForm extends PrefixedContext {
             ProblemForm.init = true;
 
             var w0 = StringEditor;
-            var w1 = ServiceLookupEditor;
+            var w1 = LookupEditor;
 
             initFormType(ProblemForm, [
                 'Name', w0,

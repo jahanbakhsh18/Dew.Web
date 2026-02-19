@@ -14,11 +14,11 @@ export abstract class ProblemRow {
     static readonly idProperty = 'Id';
     static readonly nameProperty = 'Name';
     static readonly localTextPrefix = 'Ticket.Problem';
-    static readonly lookupKey = 'Ticketing.Problem';
+    static readonly lookupKey = 'Ticket.Problem';
 
     /** @deprecated use getLookupAsync instead */
-    static getLookup() { return getLookup<ProblemRow>('Ticketing.Problem') }
-    static async getLookupAsync() { return getLookupAsync<ProblemRow>('Ticketing.Problem') }
+    static getLookup() { return getLookup<ProblemRow>('Ticket.Problem') }
+    static async getLookupAsync() { return getLookupAsync<ProblemRow>('Ticket.Problem') }
 
     static readonly deletePermission = 'Ticketing:Ticket:Update';
     static readonly insertPermission = 'Ticketing:Ticket:Update';

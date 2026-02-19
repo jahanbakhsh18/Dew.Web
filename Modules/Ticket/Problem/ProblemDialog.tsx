@@ -1,7 +1,7 @@
-﻿import { EntityDialog } from '@serenity-is/corelib';
-import { ProblemForm, ProblemRow, ProblemService } from '../../ServerTypes/Ticket';
+﻿import { ProblemForm, ProblemRow, ProblemService } from '../../ServerTypes/Ticket';
+import { BaseEntityDialog } from '../../Common/Helpers/BaseEntityDialog';
 
-export class ProblemDialog extends EntityDialog<ProblemRow, any> {
+export class ProblemDialog extends BaseEntityDialog<ProblemRow, any> {
     static override [Symbol.typeInfo] = this.registerClass("Ticketing.Ticket.");
 
     protected override getFormKey() { return ProblemForm.formKey; }

@@ -1,10 +1,8 @@
-﻿import { DateEditor, initFormType, LookupEditor, PrefixedContext, ServiceLookupEditor, StringEditor } from "@serenity-is/corelib";
+﻿import { initFormType, IntegerEditor, PrefixedContext, StringEditor } from "@serenity-is/corelib";
 
 export interface CommentForm {
+    Id: IntegerEditor;
     Comment: StringEditor;
-    TicketId: ServiceLookupEditor;
-    UserId: LookupEditor;
-    DateCreated: DateEditor;
 }
 
 export class CommentForm extends PrefixedContext {
@@ -17,16 +15,12 @@ export class CommentForm extends PrefixedContext {
         if (!CommentForm.init) {
             CommentForm.init = true;
 
-            var w0 = StringEditor;
-            var w1 = ServiceLookupEditor;
-            var w2 = LookupEditor;
-            var w3 = DateEditor;
+            var w0 = IntegerEditor;
+            var w1 = StringEditor;
 
             initFormType(CommentForm, [
-                'Comment', w0,
-                'TicketId', w1,
-                'UserId', w2,
-                'DateCreated', w3
+                'Id', w0,
+                'Comment', w1
             ]);
         }
     }

@@ -1,4 +1,5 @@
 ﻿import { fieldsProxy } from "@serenity-is/corelib";
+import { CommentRow } from "./CommentRow";
 
 export interface TicketRow {
     Id?: number;
@@ -22,6 +23,7 @@ export interface TicketRow {
     LastActionName?: string;
     TimeFlagColor?: string;
     CreatorUsername?: string;
+    CommentList?: CommentRow[];
 }
 
 export abstract class TicketRow {

@@ -10,11 +10,11 @@ export abstract class SystemRow {
     static readonly idProperty = 'Id';
     static readonly nameProperty = 'Name';
     static readonly localTextPrefix = 'Ticket.System';
-    static readonly lookupKey = 'Ticketing.System';
+    static readonly lookupKey = 'Ticket.System';
 
     /** @deprecated use getLookupAsync instead */
-    static getLookup() { return getLookup<SystemRow>('Ticketing.System') }
-    static async getLookupAsync() { return getLookupAsync<SystemRow>('Ticketing.System') }
+    static getLookup() { return getLookup<SystemRow>('Ticket.System') }
+    static async getLookupAsync() { return getLookupAsync<SystemRow>('Ticket.System') }
 
     static readonly deletePermission = 'Ticketing:Ticket:Update';
     static readonly insertPermission = 'Ticketing:Ticket:Update';

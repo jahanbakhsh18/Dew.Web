@@ -4,11 +4,10 @@
 [BasedOnRow(typeof(CommentRow), CheckNames = true)]
 public class CommentColumns
 {
-    [EditLink, DisplayName("Db.Shared.RecordId"), AlignRight]
-    public int Id { get; set; }
-    [EditLink]
+    [EditLink, Width(250)]
     public string Comment { get; set; }
-    public string TicketTitle { get; set; }
+    [Width(125)]
     public string Username { get; set; }
+    [Width(125)]
     public DateTime DateCreated { get; set; }
 }

@@ -1,7 +1,7 @@
-﻿import { EntityDialog } from '@serenity-is/corelib';
+﻿import { BaseEntityDialog } from '../../Common/Helpers/BaseEntityDialog';
 import { TimeFlagForm, TimeFlagRow, TimeFlagService } from '../../ServerTypes/Ticket';
 
-export class TimeFlagDialog extends EntityDialog<TimeFlagRow, any> {
+export class TimeFlagDialog extends BaseEntityDialog<TimeFlagRow, any> {
     static override [Symbol.typeInfo] = this.registerClass("Ticketing.Ticket.");
 
     protected override getFormKey() { return TimeFlagForm.formKey; }

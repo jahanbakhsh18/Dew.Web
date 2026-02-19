@@ -5,13 +5,13 @@ import { TicketRow } from "./TicketRow";
 
 export interface TicketColumns {
     Id: Column<TicketRow>;
+    StatusName: Column<TicketRow>;
     SystemName: Column<TicketRow>;
     ProblemName: Column<TicketRow>;
     CreatorUsername: Column<TicketRow>;
     DateCreated: Column<TicketRow>;
     ExpireDate: Column<TicketRow>;
     TimeFlagColor: Column<TicketRow>;
-    StatusName: Column<TicketRow>;
     DateClosed: Column<TicketRow>;
 }
 
