@@ -2,6 +2,7 @@
 import { LogForm, TicketForm, TicketRow, TicketService } from '../../ServerTypes/Ticket';
 import { LogGrid } from '../Log/LogGrid';
 import { DialogUtils } from '@serenity-is/extensions';
+import { TicketDbTexts } from '../../ServerTypes/Texts';
 
 export class TicketDialog<P = {}> extends EntityDialog<TicketRow, P> {
     static override[Symbol.typeInfo] = this.registerClass("Ticketing.Ticket.");
@@ -50,8 +51,8 @@ export class TicketDialog<P = {}> extends EntityDialog<TicketRow, P> {
         return (
             <div id={id.Tabs} class="s-DialogContent">
                 <ul>
-                    <li><a href={'#' + id.TabTicket}><span> {TicketForm.name} </span></a></li>
-                    <li><a href={'#' + id.TabLogs}><span> {LogForm.name} </span></a></li>
+                    <li><a href={'#' + id.TabTicket}><span> {TicketDbTexts.Ticket.EntitySingular} </span></a></li>
+                    <li><a href={'#' + id.TabLogs}><span> {TicketDbTexts.Log.EntityPlural} </span></a></li>
                 </ul>
                 <div id={id.TabTicket} class="tab-pane s-TabTicket">
                     <div id={id.Toolbar} class="s-DialogToolbar">
@@ -68,5 +69,10 @@ export class TicketDialog<P = {}> extends EntityDialog<TicketRow, P> {
                 </div>
             </div>
         )
+    }
+
+    protected override afterLoadEntity() {
+        super.afterLoadEntity();
+        this.form.CommentList.ticketId = this.entityId;
     }
 }

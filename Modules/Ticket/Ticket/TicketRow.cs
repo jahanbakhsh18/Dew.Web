@@ -83,7 +83,7 @@ public sealed class TicketRow : Row<TicketRow.RowFields>, IIdRow, INameRow
     [DisplayName("Time Flag"), Expression($"{jTimeFlag}.[Color]")]
     public string TimeFlagColor { get => fields.TimeFlagColor[this]; set => fields.TimeFlagColor[this] = value; }
 
-    [DisplayName("Creator User Username"), Origin(jCreatorUser, nameof(Administration.UserRow.Username))]
+    [DisplayName("Creator Username"), Origin(jCreatorUser, nameof(Administration.UserRow.Username))]
     public string CreatorUsername { get => fields.CreatorUsername[this]; set => fields.CreatorUsername[this] = value; }
 
     [DisplayName("Comments"), MasterDetailRelation(foreignKey: nameof(CommentRow.TicketId)), NotMapped]

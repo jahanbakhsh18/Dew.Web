@@ -372,6 +372,7 @@ export const SignUpFormTexts = Texts.Forms.Membership.SignUp;
 export const SiteFormTexts = Texts.Forms;
 export const SiteLayoutTexts = Texts.Site.Layout;
 export const SqlExceptionHelperTexts = Texts.Validation;
+export const TicketDbTexts = Texts.Db.Ticket;
 export const UserDialogTexts = Texts.Site.UserDialog;
 export const UserPermissionDialogTexts = Texts.Site.UserPermissionDialog;
 export const ValidationErrorViewTexts = Texts.Site.ValidationError;

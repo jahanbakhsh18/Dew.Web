@@ -10,14 +10,12 @@ public class CommentSaveHandler(IRequestContext context) :
 {
     int userId = Convert.ToInt32(context.User.GetIdentifier());
 
-    protected override void SetInternalFields()
+    protected override void ValidateEditableFields(HashSet<Field> editable)
     {
-        base.SetInternalFields();
+        base.ValidateEditableFields(editable);
 
-        if (IsCreate)
-        {
-            Row.UserId = userId;
-            Row.DateCreated = DateTime.Now;
-        }
-    }
+        // IsCreate || IsUpdate
+        Row.UserId = userId;
+        Row.DateCreated = DateTime.Now;
+    }    
 }

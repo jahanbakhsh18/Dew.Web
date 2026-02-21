@@ -4,7 +4,7 @@
 [BasedOnRow(typeof(CommentRow), CheckNames = true)]
 public class CommentForm
 {
-    [Hidden]
-    public int Id { get; set; }
     public string Comment { get; set; }
+    [Hidden]
+    public int TicketId { get; set; }
 }

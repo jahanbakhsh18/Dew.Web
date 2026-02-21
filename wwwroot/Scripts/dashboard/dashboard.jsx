@@ -54,8 +54,6 @@ class RootComponent extends React.Component {
         if (this.state.value.length == 0)
             return;
 
-        console.log(this.state.value);
-
         return <div className="row">
             <DashboardCard text="Open Orders" count={`${this.state.value.OpenOrders}`} color="bg-primary" icon="fa-shopping-cart" />
             <DashboardCard text="Closed Orders (%)" count={`${this.state.value.ClosedOrderPercent}`} color="bg-info" icon="fa-truck" />

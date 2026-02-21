@@ -1,8 +1,8 @@
 ﻿import { initFormType, IntegerEditor, PrefixedContext, StringEditor } from "@serenity-is/corelib";
 
 export interface CommentForm {
-    Id: IntegerEditor;
     Comment: StringEditor;
+    TicketId: IntegerEditor;
 }
 
 export class CommentForm extends PrefixedContext {
@@ -15,12 +15,12 @@ export class CommentForm extends PrefixedContext {
         if (!CommentForm.init) {
             CommentForm.init = true;
 
-            var w0 = IntegerEditor;
-            var w1 = StringEditor;
+            var w0 = StringEditor;
+            var w1 = IntegerEditor;
 
             initFormType(CommentForm, [
-                'Id', w0,
-                'Comment', w1
+                'Comment', w0,
+                'TicketId', w1
             ]);
         }
     }

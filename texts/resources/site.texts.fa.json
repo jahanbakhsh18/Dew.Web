@@ -145,7 +145,7 @@
   "Db.Ticket.Ticket.EntitySingular": "تیکت",
   "Db.Ticket.Ticket.Id": "شناسه",
 
-  "Db.Ticket.Log.EntityPlural": "لاگ",
+  "Db.Ticket.Log.EntityPlural": "لاگ ها",
   "Db.Ticket.Log.EntitySingular": "لاگ",
   "Db.Ticket.Log.Id": "شناسه"
 }

@@ -47,27 +47,6 @@ public class TicketSaveHandler(IRequestContext context) :
         base.ValidateRequired(editableFields);
     }
 
-    protected override void SetInternalFields()
-    {
-        base.SetInternalFields();
-
-        if (Row.CommentList != null)
-        {
-            var fld = CommentRow.Fields;
-            //var oldList = IsCreate ? null : Connection.List<CommentRow>(fld.TicketId == this.Row.Id.Value);
-
-            foreach (CommentRow comment in Row.CommentList)
-            {
-                if (comment.Id == null)
-                {
-                    comment.DateCreated = DateTime.Now;
-                    comment.UserId = userId;
-                }
-            }
-            //new Common.DetailListSaveHandler<Entities.CommentRow>(oldList, Row.CommentList, x => x.TicketId = Row.Id.Value).Process(this.UnitOfWork);
-        }
-    }
-
     protected override void AfterSave()
     {
         base.AfterSave();
