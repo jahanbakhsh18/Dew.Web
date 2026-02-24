@@ -1,3 +1,4 @@
+using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Http;
@@ -16,7 +17,7 @@ public partial class AccountPage(ITwoLevelCache cache, ITextLocalizer localizer)
     {
         if (denied == 1)
             return View(MVC.Views.Errors.AccessDenied,
-                ("~/Account/Login?returnUrl=" + Uri.EscapeDataString(returnUrl)));
+                "~/Account/Login?returnUrl=" + Uri.EscapeDataString(returnUrl));
 
         ViewData["Activated"] = activated;
         ViewData["HideLeftNavigation"] = true;
@@ -31,7 +32,7 @@ public partial class AccountPage(ITwoLevelCache cache, ITextLocalizer localizer)
         return View(MVC.Views.Errors.AccessDenied, (object)returnURL);
     }
 
-    [HttpPost, JsonRequest]
+    [HttpPost, JsonRequest, IgnoreAntiforgeryToken]
     public Result<ServiceResponse> Login(LoginRequest request,
         [FromServices] IUserPasswordValidator passwordValidator,
         [FromServices] IUserClaimCreator userClaimCreator)
@@ -81,5 +82,27 @@ public partial class AccountPage(ITwoLevelCache cache, ITextLocalizer localizer)
         HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
         HttpContext.RequestServices.GetService<IElevationHandler>()?.DeleteToken();
         return new RedirectResult("~/");
+    }
+
+    [HttpGet]
+    public object CurrentUser()
+    {
+        var user = User;
+
+        if (!user.Identity?.IsAuthenticated ?? true)
+            return Unauthorized();
+
+        var response = new
+        {
+            IsAuthenticated = true,
+            Username = user.Identity?.Name,
+            //UserId = user.FindFirst(ClaimTypes.NameIdentifier)?.Value,
+            Roles = user.Claims
+                .Where(c => c.Type == ClaimTypes.Role)
+                .Select(c => c.Value)
+                .ToList()
+        };
+
+        return Ok(response);
     }
 }

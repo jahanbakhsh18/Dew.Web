@@ -53,10 +53,14 @@ public partial class Startup
                     .PersistKeysToFileSystem(new DirectoryInfo(dataProtectionKeysFolder));
         }
 
-        /*services.AddCors(options =>
+        services.AddCors(options =>
         {
-            options.AddPolicy("AllowAllOrigin", builder => builder.AllowAnyOrigin());
-        });*/
+            options.AddPolicy("ReactDev",
+                policy =>
+                {
+                    policy.WithOrigins("http://localhost:5173").AllowAnyHeader().AllowAnyMethod().AllowCredentials();
+                });
+        });
 
         services.AddAntiforgery(options => options.HeaderName = "X-CSRF-TOKEN");
         services.Configure<KestrelServerOptions>(options => options.AllowSynchronousIO = true);
@@ -163,6 +167,9 @@ public partial class Startup
         app.UseStaticFiles();
 
         app.UseRouting();
+
+        app.UseCors("ReactDev");
+
         app.UseAuthentication();
         app.UseAuthorization();
 

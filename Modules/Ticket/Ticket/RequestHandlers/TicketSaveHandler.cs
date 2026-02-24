@@ -1,5 +1,4 @@
-﻿using Ticketing.Administration;
-using MyRow = Ticketing.Ticket.TicketRow;
+﻿using MyRow = Ticketing.Ticket.TicketRow;
 
 namespace Ticketing.Ticket;
 

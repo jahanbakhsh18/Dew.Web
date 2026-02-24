@@ -1,5 +1,5 @@
 ﻿import { EntityDialog, TabsExtensions, WidgetProps } from '@serenity-is/corelib';
-import { LogForm, TicketForm, TicketRow, TicketService } from '../../ServerTypes/Ticket';
+import { TicketForm, TicketRow, TicketService } from '../../ServerTypes/Ticket';
 import { LogGrid } from '../Log/LogGrid';
 import { DialogUtils } from '@serenity-is/extensions';
 import { TicketDbTexts } from '../../ServerTypes/Texts';
