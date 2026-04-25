@@ -53,13 +53,13 @@ public partial class Startup
                     .PersistKeysToFileSystem(new DirectoryInfo(dataProtectionKeysFolder));
         }
 
+        var allowedOrigins = Configuration.GetSection("CorsSettings:AllowedOrigins").Get<string[]>();
         services.AddCors(options =>
         {
-            options.AddPolicy("ReactDev",
-                policy =>
-                {
-                    policy.WithOrigins("http://localhost:5173").AllowAnyHeader().AllowAnyMethod().AllowCredentials();
-                });
+            options.AddPolicy("ReactDev", policy =>
+            {
+                policy.WithOrigins(allowedOrigins).AllowAnyMethod().AllowAnyHeader().AllowCredentials();
+            });
         });
 
         services.AddAntiforgery(options => options.HeaderName = "X-CSRF-TOKEN");
@@ -177,7 +177,8 @@ public partial class Startup
 
         app.UseDynamicScripts();
 
-        app.UseEndpoints(endpoints => {
+        app.UseEndpoints(endpoints =>
+        {
             endpoints.MapControllers();
         });
 

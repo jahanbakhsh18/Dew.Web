@@ -12,7 +12,7 @@ public partial class AccountPage : Controller
         return View(MVC.Views.Membership.Account.SignUp.SignUpPage);
     }
 
-    [HttpPost, JsonRequest]
+    [HttpPost, JsonRequest, IgnoreAntiforgeryToken]
     public Result<SignUpResponse> SignUp(SignUpRequest request,
         [FromServices] IEmailSender emailSender,
         [FromServices] IOptions<EnvironmentSettings> environmentOptions,
