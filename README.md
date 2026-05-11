@@ -1,6 +1,6 @@
 ## 🎫 Ticketing System
 A demonstration project that showcases: 
-- A product-based ticketing system for company support
+- A problem handling system for company products
 - Workflow design built from scratch and modeled using BPMN 2.0
 - A structured backend/frontend built with Serenity (TypeScript + .NET Core)
  
