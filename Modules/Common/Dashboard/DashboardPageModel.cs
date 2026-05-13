@@ -1,5 +1,5 @@
 ﻿
-namespace Ticketing.Common;
+namespace Dew.Common;
 
 public class DashboardPageModel
 {

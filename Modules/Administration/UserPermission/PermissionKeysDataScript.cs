@@ -1,4 +1,4 @@
-namespace Ticketing.Administration;
+namespace Dew.Administration;
 
 [DataScript("Administration.PermissionKeys", Permission = PermissionKeys.Security)]
 public class PermissionKeysDataScript : DataScript<IEnumerable<string>>

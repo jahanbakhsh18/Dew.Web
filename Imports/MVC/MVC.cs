@@ -1,5 +1,5 @@
 ﻿
-namespace Ticketing.MVC;
+namespace Dew.MVC;
 
 public static partial class Views
 {

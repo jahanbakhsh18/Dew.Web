@@ -1,4 +1,4 @@
-﻿namespace Ticketing.Administration.Pages;
+﻿namespace Dew.Administration.Pages;
 
 [PageAuthorize(typeof(RoleRow))]
 public class RolePage : Controller

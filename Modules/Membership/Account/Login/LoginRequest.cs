@@ -1,4 +1,4 @@
-﻿namespace Ticketing.Membership;
+﻿namespace Dew.Membership;
 
 [FormScript("Membership.Login")]
 [BasedOnRow(typeof(Administration.UserRow), CheckNames = true)]

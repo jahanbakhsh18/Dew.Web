@@ -1,5 +1,5 @@
 
-namespace Ticketing.AppServices;
+namespace Dew.AppServices;
 
 public class DirectoryEntry
 {

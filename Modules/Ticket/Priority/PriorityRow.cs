@@ -1,12 +1,12 @@
-﻿namespace Ticketing.Ticket;
+﻿namespace Dew.Ticket;
 
 [ConnectionKey("Default"), Module("Ticket"), TableName("[tkt].[Priority]")]
 [DisplayName("Priority"), InstanceName("Priority")]
 [ReadPermission(PermissionKeys.Ticket.View)]
 [UpdatePermission(PermissionKeys.Ticket.Admin)]
 [InsertPermission(PermissionKeys.Ticket.Admin)]
-[ServiceLookupPermission("Ticketing:Ticket")]
-[LookupScript("Ticketing.Priority")]
+[ServiceLookupPermission("Dew:Ticket")]
+[LookupScript("Dew.Priority")]
 public sealed class PriorityRow : Row<PriorityRow.RowFields>, IIdRow, INameRow
 {
     [DisplayName("Id"), NotNull, Identity, IdProperty, SortOrder(1, false)]

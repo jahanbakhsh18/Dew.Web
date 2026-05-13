@@ -20,10 +20,10 @@ export abstract class ProblemRow {
     static getLookup() { return getLookup<ProblemRow>('Ticket.Problem') }
     static async getLookupAsync() { return getLookupAsync<ProblemRow>('Ticket.Problem') }
 
-    static readonly deletePermission = 'Ticketing:Ticket:Update';
-    static readonly insertPermission = 'Ticketing:Ticket:Update';
-    static readonly readPermission = 'Ticketing:Ticket:View';
-    static readonly updatePermission = 'Ticketing:Ticket:Update';
+    static readonly deletePermission = 'Dew:Ticket:Update';
+    static readonly insertPermission = 'Dew:Ticket:Update';
+    static readonly readPermission = 'Dew:Ticket:View';
+    static readonly updatePermission = 'Dew:Ticket:Update';
 
     static readonly Fields = fieldsProxy<ProblemRow>();
 }

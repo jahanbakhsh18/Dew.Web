@@ -1,6 +1,6 @@
-﻿using MyRow = Ticketing.Ticket.ProblemRow;
+﻿using MyRow = Dew.Ticket.ProblemRow;
 
-namespace Ticketing.Ticket;
+namespace Dew.Ticket;
 
 public interface IProblemDeleteHandler : IDeleteHandler<MyRow, DeleteRequest, DeleteResponse> { }
 

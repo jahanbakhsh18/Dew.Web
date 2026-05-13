@@ -1,4 +1,4 @@
-﻿namespace Ticketing.Ticket.Forms;
+﻿namespace Dew.Ticket.Forms;
 
 [FormScript("Ticket.Problem")]
 [BasedOnRow(typeof(ProblemRow), CheckNames = true)]

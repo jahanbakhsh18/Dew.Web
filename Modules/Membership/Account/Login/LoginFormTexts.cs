@@ -1,4 +1,4 @@
-namespace Ticketing;
+namespace Dew;
 
 [NestedLocalTexts(Prefix = "Forms.Membership.Login.")]
 public static class LoginFormTexts

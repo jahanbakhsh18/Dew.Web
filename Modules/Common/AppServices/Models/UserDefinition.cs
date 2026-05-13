@@ -1,4 +1,4 @@
-namespace Ticketing;
+namespace Dew;
 
 [Serializable]
 public class UserDefinition : IUserDefinition, IHasPassword

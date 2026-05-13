@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.Extensions;
-using Ticketing.Administration;
+using Dew.Administration;
 
-namespace Ticketing.AppServices;
+namespace Dew.AppServices;
 
 public class NavigationModelFactory(
     ITwoLevelCache cache,

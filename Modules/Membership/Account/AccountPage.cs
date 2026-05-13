@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Ticketing.Membership.Pages;
+namespace Dew.Membership.Pages;
 
 [Route("Account/[action]")]
 public partial class AccountPage(ITwoLevelCache cache, ITextLocalizer localizer) : Controller

@@ -1,6 +1,6 @@
-using Ticketing.Administration;
+using Dew.Administration;
 
-namespace Ticketing.AppServices;
+namespace Dew.AppServices;
 
 public class UserPasswordValidator(ITwoLevelCache cache, ISqlConnections sqlConnections, IUserRetrieveService userRetriever,
     ILogger<UserPasswordValidator> log = null, IDirectoryService directoryService = null) : IUserPasswordValidator

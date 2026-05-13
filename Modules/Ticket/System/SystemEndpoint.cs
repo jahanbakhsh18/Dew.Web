@@ -1,9 +1,9 @@
 ﻿using Serenity.Reporting;
 using System.Data;
 using System.Globalization;
-using MyRow = Ticketing.Ticket.SystemRow;
+using MyRow = Dew.Ticket.SystemRow;
 
-namespace Ticketing.Ticket.Endpoints;
+namespace Dew.Ticket.Endpoints;
 
 [Route("Services/Ticket/System/[action]")]
 [ConnectionKey(typeof(MyRow)), ServiceAuthorize(typeof(MyRow))]

@@ -1,4 +1,4 @@
-﻿namespace Ticketing.Ticket.Pages;
+﻿namespace Dew.Ticket.Pages;
 
 [PageAuthorize(typeof(TicketRow))]
 public class TicketPage : Controller

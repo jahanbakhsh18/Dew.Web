@@ -1,5 +1,5 @@
 
-namespace Ticketing.Common.Pages;
+namespace Dew.Common.Pages;
 
 [Route("Dashboard/[action]")]
 public class DashboardPage : Controller

@@ -1,5 +1,5 @@
 {
-  "name": "ticketing.web",
+  "name": "dew.web",
   "dependencies": {
     "@serenity-is/corelib": "./node_modules/.dotnet/serenity.corelib",
     "@serenity-is/domwise": "./node_modules/.dotnet/serenity.domwise",

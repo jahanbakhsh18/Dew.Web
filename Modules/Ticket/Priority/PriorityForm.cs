@@ -1,4 +1,4 @@
-﻿namespace Ticketing.Ticket.Forms;
+﻿namespace Dew.Ticket.Forms;
 
 [FormScript("Ticket.Priority")]
 [BasedOnRow(typeof(PriorityRow), CheckNames = true)]

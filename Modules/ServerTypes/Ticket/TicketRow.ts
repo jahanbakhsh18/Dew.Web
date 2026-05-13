@@ -30,10 +30,10 @@ export abstract class TicketRow {
     static readonly idProperty = 'Id';
     static readonly nameProperty = 'Title';
     static readonly localTextPrefix = 'Ticket.Ticket';
-    static readonly deletePermission = 'Ticketing:Ticket';
-    static readonly insertPermission = 'Ticketing:Ticket';
-    static readonly readPermission = 'Ticketing:Ticket';
-    static readonly updatePermission = 'Ticketing:Ticket';
+    static readonly deletePermission = 'Dew:Ticket';
+    static readonly insertPermission = 'Dew:Ticket';
+    static readonly readPermission = 'Dew:Ticket';
+    static readonly updatePermission = 'Dew:Ticket';
 
     static readonly Fields = fieldsProxy<TicketRow>();
 }

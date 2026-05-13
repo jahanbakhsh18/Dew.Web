@@ -1,6 +1,6 @@
-﻿using MyRow = Ticketing.Ticket.CommentRow;
+﻿using MyRow = Dew.Ticket.CommentRow;
 
-namespace Ticketing.Ticket;
+namespace Dew.Ticket;
 
 public interface ICommentSaveHandler : ISaveHandler<MyRow, SaveRequest<MyRow>, SaveResponse> { }
 

@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Hosting;
-using MyRepository = Ticketing.Administration.Repositories.TranslationRepository;
+using MyRepository = Dew.Administration.Repositories.TranslationRepository;
 
-namespace Ticketing.Administration.Endpoints;
+namespace Dew.Administration.Endpoints;
 
 [Route("Services/Administration/Translation/[action]")]
 [ServiceAuthorize(PermissionKeys.Translation)]

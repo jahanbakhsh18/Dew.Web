@@ -1,6 +1,6 @@
-using MyRow = Ticketing.Administration.LanguageRow;
+using MyRow = Dew.Administration.LanguageRow;
 
-namespace Ticketing.Administration;
+namespace Dew.Administration;
 
 public interface ILanguageListHandler : IListHandler<MyRow> { }
 

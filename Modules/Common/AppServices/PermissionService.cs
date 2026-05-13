@@ -1,7 +1,7 @@
-using Ticketing.Administration;
+using Dew.Administration;
 using System.Security.Claims;
 
-namespace Ticketing.AppServices;
+namespace Dew.AppServices;
 
 public class PermissionService(ITwoLevelCache cache,
     ISqlConnections sqlConnections,

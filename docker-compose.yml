@@ -1,8 +1,8 @@
 #version: "3.9"
 services:
-  ticketing_web:
-    container_name: ticketing_web
-    image: ticketing_web:latest
+  dew_web:
+    container_name: dew_web
+    image: dew_web:latest
     restart: unless-stopped
     environment:
       TZ: Asia/Tehran

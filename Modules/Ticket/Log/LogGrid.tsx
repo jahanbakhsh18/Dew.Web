@@ -3,7 +3,7 @@ import { LogColumns, LogRow, LogService } from '../../ServerTypes/Ticket';
 import { LogDialog } from './LogDialog';
 
 export class LogGrid extends EntityGrid<LogRow> {
-    static override[Symbol.typeInfo] = this.registerClass("Ticketing.Ticket.");
+    static override[Symbol.typeInfo] = this.registerClass("Dew.Ticket.");
 
     protected override getColumnsKey() { return LogColumns.columnsKey; }
     protected override getDialogType() { return LogDialog; }

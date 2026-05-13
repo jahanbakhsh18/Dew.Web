@@ -1,4 +1,4 @@
-namespace Ticketing.Administration;
+namespace Dew.Administration;
 
 [ConnectionKey("Default"), Module("Administration"), TableName("Languages")]
 [DisplayName("Languages"), InstanceName("Language")]

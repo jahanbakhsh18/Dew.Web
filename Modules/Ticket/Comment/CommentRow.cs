@@ -1,10 +1,10 @@
-﻿namespace Ticketing.Ticket;
+﻿namespace Dew.Ticket;
 
 [ConnectionKey("Default"), Module("Ticket"), TableName("[tkt].[Comment]")]
 [DisplayName("Comment"), InstanceName("Comment")]
-[ReadPermission("Ticketing:Ticket")]
-[ModifyPermission("Ticketing:Ticket")]
-[ServiceLookupPermission("Ticketing:Ticket")]
+[ReadPermission("Dew:Ticket")]
+[ModifyPermission("Dew:Ticket")]
+[ServiceLookupPermission("Dew:Ticket")]
 public sealed class CommentRow : Row<CommentRow.RowFields>, IIdRow, INameRow
 {
     const string jTicket = nameof(jTicket);

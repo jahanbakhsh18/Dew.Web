@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.DataProtection;
-using Ticketing.Administration;
+using Dew.Administration;
 using System.IO;
 
-namespace Ticketing.Membership.Pages;
+namespace Dew.Membership.Pages;
 
 public partial class AccountPage : Controller
 {

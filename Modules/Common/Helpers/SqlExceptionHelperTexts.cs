@@ -1,4 +1,4 @@
-namespace Ticketing.Common;
+namespace Dew.Common;
 
 [NestedLocalTexts(Prefix = "Validation.")]
 public static partial class SqlExceptionHelperTexts

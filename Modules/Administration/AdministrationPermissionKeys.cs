@@ -1,4 +1,4 @@
-﻿namespace Ticketing.Administration;
+﻿namespace Dew.Administration;
 
 [NestedPermissionKeys]
 [DisplayName("Administration")]

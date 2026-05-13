@@ -1,6 +1,6 @@
-﻿using MyRow = Ticketing.Ticket.LogRow;
+﻿using MyRow = Dew.Ticket.LogRow;
 
-namespace Ticketing.Ticket;
+namespace Dew.Ticket;
 
 public interface ILogDeleteHandler : IDeleteHandler<MyRow, DeleteRequest, DeleteResponse> { }
 

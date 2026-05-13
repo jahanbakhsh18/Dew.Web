@@ -1,10 +1,10 @@
-﻿namespace Ticketing.Ticket;
+﻿namespace Dew.Ticket;
 
 [ConnectionKey("Default"), Module("Ticket"), TableName("[tkt].[Problem]")]
 [DisplayName("Problem"), InstanceName("Problem")]
 [ReadPermission(PermissionKeys.Ticket.View)]
 [ModifyPermission(PermissionKeys.Ticket.Update)]
-[ServiceLookupPermission("Ticketing:Ticket")]
+[ServiceLookupPermission("Dew:Ticket")]
 [LookupScript]
 public sealed class ProblemRow : Row<ProblemRow.RowFields>, IIdRow, INameRow
 {

@@ -2,7 +2,7 @@
 import { ActionForm, ActionRow, ActionService } from '../../ServerTypes/WorkFlow';
 
 export class ActionDialog extends EntityDialog<ActionRow, any> {
-    static override [Symbol.typeInfo] = this.registerClass("Ticketing.WorkFlow.");
+    static override [Symbol.typeInfo] = this.registerClass("Dew.WorkFlow.");
 
     protected override getFormKey() { return ActionForm.formKey; }
     protected override getRowDefinition() { return ActionRow; }

@@ -1,7 +1,7 @@
 using System.Data;
-using MyRow = Ticketing.Administration.RolePermissionRow;
+using MyRow = Dew.Administration.RolePermissionRow;
 
-namespace Ticketing.Administration.Repositories;
+namespace Dew.Administration.Repositories;
 
 public class RolePermissionRepository(IRequestContext context) : BaseRepository(context)
 {

@@ -1,4 +1,4 @@
-﻿namespace Ticketing;
+﻿namespace Dew;
 
 public partial class PriorityFormatterAttribute : CustomFormatterAttribute
 {

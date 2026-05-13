@@ -1,7 +1,7 @@
-﻿using Ticketing.Ticket.Endpoints;
-using MyRow = Ticketing.Ticket.TicketRow;
+﻿using Dew.Ticket.Endpoints;
+using MyRow = Dew.Ticket.TicketRow;
 
-namespace Ticketing.Ticket;
+namespace Dew.Ticket;
 
 public interface ITicketDeleteHandler : IDeleteHandler<MyRow, DeleteRequest, DeleteResponse> { }
 

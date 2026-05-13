@@ -1,4 +1,4 @@
-﻿namespace Ticketing.Ticket.Columns;
+﻿namespace Dew.Ticket.Columns;
 
 [ColumnsScript("Ticket.Priority")]
 [BasedOnRow(typeof(PriorityRow), CheckNames = true)]

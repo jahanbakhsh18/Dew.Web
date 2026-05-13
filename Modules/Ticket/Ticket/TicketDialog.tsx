@@ -5,7 +5,7 @@ import { DialogUtils } from '@serenity-is/extensions';
 import { TicketDbTexts } from '../../ServerTypes/Texts';
 
 export class TicketDialog<P = {}> extends EntityDialog<TicketRow, P> {
-    static override[Symbol.typeInfo] = this.registerClass("Ticketing.Ticket.");
+    static override[Symbol.typeInfo] = this.registerClass("Dew.Ticket.");
 
     protected override getFormKey() { return TicketForm.formKey; }
     protected override getRowDefinition() { return TicketRow; }

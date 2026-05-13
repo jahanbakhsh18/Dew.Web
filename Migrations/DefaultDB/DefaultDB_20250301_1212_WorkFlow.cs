@@ -1,6 +1,6 @@
 ﻿using FluentMigrator;
 
-namespace Ticketing.Migrations.DefaultDB;
+namespace Dew.Migrations.DefaultDB;
 
 [Migration(20250301_1212)]
 public class DefaultDB_20250301_1212_WorkFlow : AutoReversingMigration

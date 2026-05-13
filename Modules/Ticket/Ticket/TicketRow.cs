@@ -1,12 +1,12 @@
 ﻿using System.IO;
 
-namespace Ticketing.Ticket;
+namespace Dew.Ticket;
 
 [ConnectionKey("Default"), Module("Ticket"), TableName("[tkt].[Ticket]")]
 [DisplayName("Ticket"), InstanceName("Ticket")]
-[ReadPermission("Ticketing:Ticket")]
-[ModifyPermission("Ticketing:Ticket")]
-[ServiceLookupPermission("Ticketing:Ticket")]
+[ReadPermission("Dew:Ticket")]
+[ModifyPermission("Dew:Ticket")]
+[ServiceLookupPermission("Dew:Ticket")]
 public sealed class TicketRow : Row<TicketRow.RowFields>, IIdRow, INameRow
 {
     const string jSystem = nameof(jSystem);

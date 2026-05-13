@@ -1,6 +1,6 @@
-﻿using MyRow = Ticketing.Ticket.CommentRow;
+﻿using MyRow = Dew.Ticket.CommentRow;
 
-namespace Ticketing.Ticket;
+namespace Dew.Ticket;
 
 public interface ICommentDeleteHandler : IDeleteHandler<MyRow, DeleteRequest, DeleteResponse> { }
 

@@ -3,7 +3,7 @@ import { SystemColumns, SystemRow, SystemService } from '../../ServerTypes/Ticke
 import { SystemDialog } from './SystemDialog';
 
 export class SystemGrid extends EntityGrid<SystemRow> {
-    static override [Symbol.typeInfo] = this.registerClass("Ticketing.Ticket.");
+    static override [Symbol.typeInfo] = this.registerClass("Dew.Ticket.");
 
     protected override getColumnsKey() { return SystemColumns.columnsKey; }
     protected override getDialogType() { return SystemDialog; }

@@ -1,4 +1,4 @@
-namespace Ticketing.Membership;
+namespace Dew.Membership;
 
 [FormScript("Membership.SignUp")]
 public class SignUpForm

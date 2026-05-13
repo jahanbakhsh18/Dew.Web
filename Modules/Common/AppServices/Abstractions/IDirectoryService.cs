@@ -1,5 +1,5 @@
 
-namespace Ticketing;
+namespace Dew;
 
 public interface IDirectoryService
 {

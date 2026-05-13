@@ -1,4 +1,4 @@
-﻿using MyPages = Ticketing.Ticket.Pages;
+﻿using MyPages = Dew.Ticket.Pages;
 
 [assembly: NavigationMenu(4000, "Ticket", icon: "fa-ticket")]
 

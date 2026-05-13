@@ -1,6 +1,6 @@
-using MyRow = Ticketing.Administration.UserRow;
+using MyRow = Dew.Administration.UserRow;
 
-namespace Ticketing.Administration;
+namespace Dew.Administration;
 
 public interface IUserRetrieveHandler : IRetrieveHandler<MyRow> { }
 

@@ -2,7 +2,7 @@
 import { GridEditorDialog } from '@serenity-is/extensions';
 
 export class CommentDialog extends GridEditorDialog<CommentRow, any> {
-    static override [Symbol.typeInfo] = this.registerClass("Ticketing.Ticket.");
+    static override [Symbol.typeInfo] = this.registerClass("Dew.Ticket.");
 
     protected override getFormKey() { return CommentForm.formKey; }
     protected override getRowDefinition() { return CommentRow; }

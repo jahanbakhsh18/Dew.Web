@@ -1,6 +1,6 @@
-## 🎫 Ticketing System
+## 🎫 Dew Problem Handling System
 A demonstration project that showcases: 
-- A problem handling system for company products
+- A problem handling system for company products.
 - Workflow design built from scratch and modeled using BPMN 2.0
 - A structured backend/frontend built with Serenity (TypeScript + .NET Core)
  
@@ -14,7 +14,7 @@ A demonstration project that showcases:
 
 ## 📚 Workflow Overview
 The following diagram represents the ticket lifecycle and workflow process:
-<p> <img src="Documents/Ticketing.png" width="700" /> </p>
+<p> <img src="Documents/Dew-Workflow.png" width="700" /> </p>
 
 ## 🚀 Running the Project
 

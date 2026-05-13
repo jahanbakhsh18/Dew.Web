@@ -5,7 +5,7 @@ import "flatpickr/dist/l10n";
 import { getLanguageList } from "./Helpers/LanguageList";
 import DOMPurify from "dompurify";
 
-Config.rootNamespaces.push('Ticketing');
+Config.rootNamespaces.push('Dew');
 TranslationConfig.getLanguageList = getLanguageList;
 gridDefaults.sanitizer = (globalThis.DOMPurify = DOMPurify).sanitize;
 

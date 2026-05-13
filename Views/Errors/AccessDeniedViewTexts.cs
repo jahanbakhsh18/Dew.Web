@@ -1,4 +1,4 @@
-namespace Ticketing.Common;
+namespace Dew.Common;
 
 [NestedLocalTexts(Prefix = "Site.AccessDenied.")]
 public static partial class AccessDeniedViewTexts

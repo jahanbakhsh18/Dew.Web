@@ -1,9 +1,9 @@
-﻿namespace Ticketing.Ticket;
+﻿namespace Dew.Ticket;
 
 [ConnectionKey("Default"), Module("Ticket"), TableName("[tkt].[Log]")]
 [DisplayName("Log"), InstanceName("Log")]
-[ReadPermission("Ticketing:Ticket")]
-[ModifyPermission("Ticketing:Ticket")]
+[ReadPermission("Dew:Ticket")]
+[ModifyPermission("Dew:Ticket")]
 public sealed class LogRow : Row<LogRow.RowFields>, IIdRow
 {
     const string jStatus = nameof(jStatus);

@@ -2,7 +2,7 @@
 import { LogForm, LogRow, LogService } from '../../ServerTypes/Ticket';
 
 export class LogDialog extends EntityDialog<LogRow, any> {
-    static override [Symbol.typeInfo] = this.registerClass("Ticketing.Ticket.");
+    static override [Symbol.typeInfo] = this.registerClass("Dew.Ticket.");
 
     protected override getFormKey() { return LogForm.formKey; }
     protected override getRowDefinition() { return LogRow; }

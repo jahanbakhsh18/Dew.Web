@@ -3,7 +3,7 @@ import { ActionColumns, ActionRow, ActionService } from '../../ServerTypes/WorkF
 import { ActionDialog } from './ActionDialog';
 
 export class ActionGrid extends EntityGrid<ActionRow> {
-    static override [Symbol.typeInfo] = this.registerClass("Ticketing.WorkFlow.");
+    static override [Symbol.typeInfo] = this.registerClass("Dew.WorkFlow.");
 
     protected override getColumnsKey() { return ActionColumns.columnsKey; }
     protected override getDialogType() { return ActionDialog; }

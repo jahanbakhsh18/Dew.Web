@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using System.IO;
 
-namespace Ticketing.AppServices;
+namespace Dew.AppServices;
 
 public class DataMigrations(ITypeSource typeSource,
     ISqlConnections sqlConnections,

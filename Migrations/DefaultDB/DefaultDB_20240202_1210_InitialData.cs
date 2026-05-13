@@ -1,7 +1,7 @@
 using FluentMigrator;
 using FluentMigrator.SqlServer;
 
-namespace Ticketing.Migrations.DefaultDB;
+namespace Dew.Migrations.DefaultDB;
 
 [Migration(20240202_1210)]
 public class DefaultDB_20240202_1210_InitialData : AutoReversingMigration
@@ -45,21 +45,21 @@ public class DefaultDB_20240202_1210_InitialData : AutoReversingMigration
             .Row(new { RoleId = 5, RoleName = "User" });
 
         Insert.IntoTable("RolePermissions")
-            .Row(new { RoleId = 1, PermissionKey = "Ticketing:General" })
-            .Row(new { RoleId = 1, PermissionKey = "Ticketing:Ticket:Create" })
-            .Row(new { RoleId = 1, PermissionKey = "Ticketing:Ticket:Update" })
+            .Row(new { RoleId = 1, PermissionKey = "Dew:General" })
+            .Row(new { RoleId = 1, PermissionKey = "Dew:Ticket:Create" })
+            .Row(new { RoleId = 1, PermissionKey = "Dew:Ticket:Update" })
             //Only system administrator manages ticketing related actions...
-            .Row(new { RoleId = 1, PermissionKey = "Ticketing:Ticket:Admin" })
+            .Row(new { RoleId = 1, PermissionKey = "Dew:Ticket:Admin" })
             .Row(new { RoleId = 1, PermissionKey = "Workflow:View" })
             .Row(new { RoleId = 1, PermissionKey = "Workflow:Modify" })
             .Row(new { RoleId = 1, PermissionKey = "Administration:User" })
-            .Row(new { RoleId = 2, PermissionKey = "Ticketing:Ticket:Update" })
+            .Row(new { RoleId = 2, PermissionKey = "Dew:Ticket:Update" })
             .Row(new { RoleId = 2, PermissionKey = "Workflow:View" })
-            .Row(new { RoleId = 3, PermissionKey = "Ticketing:Ticket:Update" })
+            .Row(new { RoleId = 3, PermissionKey = "Dew:Ticket:Update" })
             .Row(new { RoleId = 3, PermissionKey = "Workflow:View" })
-            .Row(new { RoleId = 4, PermissionKey = "Ticketing:Ticket:Update" })
+            .Row(new { RoleId = 4, PermissionKey = "Dew:Ticket:Update" })
             .Row(new { RoleId = 4, PermissionKey = "Workflow:View" })
-            .Row(new { RoleId = 5, PermissionKey = "Ticketing:Ticket:Create" })
+            .Row(new { RoleId = 5, PermissionKey = "Dew:Ticket:Create" })
             .Row(new { RoleId = 5, PermissionKey = "Workflow:View" });
 
         IfDatabase("PostgreSQL").Execute.Sql("""

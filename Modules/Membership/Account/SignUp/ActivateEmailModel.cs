@@ -1,5 +1,5 @@
 ﻿
-namespace Ticketing.Membership;
+namespace Dew.Membership;
 
 public class ActivateEmailModel
 {

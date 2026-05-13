@@ -1,6 +1,6 @@
-﻿using MyRow = Ticketing.Ticket.ProblemRow;
+﻿using MyRow = Dew.Ticket.ProblemRow;
 
-namespace Ticketing.Ticket;
+namespace Dew.Ticket;
 
 public interface IProblemListHandler : IListHandler<MyRow, ListRequest, ListResponse<MyRow>> { }
 

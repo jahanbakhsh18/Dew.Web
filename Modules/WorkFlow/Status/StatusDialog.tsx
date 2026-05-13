@@ -2,7 +2,7 @@
 import { StatusForm, StatusRow, StatusService } from '../../ServerTypes/WorkFlow';
 
 export class StatusDialog extends EntityDialog<StatusRow, any> {
-    static override [Symbol.typeInfo] = this.registerClass("Ticketing.WorkFlow.");
+    static override [Symbol.typeInfo] = this.registerClass("Dew.WorkFlow.");
 
     protected override getFormKey() { return StatusForm.formKey; }
     protected override getRowDefinition() { return StatusRow; }

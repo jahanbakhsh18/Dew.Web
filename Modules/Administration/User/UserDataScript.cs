@@ -1,4 +1,4 @@
-namespace Ticketing.Administration;
+namespace Dew.Administration;
 
 /// <summary>
 /// This declares a dynamic script with key 'UserData' that will be available from client side.

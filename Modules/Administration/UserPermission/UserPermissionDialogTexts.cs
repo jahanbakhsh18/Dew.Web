@@ -1,4 +1,4 @@
-namespace Ticketing.Administration;
+namespace Dew.Administration;
 
 [NestedLocalTexts(Prefix = "Site.UserPermissionDialog.")]
 public static class UserPermissionDialogTexts

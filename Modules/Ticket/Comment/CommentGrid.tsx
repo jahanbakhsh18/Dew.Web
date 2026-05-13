@@ -3,7 +3,7 @@ import { CommentColumns, CommentRow, CommentService } from '../../ServerTypes/Ti
 import { CommentDialog } from './CommentDialog';
 
 export class CommentGrid extends EntityGrid<CommentRow> {
-    static override [Symbol.typeInfo] = this.registerClass("Ticketing.Ticket.");
+    static override [Symbol.typeInfo] = this.registerClass("Dew.Ticket.");
 
     protected override getColumnsKey() { return CommentColumns.columnsKey; }
     protected override getDialogType() { return CommentDialog; }

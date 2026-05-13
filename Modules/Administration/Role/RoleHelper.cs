@@ -1,6 +1,6 @@
-using MyRow = Ticketing.Administration.RoleRow;
+using MyRow = Dew.Administration.RoleRow;
 
-namespace Ticketing.Administration;
+namespace Dew.Administration;
 
 public static class RoleHelper
 {

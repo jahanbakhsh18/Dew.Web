@@ -1,4 +1,4 @@
-﻿namespace Ticketing;
+﻿namespace Dew;
 
 /// <summary>
 /// This data will be available from script code using a dynamic script.

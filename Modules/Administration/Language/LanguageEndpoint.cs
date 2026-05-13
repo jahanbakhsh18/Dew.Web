@@ -1,6 +1,6 @@
-﻿using MyRow = Ticketing.Administration.LanguageRow;
+﻿using MyRow = Dew.Administration.LanguageRow;
 
-namespace Ticketing.Administration.Endpoints;
+namespace Dew.Administration.Endpoints;
 
 [Route("Services/Administration/Language/[action]")]
 [ConnectionKey(typeof(MyRow)), ServiceAuthorize(typeof(MyRow))]

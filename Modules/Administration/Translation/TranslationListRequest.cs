@@ -1,4 +1,4 @@
-﻿namespace Ticketing.Administration;
+﻿namespace Dew.Administration;
 
 public class TranslationListRequest : ListRequest
 {

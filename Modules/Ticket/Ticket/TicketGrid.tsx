@@ -3,7 +3,7 @@ import { TicketColumns, TicketRow, TicketService } from '../../ServerTypes/Ticke
 import { TicketDialog } from './TicketDialog';
 
 export class TicketGrid extends EntityGrid<TicketRow> {
-    static override[Symbol.typeInfo] = this.registerClass("Ticketing.Ticket.");
+    static override[Symbol.typeInfo] = this.registerClass("Dew.Ticket.");
 
     protected override getColumnsKey() { return TicketColumns.columnsKey; }
     protected override getDialogType() { return TicketDialog; }

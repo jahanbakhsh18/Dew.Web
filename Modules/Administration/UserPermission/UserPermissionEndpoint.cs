@@ -1,7 +1,7 @@
-using MyRepository = Ticketing.Administration.Repositories.UserPermissionRepository;
-using MyRow = Ticketing.Administration.UserPermissionRow;
+using MyRepository = Dew.Administration.Repositories.UserPermissionRepository;
+using MyRow = Dew.Administration.UserPermissionRow;
 
-namespace Ticketing.Administration.Endpoints;
+namespace Dew.Administration.Endpoints;
 
 [Route("Services/Administration/UserPermission/[action]")]
 [ConnectionKey(typeof(MyRow)), ServiceAuthorize(typeof(MyRow))]

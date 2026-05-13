@@ -1,8 +1,8 @@
-﻿namespace Ticketing.Ticket;
+﻿namespace Dew.Ticket;
 
 public partial class TimeFlagFormatterAttribute : CustomFormatterAttribute
 {
-    public const string Key = "Ticketing.Ticket.TimeFlagFormatter";
+    public const string Key = "Dew.Ticket.TimeFlagFormatter";
 
     public TimeFlagFormatterAttribute()
         : base(Key)

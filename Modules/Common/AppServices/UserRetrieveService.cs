@@ -1,6 +1,6 @@
-using MyRow = Ticketing.Administration.UserRow;
+using MyRow = Dew.Administration.UserRow;
 
-namespace Ticketing.AppServices;
+namespace Dew.AppServices;
 
 public class UserRetrieveService(ITwoLevelCache cache, ISqlConnections sqlConnections)
     : BaseUserRetrieveService<MyRow>(cache, sqlConnections)

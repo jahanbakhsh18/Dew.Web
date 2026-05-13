@@ -1,6 +1,6 @@
-using Ticketing.Administration;
+using Dew.Administration;
 
-namespace Ticketing.AppServices;
+namespace Dew.AppServices;
 
 public class PermissionKeyLister(ITwoLevelCache cache, ITypeSource typeSource)
     : BasePermissionKeyLister(cache, typeSource)

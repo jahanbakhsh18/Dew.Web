@@ -1,4 +1,4 @@
-namespace Ticketing.AppServices;
+namespace Dew.AppServices;
 
 internal class DynamicDataGenerator : BaseDynamicDataGenerator
 {

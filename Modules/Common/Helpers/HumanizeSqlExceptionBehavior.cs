@@ -1,6 +1,6 @@
 using Microsoft.Data.SqlClient;
 
-namespace Ticketing.Common;
+namespace Dew.Common;
 
 public class HumanizeSqlExceptionBehavior : BaseSaveDeleteBehavior, IImplicitBehavior
 {

@@ -1,6 +1,6 @@
-﻿using MyRow = Ticketing.Ticket.TimeFlagRow;
+﻿using MyRow = Dew.Ticket.TimeFlagRow;
 
-namespace Ticketing.Ticket;
+namespace Dew.Ticket;
 
 public interface ITimeFlagSaveHandler : ISaveHandler<MyRow, SaveRequest<MyRow>, SaveResponse> { }
 

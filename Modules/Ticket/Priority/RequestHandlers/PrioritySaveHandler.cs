@@ -1,6 +1,6 @@
-﻿using MyRow = Ticketing.Ticket.PriorityRow;
+﻿using MyRow = Dew.Ticket.PriorityRow;
 
-namespace Ticketing.Ticket;
+namespace Dew.Ticket;
 
 public interface IPrioritySaveHandler : ISaveHandler<MyRow, SaveRequest<MyRow>, SaveResponse> { }
 

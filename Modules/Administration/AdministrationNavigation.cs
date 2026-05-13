@@ -1,4 +1,4 @@
-using Administration = Ticketing.Administration.Pages;
+using Administration = Dew.Administration.Pages;
 
 [assembly: NavigationMenu(2000, "Administration", icon: "fa-wrench")]
 

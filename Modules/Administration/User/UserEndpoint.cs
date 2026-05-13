@@ -1,6 +1,6 @@
-﻿using MyRow = Ticketing.Administration.UserRow;
+﻿using MyRow = Dew.Administration.UserRow;
 
-namespace Ticketing.Administration.Endpoints;
+namespace Dew.Administration.Endpoints;
 
 [Route("Services/Administration/User/[action]")]
 [ConnectionKey(typeof(MyRow)), ServiceAuthorize(typeof(MyRow))]

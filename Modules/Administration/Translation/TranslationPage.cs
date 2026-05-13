@@ -1,4 +1,4 @@
-namespace Ticketing.Administration.Pages;
+namespace Dew.Administration.Pages;
 
 [PageAuthorize(PermissionKeys.Translation)]
 public class TranslationPage : Controller

@@ -2,7 +2,7 @@
 import { BaseEntityDialog } from '../../Common/Helpers/BaseEntityDialog';
 
 export class SystemDialog extends BaseEntityDialog<SystemRow, any> {
-    static override [Symbol.typeInfo] = this.registerClass("Ticketing.Ticket.");
+    static override [Symbol.typeInfo] = this.registerClass("Dew.Ticket.");
 
     protected override getFormKey() { return SystemForm.formKey; }
     protected override getRowDefinition() { return SystemRow; }

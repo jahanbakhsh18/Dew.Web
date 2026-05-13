@@ -1,4 +1,4 @@
-﻿namespace Ticketing.Administration.Columns;
+﻿namespace Dew.Administration.Columns;
 
 [ColumnsScript("Administration.User")]
 [BasedOnRow(typeof(UserRow), CheckNames = true)]

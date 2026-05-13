@@ -3,7 +3,7 @@ import { StatusColumns, StatusRow, StatusService } from '../../ServerTypes/WorkF
 import { StatusDialog } from './StatusDialog';
 
 export class StatusGrid extends EntityGrid<StatusRow> {
-    static override [Symbol.typeInfo] = this.registerClass("Ticketing.WorkFlow.");
+    static override [Symbol.typeInfo] = this.registerClass("Dew.WorkFlow.");
 
     protected override getColumnsKey() { return StatusColumns.columnsKey; }
     protected override getDialogType() { return StatusDialog; }

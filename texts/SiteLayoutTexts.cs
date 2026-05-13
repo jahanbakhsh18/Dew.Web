@@ -1,4 +1,4 @@
-namespace Ticketing;
+namespace Dew;
 
 [NestedLocalTexts(Prefix = "Site.Layout.")]
 public static partial class SiteLayoutTexts

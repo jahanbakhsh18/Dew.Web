@@ -13,7 +13,7 @@ using Serenity.Extensions.DependencyInjection;
 using Serenity.Localization;
 using System.IO;
 
-namespace Ticketing;
+namespace Dew;
 
 public partial class Startup
 {

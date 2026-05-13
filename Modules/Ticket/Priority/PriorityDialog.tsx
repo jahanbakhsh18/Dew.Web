@@ -2,7 +2,7 @@
 import { BaseEntityDialog } from '../../Common/Helpers/BaseEntityDialog';
 
 export class PriorityDialog extends BaseEntityDialog<PriorityRow, any> {
-    static override [Symbol.typeInfo] = this.registerClass("Ticketing.Ticket.");
+    static override [Symbol.typeInfo] = this.registerClass("Dew.Ticket.");
 
     protected override getFormKey() { return PriorityForm.formKey; }
     protected override getRowDefinition() { return PriorityRow; }

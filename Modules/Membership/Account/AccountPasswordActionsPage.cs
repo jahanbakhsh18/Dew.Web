@@ -1,6 +1,6 @@
-using Ticketing.Administration;
+using Dew.Administration;
 
-namespace Ticketing.Membership.Pages;
+namespace Dew.Membership.Pages;
 
 [Route("Account/[action]")]
 public class AccountPasswordActionsPage : AccountPasswordActionsPageBase<UserRow>

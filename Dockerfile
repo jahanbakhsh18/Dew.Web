@@ -13,18 +13,18 @@ WORKDIR /src
 
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["Ticketing.Web.csproj", "Ticketing/"]
-RUN dotnet restore "./Ticketing/Ticketing.Web.csproj"
+COPY ["Dew.Web.csproj", "Dew/"]
+RUN dotnet restore "./Dew/Dew.Web.csproj"
 
-WORKDIR "/src/Ticketing"
+WORKDIR "/src/Dew"
 COPY . .
 
-RUN dotnet build "./Ticketing.Web.csproj" -c $BUILD_CONFIGURATION -o /app/build
+RUN dotnet build "./Dew.Web.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "./Ticketing.Web.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "./Dew.Web.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "Ticketing.Web.dll"]
+ENTRYPOINT ["dotnet", "Dew.Web.dll"]

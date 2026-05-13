@@ -1,4 +1,4 @@
-﻿namespace Ticketing.Administration;
+﻿namespace Dew.Administration;
 
 [ConnectionKey("Default"), Module("Administration"), TableName("Roles")]
 [DisplayName("Roles"), InstanceName("Role")]

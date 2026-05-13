@@ -1,8 +1,8 @@
-﻿namespace Ticketing.Administration;
+﻿namespace Dew.Administration;
 
 public partial class PermissionCheckEditorAttribute : CustomEditorAttribute
 {
-    public const string Key = "Ticketing.Administration.PermissionCheckEditor";
+    public const string Key = "Dew.Administration.PermissionCheckEditor";
 
     public PermissionCheckEditorAttribute()
         : base(Key)

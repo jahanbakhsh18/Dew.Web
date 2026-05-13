@@ -1,7 +1,7 @@
 ﻿using FluentMigrator;
 using FluentMigrator.SqlServer;
 
-namespace Ticketing.Migrations.DefaultDB;
+namespace Dew.Migrations.DefaultDB;
 
 [Migration(20250815_2001)]
 public class DefaultDB_20250815_2001_Data : AutoReversingMigration

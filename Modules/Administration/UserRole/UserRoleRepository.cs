@@ -1,7 +1,7 @@
 ﻿using System.Data;
-using MyRow = Ticketing.Administration.UserRoleRow;
+using MyRow = Dew.Administration.UserRoleRow;
 
-namespace Ticketing.Administration.Repositories;
+namespace Dew.Administration.Repositories;
 
 public class UserRoleRepository(IRequestContext context) : BaseRepository(context)
 {

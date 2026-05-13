@@ -1,4 +1,4 @@
-﻿namespace Ticketing.Ticket.Columns;
+﻿namespace Dew.Ticket.Columns;
 
 [ColumnsScript("Ticket.Problem")]
 [BasedOnRow(typeof(ProblemRow), CheckNames = true)]

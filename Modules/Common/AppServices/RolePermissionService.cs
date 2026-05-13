@@ -1,6 +1,6 @@
-using Ticketing.Administration;
+using Dew.Administration;
 
-namespace Ticketing.AppServices;
+namespace Dew.AppServices;
 
 public class RolePermissionService(ITwoLevelCache cache, ISqlConnections sqlConnections, ITypeSource typeSource)
     : BaseRolePermissionService<RolePermissionRow>(cache, sqlConnections, typeSource)

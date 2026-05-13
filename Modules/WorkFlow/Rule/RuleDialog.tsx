@@ -2,7 +2,7 @@
 import { RuleForm, RuleRow, RuleService } from '../../ServerTypes/WorkFlow';
 
 export class RuleDialog extends EntityDialog<RuleRow, any> {
-    static override [Symbol.typeInfo] = this.registerClass("Ticketing.WorkFlow.");
+    static override [Symbol.typeInfo] = this.registerClass("Dew.WorkFlow.");
 
     protected override getFormKey() { return RuleForm.formKey; }
     protected override getRowDefinition() { return RuleRow; }

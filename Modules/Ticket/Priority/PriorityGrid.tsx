@@ -3,7 +3,7 @@ import { PriorityColumns, PriorityRow, PriorityService } from '../../ServerTypes
 import { PriorityDialog } from './PriorityDialog';
 
 export class PriorityGrid extends EntityGrid<PriorityRow> {
-    static override [Symbol.typeInfo] = this.registerClass("Ticketing.Ticket.");
+    static override [Symbol.typeInfo] = this.registerClass("Dew.Ticket.");
 
     protected override getColumnsKey() { return PriorityColumns.columnsKey; }
     protected override getDialogType() { return PriorityDialog; }

@@ -1,4 +1,4 @@
-namespace Ticketing.Administration;
+namespace Dew.Administration;
 
 [ConnectionKey("Default"), Module("Administration"), TableName("RolePermissions")]
 [DisplayName("Role Permissions"), InstanceName("Role Permission")]

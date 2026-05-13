@@ -2,7 +2,7 @@
 import { TimeFlagForm, TimeFlagRow, TimeFlagService } from '../../ServerTypes/Ticket';
 
 export class TimeFlagDialog extends BaseEntityDialog<TimeFlagRow, any> {
-    static override [Symbol.typeInfo] = this.registerClass("Ticketing.Ticket.");
+    static override [Symbol.typeInfo] = this.registerClass("Dew.Ticket.");
 
     protected override getFormKey() { return TimeFlagForm.formKey; }
     protected override getRowDefinition() { return TimeFlagRow; }

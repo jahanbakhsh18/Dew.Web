@@ -1,6 +1,6 @@
-﻿using MyRow = Ticketing.Ticket.TicketRow;
+﻿using MyRow = Dew.Ticket.TicketRow;
 
-namespace Ticketing.Ticket;
+namespace Dew.Ticket;
 
 public interface ITicketRetrieveHandler : IRetrieveHandler<MyRow, RetrieveRequest, RetrieveResponse<MyRow>> { }
 

@@ -1,4 +1,4 @@
-namespace Ticketing.Common;
+namespace Dew.Common;
 
 [NestedLocalTexts(Prefix = "Site.ValidationError.")]
 public static class ValidationErrorViewTexts

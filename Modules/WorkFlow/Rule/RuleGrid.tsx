@@ -3,7 +3,7 @@ import { RuleColumns, RuleRow, RuleService } from '../../ServerTypes/WorkFlow';
 import { RuleDialog } from './RuleDialog';
 
 export class RuleGrid extends EntityGrid<RuleRow> {
-    static override [Symbol.typeInfo] = this.registerClass("Ticketing.WorkFlow.");
+    static override [Symbol.typeInfo] = this.registerClass("Dew.WorkFlow.");
 
     protected override getColumnsKey() { return RuleColumns.columnsKey; }
     protected override getDialogType() { return RuleDialog; }

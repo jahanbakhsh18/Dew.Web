@@ -1,4 +1,4 @@
-namespace Ticketing;
+namespace Dew;
 
 public interface IDataMigrations
 {

@@ -1,10 +1,10 @@
 ﻿export namespace PermissionKeys {
-    export const General = "Ticketing:General";
+    export const General = "Dew:General";
 
     export namespace Ticket {
-        export const View = "Ticketing:Ticket:View";
-        export const Create = "Ticketing:Ticket:Create";
-        export const Update = "Ticketing:Ticket:Update";
-        export const Admin = "Ticketing:Ticket:Admin";
+        export const View = "Dew:Ticket:View";
+        export const Create = "Dew:Ticket:Create";
+        export const Update = "Dew:Ticket:Update";
+        export const Admin = "Dew:Ticket:Admin";
     }
 }

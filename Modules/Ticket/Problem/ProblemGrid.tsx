@@ -3,7 +3,7 @@ import { ProblemColumns, ProblemRow, ProblemService } from '../../ServerTypes/Ti
 import { ProblemDialog } from './ProblemDialog';
 
 export class ProblemGrid extends EntityGrid<ProblemRow> {
-    static override[Symbol.typeInfo] = this.registerClass("Ticketing.Ticket.");
+    static override[Symbol.typeInfo] = this.registerClass("Dew.Ticket.");
 
     protected override getColumnsKey() { return ProblemColumns.columnsKey; }
     protected override getDialogType() { return ProblemDialog; }
