@@ -2,16 +2,16 @@
 services:
   dew_web:
     container_name: dew_web
-    image: dew_web:latest
+    image: dew_web:1.0.0
     restart: unless-stopped
     environment:
       TZ: Asia/Tehran
     ports:
-      - 5000:8080
+      - 5001:5001
     expose:
-      - 5000
+      - 5001
     healthcheck:
-      test: timeout 1 bash -c 'cat < /dev/null > /dev/tcp/127.0.0.1/8080'
+      test: timeout 1 bash -c 'cat < /dev/null > /dev/tcp/127.0.0.1/5001'
       interval: 10s
       timeout: 3s
       retries: 10

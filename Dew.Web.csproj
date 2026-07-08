@@ -23,6 +23,11 @@
     <PackageReference Include="Npgsql" Version="10.0.1" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="cert.pfx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
     <PackageReference Include="Serenity.Assets" Version="9.1.1" />
     <PackageReference Include="Serenity.Corelib" Version="9.1.1" />
     <PackageReference Include="Serenity.Net.Web" Version="9.1.1" />

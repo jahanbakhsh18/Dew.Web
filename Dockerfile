@@ -1,11 +1,14 @@
 FROM mcr.microsoft.com/dotnet/aspnet:8.0-bookworm-slim AS base
-RUN apt-get update -yq && apt-get install -yq libfontconfig1
+RUN apt-get update -yq && apt-get install -yq libfontconfig1 \
+        libkrb5-3 \
+        libgssapi-krb5-2 \
+    && rm -rf /var/lib/apt/lists/*
 WORKDIR /app
 
 FROM mcr.microsoft.com/dotnet/sdk:8.0-bookworm-slim AS build
 RUN apt-get update -yq && \
-    apt-get upgrade -yq \
-    && apt-get install -yq curl git nano
+    apt-get upgrade -yq && \
+    apt-get install -yq curl git nano
 RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - && apt-get install -yq nodejs 
 RUN npm install -g npm
 
@@ -14,7 +17,7 @@ WORKDIR /src
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["Dew.Web.csproj", "Dew/"]
-RUN dotnet restore "./Dew/Dew.Web.csproj"
+RUN dotnet restore "./Dew/Dew.Web.csproj" --verbosity diagnostic
 
 WORKDIR "/src/Dew"
 COPY . .
