@@ -3,9 +3,8 @@
 [ConnectionKey("Default"), Module("Ticket"), TableName("[tkt].[Priority]")]
 [DisplayName("Priority"), InstanceName("Priority")]
 [ReadPermission(PermissionKeys.Ticket.View)]
-[UpdatePermission(PermissionKeys.Ticket.Admin)]
-[InsertPermission(PermissionKeys.Ticket.Admin)]
-[ServiceLookupPermission("Dew:Ticket")]
+[ModifyPermission(PermissionKeys.Ticket.Admin)]
+[ServiceLookupPermission(PermissionKeys.General)]
 [LookupScript("Dew.Priority")]
 public sealed class PriorityRow : Row<PriorityRow.RowFields>, IIdRow, INameRow
 {

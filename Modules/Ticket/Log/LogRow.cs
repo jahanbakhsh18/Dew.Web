@@ -2,8 +2,8 @@
 
 [ConnectionKey("Default"), Module("Ticket"), TableName("[tkt].[Log]")]
 [DisplayName("Log"), InstanceName("Log")]
-[ReadPermission("Dew:Ticket")]
-[ModifyPermission("Dew:Ticket")]
+[ReadPermission(PermissionKeys.Ticket.View)]
+[ModifyPermission(PermissionKeys.Ticket.Update)]
 public sealed class LogRow : Row<LogRow.RowFields>, IIdRow
 {
     const string jStatus = nameof(jStatus);

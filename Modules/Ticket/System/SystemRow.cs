@@ -3,8 +3,8 @@
 [ConnectionKey("Default"), Module("Ticket"), TableName("[tkt].[System]")]
 [DisplayName("System"), InstanceName("System")]
 [ReadPermission(PermissionKeys.Ticket.View)]
-[ModifyPermission(PermissionKeys.Ticket.Update)]
-[ServiceLookupPermission("Dew:Ticket")]
+[ModifyPermission(PermissionKeys.Ticket.Admin)]
+[ServiceLookupPermission(PermissionKeys.General)]
 [LookupScript]
 public sealed class SystemRow : Row<SystemRow.RowFields>, IIdRow, INameRow
 {

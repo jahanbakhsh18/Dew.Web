@@ -5,7 +5,7 @@ namespace Dew.Ticket;
 [DisplayName("Dew")]
 public class PermissionKeys
 {
-    [DisplayName("Ticket")]
+    //[DisplayName("Ticket")]
     public class Ticket
     {
         //L2 Permission default users

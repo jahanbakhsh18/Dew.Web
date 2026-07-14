@@ -1,4 +1,5 @@
-﻿using MyRow = Dew.Ticket.TicketRow;
+﻿using Dew.Administration;
+using MyRow = Dew.Ticket.TicketRow;
 
 namespace Dew.Ticket;
 
@@ -12,8 +13,15 @@ public class TicketSaveHandler(IRequestContext context) :
 
     protected override void ValidateEditableFields(HashSet<Field> editable)
     {
+        var roleIds = Connection.List<UserRoleRow>()
+            .Where(x => x.UserId == userId).Select(x => x.RoleId).ToList();
+
         // Workflow
-        var nextStatus = Connection.List<WorkFlow.RuleRow>().FirstOrDefault(t => t.ActionId == Row.LastActionId && t.CurrentStatusId == Row.StatusId);
+        var nextStatus = Connection.List<WorkFlow.RuleRow>().FirstOrDefault(t =>
+            t.ActionId == Row.LastActionId
+            && t.CurrentStatusId == Row.StatusId
+            && (roleIds.Contains(t.RoleId.Value) || roleIds.Contains(1))
+        );
 
         if (nextStatus != null)
         {

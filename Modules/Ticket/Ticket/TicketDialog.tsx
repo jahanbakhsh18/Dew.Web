@@ -36,14 +36,14 @@ export class TicketDialog<P = {}> extends EntityDialog<TicketRow, P> {
 
     protected override loadResponse(data: any) {
         super.loadResponse(data);
-        this.loadedState = this.getSaveState();
+        this.loadedState = this.getSaveState() ?? '';
     }
 
     protected override loadEntity(entity: TicketRow) {
         super.loadEntity(entity);
 
         TabsExtensions.setDisabled(this.tabs, 'Logs', this.isNewOrDeleted());
-        this.logsGrid.TicketId = entity.Id;
+        this.logsGrid.TicketId = entity.Id ?? 0;
     }
 
     protected override renderContents(): any {

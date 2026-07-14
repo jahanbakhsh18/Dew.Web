@@ -2,9 +2,9 @@
 
 [ConnectionKey("Default"), Module("Ticket"), TableName("[tkt].[TimeFlag]")]
 [DisplayName("Time Flag"), InstanceName("Time Flag")]
-[ReadPermission("Dew:Ticket")]
-[ModifyPermission("Dew:Ticket")]
-[ServiceLookupPermission("Dew:Ticket")]
+[ReadPermission(PermissionKeys.Ticket.View)]
+[ModifyPermission(PermissionKeys.Ticket.Admin)]
+[ServiceLookupPermission(PermissionKeys.General)]
 public sealed class TimeFlagRow : Row<TimeFlagRow.RowFields>, IIdRow, INameRow
 {
     [DisplayName("Id"), NotNull, IdProperty, Identity, SortOrder(1, false)]

@@ -16,10 +16,10 @@ export interface LogRow {
 export abstract class LogRow {
     static readonly idProperty = 'Id';
     static readonly localTextPrefix = 'Ticket.Log';
-    static readonly deletePermission = 'Dew:Ticket';
-    static readonly insertPermission = 'Dew:Ticket';
-    static readonly readPermission = 'Dew:Ticket';
-    static readonly updatePermission = 'Dew:Ticket';
+    static readonly deletePermission = 'Dew:Ticket:Update';
+    static readonly insertPermission = 'Dew:Ticket:Update';
+    static readonly readPermission = 'Dew:Ticket:View';
+    static readonly updatePermission = 'Dew:Ticket:Update';
 
     static readonly Fields = fieldsProxy<LogRow>();
 }

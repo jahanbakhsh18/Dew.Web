@@ -6,6 +6,8 @@ namespace WorkFlow;
 [DisplayName("Rule"), InstanceName("Rule")]
 [ReadPermission(PermissionKeys.View)]
 [ModifyPermission(PermissionKeys.Modify)]
+[ServiceLookupPermission(PermissionKeys.View)]
+[LookupScript("WorkFlow.Rule")]
 public sealed class RuleRow : Row<RuleRow.RowFields>, IIdRow
 {
     const string jAction = nameof(jAction);

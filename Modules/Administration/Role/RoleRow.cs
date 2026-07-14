@@ -4,6 +4,7 @@
 [DisplayName("Roles"), InstanceName("Role")]
 [ReadPermission(PermissionKeys.Security)]
 [ModifyPermission(PermissionKeys.Security)]
+[ServiceLookupPermission(Ticket.PermissionKeys.General)]
 [LookupScript]
 public sealed class RoleRow : Row<RoleRow.RowFields>, IIdRow, INameRow
 {

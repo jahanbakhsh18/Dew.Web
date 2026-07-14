@@ -13,10 +13,10 @@ export abstract class CommentRow {
     static readonly idProperty = 'Id';
     static readonly nameProperty = 'Comment';
     static readonly localTextPrefix = 'Ticket.Comment';
-    static readonly deletePermission = 'Dew:Ticket';
-    static readonly insertPermission = 'Dew:Ticket';
-    static readonly readPermission = 'Dew:Ticket';
-    static readonly updatePermission = 'Dew:Ticket';
+    static readonly deletePermission = 'Dew:Ticket:Update';
+    static readonly insertPermission = 'Dew:Ticket:Update';
+    static readonly readPermission = 'Dew:Ticket:View';
+    static readonly updatePermission = 'Dew:Ticket:Update';
 
     static readonly Fields = fieldsProxy<CommentRow>();
 }

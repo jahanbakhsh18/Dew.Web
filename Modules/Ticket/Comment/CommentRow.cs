@@ -2,9 +2,9 @@
 
 [ConnectionKey("Default"), Module("Ticket"), TableName("[tkt].[Comment]")]
 [DisplayName("Comment"), InstanceName("Comment")]
-[ReadPermission("Dew:Ticket")]
-[ModifyPermission("Dew:Ticket")]
-[ServiceLookupPermission("Dew:Ticket")]
+[ReadPermission(PermissionKeys.Ticket.View)]
+[ModifyPermission(PermissionKeys.Ticket.Update)]
+[ServiceLookupPermission(PermissionKeys.General)]
 public sealed class CommentRow : Row<CommentRow.RowFields>, IIdRow, INameRow
 {
     const string jTicket = nameof(jTicket);

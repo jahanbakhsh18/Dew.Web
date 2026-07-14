@@ -5,7 +5,6 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Server.Kestrel.Core;
-using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -108,6 +107,7 @@ public partial class Startup
         services.AddSingleton<IRolePermissionService, AppServices.RolePermissionService>();
         services.AddSingleton<IUploadAVScanner, ClamAVUploadScanner>();
         services.AddSingleton<IUserPasswordValidator, AppServices.UserPasswordValidator>();
+        services.AddSingleton<IPasswordStrengthValidator, PasswordStrengthValidator>();
         services.AddUserProvider<AppServices.UserAccessor, AppServices.UserRetrieveService>();
         services.AddServiceHandlers();
         services.AddDynamicScripts();

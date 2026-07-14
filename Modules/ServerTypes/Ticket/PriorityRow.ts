@@ -18,7 +18,7 @@ export abstract class PriorityRow {
     static getLookup() { return getLookup<PriorityRow>('Dew.Priority') }
     static async getLookupAsync() { return getLookupAsync<PriorityRow>('Dew.Priority') }
 
-    static readonly deletePermission = 'Dew:Ticket:View';
+    static readonly deletePermission = 'Dew:Ticket:Admin';
     static readonly insertPermission = 'Dew:Ticket:Admin';
     static readonly readPermission = 'Dew:Ticket:View';
     static readonly updatePermission = 'Dew:Ticket:Admin';
