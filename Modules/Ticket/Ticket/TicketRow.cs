@@ -6,6 +6,7 @@ namespace Dew.Ticket;
 [DisplayName("Ticket"), InstanceName("Ticket")]
 [ReadPermission(PermissionKeys.Ticket.View)]
 [ModifyPermission(PermissionKeys.Ticket.Update)]
+[InsertPermission(PermissionKeys.Ticket.Create)]
 [ServiceLookupPermission(PermissionKeys.General)]
 public sealed class TicketRow : Row<TicketRow.RowFields>, IIdRow, INameRow
 {

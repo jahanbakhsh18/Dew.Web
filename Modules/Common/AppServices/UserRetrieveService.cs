@@ -19,7 +19,8 @@ public class UserRetrieveService(ITwoLevelCache cache, ISqlConnections sqlConnec
             PasswordHash = user.PasswordHash,
             PasswordSalt = user.PasswordSalt,
             UpdateDate = user.UpdateDate,
-            LastDirectoryUpdate = user.LastDirectoryUpdate
+            LastDirectoryUpdate = user.LastDirectoryUpdate,
+            RoleIds = user.Roles.ToHashSet()
         };
     }
 }
