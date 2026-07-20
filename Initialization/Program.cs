@@ -15,9 +15,14 @@ public class Program
 
     public static IHostBuilder CreateHostBuilder(string[] args)
     {
+        var port = Environment.GetEnvironmentVariable("PORT") ?? "5000";
+        var serverUrl = $"http://0.0.0.0:{port}";
+
         return Host.CreateDefaultBuilder(args)
             .ConfigureWebHostDefaults(webBuilder =>
             {
+                webBuilder.UseUrls(serverUrl);
+                
                 webBuilder.UseStaticWebAssets();
                 webBuilder.UseStartup<Startup>();
             })
@@ -28,10 +33,7 @@ public class Program
 
                 // Re-add the defaults with reloadOnChange: FALSE
                 config.AddJsonFile("appsettings.json", optional: true, reloadOnChange: false);
-                
-                // Your custom files (explicitly set to false for safety)
                 config.AddJsonFile("appsettings.bundles.json", optional: false, reloadOnChange: false);
-                
                 config.AddJsonFile("appsettings.machine.json", optional: true, reloadOnChange: false);
 
                 // Keep essential providers that don't use file watchers
