@@ -10,6 +10,11 @@ export class TicketGrid extends EntityGrid<TicketRow> {
     protected override getRowDefinition() { return TicketRow; }
     protected override getService() { return TicketService.baseUrl; }
 
+    /*constructor(props: any) {
+        super(props);
+        this.openDialogsAsPanel = false;    //See BaseEntityDialog
+    }*/
+
     protected override getQuickFilters(): QuickFilter<Widget<any>, any>[] {
         var filters = super.getQuickFilters();
 

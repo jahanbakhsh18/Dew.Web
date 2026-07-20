@@ -1,7 +1,7 @@
-﻿import { EntityDialog } from '@serenity-is/corelib';
+﻿import { BaseEntityDialog } from '../../Common/Helpers/BaseEntityDialog';
 import { RuleForm, RuleRow, RuleService } from '../../ServerTypes/WorkFlow';
 
-export class RuleDialog extends EntityDialog<RuleRow, any> {
+export class RuleDialog extends BaseEntityDialog<RuleRow, any> {
     static override [Symbol.typeInfo] = this.registerClass("Dew.WorkFlow.");
 
     protected override getFormKey() { return RuleForm.formKey; }

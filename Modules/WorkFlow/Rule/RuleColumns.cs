@@ -5,7 +5,8 @@
 public class RuleColumns
 {
     [EditLink, DisplayName("Db.Shared.RecordId"), AlignRight]
-    public int Id { get; set; }    
+    public int Id { get; set; }
+    [EditLink]
     public string CurrentStatusName { get; set; }
     public string ActionName { get; set; }
     public string NextStatusName { get; set; }

@@ -5,7 +5,7 @@
 [ReadPermission(PermissionKeys.Security)]
 [ModifyPermission(PermissionKeys.Security)]
 [ServiceLookupPermission(Ticket.PermissionKeys.General)]
-[LookupScript]
+[LookupScript(Permission = "*")]
 public sealed class RoleRow : Row<RoleRow.RowFields>, IIdRow, INameRow
 {
     [DisplayName("Role Id"), Identity, ForeignKey("Roles", "RoleId"), LeftJoin("jRole"), IdProperty]

@@ -175,10 +175,7 @@ public partial class Startup
 
         ConfigureTestPipeline?.Invoke(app);
 
-        if (env.IsDevelopment())
-        {
-            app.UseDynamicScripts();
-        }
+        app.UseDynamicScripts();
 
         app.UseEndpoints(endpoints =>
         {
