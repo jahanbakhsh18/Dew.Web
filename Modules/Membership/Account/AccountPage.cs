@@ -1,4 +1,5 @@
 using System.Security.Claims;
+using Microsoft.AspNetCore.Antiforgery;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Http;
@@ -7,10 +8,11 @@ using Microsoft.Extensions.DependencyInjection;
 namespace Dew.Membership.Pages;
 
 [Route("Account/[action]")]
-public partial class AccountPage(ITwoLevelCache cache, ITextLocalizer localizer) : Controller
+public partial class AccountPage(ITwoLevelCache cache, ITextLocalizer localizer, IAntiforgery antiforgery) : Controller
 {
     protected ITwoLevelCache Cache { get; } = cache ?? throw new ArgumentNullException(nameof(cache));
     protected ITextLocalizer Localizer { get; } = localizer ?? throw new ArgumentNullException(nameof(localizer));
+    protected IAntiforgery _antiforgery { get; } = antiforgery ?? throw new ArgumentNullException(nameof(antiforgery));
 
     [HttpGet]
     public ActionResult Login(int? denied, string activated, string returnUrl)
@@ -75,6 +77,12 @@ public partial class AccountPage(ITwoLevelCache cache, ITextLocalizer localizer)
     public string KeepAlive()
     {
         return "OK";
+    }
+
+    public IActionResult RefreshCsrfToken()
+    {
+        var tokens = _antiforgery.GetAndStoreTokens(HttpContext);
+        return Ok(new { requestVerificationToken = tokens.RequestToken });
     }
 
     public ActionResult Signout()
