@@ -43,8 +43,6 @@ public class DefaultDB_20250414_1601_Ticket : AutoReversingMigration
 
         Create.Table("Ticket").InSchema("tkt")
             .WithColumn("Id").AsInt32().IdentityKey(this)
-            .WithColumn("TicketNumber").AsInt32().Nullable()    // Remove?
-            .WithColumn("Title").AsString(127).Nullable()       // Remove?
             .WithColumn("Description").AsString(int.MaxValue).Nullable()
             .WithColumn("DateCreated").AsDateTime().NotNullable()
             .WithColumn("DateUpdated").AsDateTime().Nullable()
@@ -55,7 +53,7 @@ public class DefaultDB_20250414_1601_Ticket : AutoReversingMigration
                 .ForeignKey("FK_Ticket_ProblemId", "tkt", "Problem", "Id")
             .WithColumn("StatusId").AsInt32().NotNullable()
                 .ForeignKey("FK_Ticket_StatusId", "wf", "Status", "Id")
-            .WithColumn("LastActionId").AsInt32().NotNullable()  //maybe it is not usable
+            .WithColumn("LastActionId").AsInt32().NotNullable()
                 .ForeignKey("FK_Ticket_LastActionId", "wf", "Action", "Id")
             .WithColumn("TimeFlagId").AsInt32().NotNullable()
                 .ForeignKey("FK_Ticket_TimeFlagId", "tkt", "TimeFlag", "Id")

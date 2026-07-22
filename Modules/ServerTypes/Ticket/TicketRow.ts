@@ -3,8 +3,6 @@ import { CommentRow } from "./CommentRow";
 
 export interface TicketRow {
     Id?: number;
-    TicketNumber?: number;
-    Title?: string;
     Description?: string;
     DateCreated?: string;
     DateUpdated?: string;
@@ -28,7 +26,6 @@ export interface TicketRow {
 
 export abstract class TicketRow {
     static readonly idProperty = 'Id';
-    static readonly nameProperty = 'Title';
     static readonly localTextPrefix = 'Ticket.Ticket';
     static readonly deletePermission = 'Dew:Ticket:Update';
     static readonly insertPermission = 'Dew:Ticket:Create';

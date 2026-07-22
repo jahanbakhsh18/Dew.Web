@@ -7,10 +7,6 @@ public class DefaultDB_20240101_1118_Initial : AutoReversingMigration
 {
     public override void Up()
     {
-        Create.Table("Country")
-            .WithColumn("Id").AsInt32().IdentityKey(this)
-            .WithColumn("Name").AsString(31).NotNullable();
-
         Create.Table("Users")
             .WithColumn("UserId").AsInt32().IdentityKey(this)
             .WithColumn("Username").AsString(100).NotNullable().Unique("IX_Users_Username")
@@ -26,10 +22,7 @@ public class DefaultDB_20240101_1118_Initial : AutoReversingMigration
             .WithColumn("InsertUserId").AsInt32().NotNullable()
             .WithColumn("UpdateDate").AsDateTime().Nullable()
             .WithColumn("UpdateUserId").AsInt32().Nullable()
-            .WithColumn("IsActive").AsInt16().NotNullable().WithDefaultValue(1)
-            .WithColumn("CountryId").AsInt32().Nullable()
-                .ForeignKey("FK_Users_CountryId", "Country", "Id")            
-            .WithColumn("City").AsString(64).Nullable();
+            .WithColumn("IsActive").AsInt16().NotNullable().WithDefaultValue(1);
         
         Create.Table("Languages")
             .WithColumn("Id").AsInt32().IdentityKey(this)

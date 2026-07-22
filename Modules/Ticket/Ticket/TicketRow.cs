@@ -8,7 +8,7 @@ namespace Dew.Ticket;
 [ModifyPermission(PermissionKeys.Ticket.Update)]
 [InsertPermission(PermissionKeys.Ticket.Create)]
 [ServiceLookupPermission(PermissionKeys.General)]
-public sealed class TicketRow : Row<TicketRow.RowFields>, IIdRow, INameRow
+public sealed class TicketRow : Row<TicketRow.RowFields>, IIdRow
 {
     const string jSystem = nameof(jSystem);
     const string jProblem = nameof(jProblem);
@@ -19,12 +19,6 @@ public sealed class TicketRow : Row<TicketRow.RowFields>, IIdRow, INameRow
 
     [DisplayName("Id"), NotNull, IdProperty, Identity]
     public int? Id { get => fields.Id[this]; set => fields.Id[this] = value; }
-
-    [DisplayName("Ticket Number")]
-    public int? TicketNumber { get => fields.TicketNumber[this]; set => fields.TicketNumber[this] = value; }
-
-    [DisplayName("Title"), Size(127), QuickSearch, NameProperty]
-    public string Title { get => fields.Title[this]; set => fields.Title[this] = value; }
 
     [DisplayName("Description")]
     public string Description { get => fields.Description[this]; set => fields.Description[this] = value; }
@@ -94,8 +88,6 @@ public sealed class TicketRow : Row<TicketRow.RowFields>, IIdRow, INameRow
     public class RowFields : RowFieldsBase
     {
         public Int32Field Id;
-        public Int32Field TicketNumber;
-        public StringField Title;
         public StringField Description;
         public DateTimeField DateCreated;
         public DateTimeField DateUpdated;

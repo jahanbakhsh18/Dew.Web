@@ -1,3 +1,4 @@
+using Dew.Administration;
 using MyRow = Dew.Administration.UserRow;
 
 namespace Dew.AppServices;
@@ -22,4 +23,28 @@ public class UserRetrieveService(ITwoLevelCache cache, ISqlConnections sqlConnec
             LastDirectoryUpdate = user.LastDirectoryUpdate
         };
     }
+
+    protected override IUserDefinition LoadByCriteria(IDbConnection connection, BaseCriteria criteria)
+    {
+        var userDef = base.LoadByCriteria(connection, criteria) as UserDefinition;
+        if (userDef == null)
+            return null;
+
+        var userRoleFields = UserRoleRow.Fields.As("ur");
+        var roleFields = RoleRow.Fields.As("r");
+
+        var query = new SqlQuery()
+            .From(userRoleFields)
+            .Select(roleFields.RoleName)
+            .InnerJoin(roleFields,
+                userRoleFields.RoleId == roleFields.RoleId)
+            .Where(userRoleFields.UserId == userDef.UserId);
+
+        var roleNames = connection.Query<string>(query).ToList();
+
+        userDef.RoleNames = roleNames.ToArray();
+        return userDef;
+    }
+
+
 }

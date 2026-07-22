@@ -1,4 +1,3 @@
-using System.Security.Claims;
 using Microsoft.AspNetCore.Antiforgery;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
@@ -8,11 +7,15 @@ using Microsoft.Extensions.DependencyInjection;
 namespace Dew.Membership.Pages;
 
 [Route("Account/[action]")]
-public partial class AccountPage(ITwoLevelCache cache, ITextLocalizer localizer, IAntiforgery antiforgery) : Controller
+public partial class AccountPage(
+    ITwoLevelCache cache, ITextLocalizer localizer,
+    IAntiforgery antiforgery, IUserRetrieveService userRetrieveService) : Controller
 {
     protected ITwoLevelCache Cache { get; } = cache ?? throw new ArgumentNullException(nameof(cache));
     protected ITextLocalizer Localizer { get; } = localizer ?? throw new ArgumentNullException(nameof(localizer));
     protected IAntiforgery _antiforgery { get; } = antiforgery ?? throw new ArgumentNullException(nameof(antiforgery));
+    protected IUserRetrieveService _userRetrieveService { get; } =
+        userRetrieveService ?? throw new ArgumentNullException(nameof(userRetrieveService));
 
     [HttpGet]
     public ActionResult Login(int? denied, string activated, string returnUrl)
@@ -93,22 +96,23 @@ public partial class AccountPage(ITwoLevelCache cache, ITextLocalizer localizer,
     }
 
     [HttpGet]
-    public object CurrentUser()
+    public object GetUserInfo()
     {
-        var user = User;
-
-        if (!user.Identity?.IsAuthenticated ?? true)
+        if (!User.Identity?.IsAuthenticated ?? true)
             return Unauthorized();
+
+        var userDef = _userRetrieveService.ByUsername(User.Identity.Name) as UserDefinition;
+        if (userDef == null)
+            return NotFound();
 
         var response = new
         {
-            IsAuthenticated = true,
-            Username = user.Identity?.Name,
-            //UserId = user.FindFirst(ClaimTypes.NameIdentifier)?.Value,
-            Roles = user.Claims
-                .Where(c => c.Type == ClaimTypes.Role)
-                .Select(c => c.Value)
-                .ToList()
+            userDef.Username,
+            userDef.DisplayName,
+            userDef.Email,
+            userDef.UserImage,
+            userDef.IsActive,
+            userDef.RoleNames
         };
 
         return Ok(response);

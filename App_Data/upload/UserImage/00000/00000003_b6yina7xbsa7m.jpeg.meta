@@ -1,0 +1,10 @@
+{
+  "OriginalName": "MyPic.jpeg",
+  "ImageSize": "640x640",
+  "ThumbSize": "96x96",
+  "EntityTable": "Users",
+  "EntityType": "Dew.Administration.UserRow",
+  "EntityField": "UserImage",
+  "EntityProperty": "UserImage",
+  "EntityId": "5"
+}

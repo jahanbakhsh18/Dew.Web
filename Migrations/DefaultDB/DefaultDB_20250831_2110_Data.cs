@@ -67,24 +67,25 @@ public class DefaultDB_20250815_2001_Data : AutoReversingMigration
             {
                 UserId = 2,
                 Username = "support1",
-                DisplayName = "Iran Support",
+                DisplayName = "Robert Williams",
                 Source = "site",
                 PasswordHash = "Tbx1ar3apCdhYLcYXKqmO5klUr35ehupfPI0pAAsDlesD91YgTwFawmWURhtO7IzJNvtAJx67FYT05uVEtKYGw",
                 PasswordSalt = "air_o",
                 InsertDate = DateTime.Now,
                 InsertUserId = 1,
-                IsActive = 1,
-                CountryId = 1
+                UserImage = "UserImage/00000/00000002_w4gahj6vvfqga.jpg",
+                IsActive = 1
             })
             .Row(new
             {
                 UserId = 3,
                 Username = "develop1",
-                DisplayName = "Azadpour",
+                DisplayName = "Brian Johnson",
                 Source = "site",
                 PasswordHash = "Tbx1ar3apCdhYLcYXKqmO5klUr35ehupfPI0pAAsDlesD91YgTwFawmWURhtO7IzJNvtAJx67FYT05uVEtKYGw",
                 PasswordSalt = "air_o",
                 InsertDate = DateTime.Now,
+                UserImage = "UserImage/00000/00000003_b6yina7xbsa7m.jpeg",
                 InsertUserId = 1,
                 IsActive = 1,
                 SystemId = 1
@@ -93,11 +94,12 @@ public class DefaultDB_20250815_2001_Data : AutoReversingMigration
             {
                 UserId = 4,
                 Username = "supervisor1",
-                DisplayName = "Aria Irani",
+                DisplayName = "Stephen Phillips",
                 Source = "site",
                 PasswordHash = "Tbx1ar3apCdhYLcYXKqmO5klUr35ehupfPI0pAAsDlesD91YgTwFawmWURhtO7IzJNvtAJx67FYT05uVEtKYGw",
                 PasswordSalt = "air_o",
                 InsertDate = DateTime.Now,
+                UserImage = "UserImage/00000/00000003_b6yina7xbsa7m.jpeg",
                 InsertUserId = 1,
                 IsActive = 1
             })
@@ -110,6 +112,7 @@ public class DefaultDB_20250815_2001_Data : AutoReversingMigration
                 PasswordHash = "Tbx1ar3apCdhYLcYXKqmO5klUr35ehupfPI0pAAsDlesD91YgTwFawmWURhtO7IzJNvtAJx67FYT05uVEtKYGw",
                 PasswordSalt = "air_o",
                 InsertDate = DateTime.Now,
+                UserImage = "UserImage/00000/00000002_w4gahj6vvfqga.jpg",
                 InsertUserId = 1,
                 IsActive = 1
             });

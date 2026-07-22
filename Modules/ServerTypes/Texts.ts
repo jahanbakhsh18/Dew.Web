@@ -168,10 +168,8 @@ namespace texts {
                 export const StatusName: string;
                 export const SystemId: string;
                 export const SystemName: string;
-                export const TicketNumber: string;
                 export const TimeFlagColor: string;
                 export const TimeFlagId: string;
-                export const Title: string;
             }
             namespace TimeFlag {
                 export function asKey(): typeof TimeFlag;
