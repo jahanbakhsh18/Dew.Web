@@ -1,17 +1,18 @@
+# No local database
 #version: "3.9"
 services:
   dew_web:
     container_name: dew_web
-    image: dew_web:1.0.0
+    image: dew_web:1.1.0
     restart: unless-stopped
     environment:
       TZ: Asia/Tehran
     ports:
-      - 5001:5001
+      - 5000:5000
     expose:
-      - 5001
+      - 5000
     healthcheck:
-      test: timeout 1 bash -c 'cat < /dev/null > /dev/tcp/127.0.0.1/5001'
+      test: timeout 1 bash -c 'cat < /dev/null > /dev/tcp/127.0.0.1/5000'
       interval: 10s
       timeout: 3s
       retries: 10
@@ -24,7 +25,44 @@ services:
 networks:
   internal:
 
-
 #volumes:
 #  app:
 #    driver: local      
+
+
+
+## Local dockerized database
+##version: '3.9'
+
+#services:
+#  postgres-db:
+#    image: postgres:16-alpine
+#    container_name: web3session-postgres
+#    environment:
+#      POSTGRES_USER: web3session
+#      POSTGRES_PASSWORD: web3session_dev
+#      POSTGRES_DB: Dew
+#    ports:
+#      - "5432:5432"
+#    volumes:
+#      - postgres_data:/var/lib/postgresql/data
+#    networks:
+#      - my_network
+#
+#  app:
+#    build: .
+#    container_name: dew_web
+#    #environment:
+#    #  - ConnectionStrings__Default=Host=postgres-db;Port=5432;Database=Dew;Username=web3session;Password=web3session_dev
+#    ports:
+#      - "5000:5000"
+#    depends_on:
+#      - postgres-db
+#    networks:
+#      - my_network
+#
+#networks:
+#  my_network:
+#
+#volumes:
+#  postgres_data:

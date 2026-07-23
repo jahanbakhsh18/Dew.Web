@@ -11,7 +11,7 @@ public sealed class PriorityRow : Row<PriorityRow.RowFields>, IIdRow, INameRow
     [DisplayName("Id"), NotNull, Identity, IdProperty, SortOrder(1, false)]
     public int? Id { get => fields.Id[this]; set => fields.Id[this] = value; }
 
-    [DisplayName("Due Time"), NotNull]
+    [DisplayName("Due Time (hours)"), NotNull]
     public short? DueTime { get => fields.DueTime[this]; set => fields.DueTime[this] = value; }
 
     [DisplayName("Name"), Size(127), NotNull, QuickSearch, NameProperty]

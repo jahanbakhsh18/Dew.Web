@@ -13,15 +13,15 @@ public class TicketColumns
 
     [QuickFilter, Width(200)]
     public string SystemName { get; set; }
-    [QuickFilter, Width(400)]
+    [QuickFilter, Width(350)]
     [QuickFilterOption("CascadeFrom", "SystemId"), QuickFilterOption("CascadeField", "SystemId")]
     public string ProblemName { get; set; }
-    [Width(150)]
+    [Width(140)]
     public string CreatorUsername { get; set; }
-    [Width(125), SortOrder(1, true)]
+    [Width(140), SortOrder(1, true), DisplayFormat("g")]
     public DateTime DateCreated { get; set; }
-    [Width(125)]
+    [Width(140), DisplayFormat("g")]
     public DateTime ExpireDate { get; set; }
-    [Width(125)]
+    [Width(140), DisplayFormat("g")]
     public DateTime DateClosed { get; set; }
 }

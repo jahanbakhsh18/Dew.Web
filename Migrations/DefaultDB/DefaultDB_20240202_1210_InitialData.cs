@@ -17,7 +17,7 @@ public class DefaultDB_20240202_1210_InitialData : AutoReversingMigration
         {
             UserId = 1,
             Username = "admin",
-            DisplayName = "James Smith",
+            DisplayName = "Mojtaba Jahanbakhsh",
             Email = "moj.jahanbakhsh@gmail.com",
             Source = "site",
             PasswordHash = "Tbx1ar3apCdhYLcYXKqmO5klUr35ehupfPI0pAAsDlesD91YgTwFawmWURhtO7IzJNvtAJx67FYT05uVEtKYGw",

@@ -38,15 +38,15 @@ public class DefaultDB_20250815_2001_Data : AutoReversingMigration
             .Row(new { Id = 6, ActionId = 3, CurrentStatusId = 4, NextStatusId = 3, RoleId = 4, Version = 1, UpdateDate = DateTime.Now, });
 
         Insert.IntoTable("Priority").InSchema("tkt").WithIdentityInsert()
-            .Row(new { Id = 1, Name = "Normal", Color = "#00ff00", DueTime = 72 })
-            .Row(new { Id = 2, Name = "Important", Color = "#ff6600", DueTime = 24 })
-            .Row(new { Id = 3, Name = "Urgent", Color = "#ff0000", DueTime = 3 });
+            .Row(new { Id = 1, Name = "Normal", Color = "#2ec27e", DueTime = 72 })
+            .Row(new { Id = 2, Name = "Important", Color = "#ff7800", DueTime = 24 })
+            .Row(new { Id = 3, Name = "Urgent", Color = "#e01b24", DueTime = 3 });
 
         Insert.IntoTable("TimeFlag").InSchema("tkt")
-            .Row(new { Name = "The elapsed time is less than half of the problem resolution time.", DuePercent = 50, Color = "#00ff00" })
-            .Row(new { Name = "The elapsed time is between 50% and 80% of the total resolution time.", DuePercent = 80, Color = "#ffff00" })
-            .Row(new { Name = "The bug fix deadline is approaching.", DuePercent = 100, Color = "#ff6600" })
-            .Row(new { Name = "The bug fix window has expired.", DuePercent = 200, Color = "#ff0000" });
+            .Row(new { Name = "The elapsed time is less than half of the problem resolution time.", DuePercent = 0, Color = "#2ec27e" })
+            .Row(new { Name = "The elapsed time is between 50% and 80% of the total resolution time.", DuePercent = 50, Color = "#e5a50a" })
+            .Row(new { Name = "The bug fix deadline is approaching.", DuePercent = 80, Color = "#ff7800" })
+            .Row(new { Name = "The bug fix window has expired.", DuePercent = 100, Color = "#e01b24" });
 
         Insert.IntoTable("System").InSchema("tkt").WithIdentityInsert()
             .Row(new { Id = 1, Name = "Post Office Software" })
@@ -65,56 +65,31 @@ public class DefaultDB_20250815_2001_Data : AutoReversingMigration
         Insert.IntoTable("Users").WithIdentityInsert()
             .Row(new
             {
-                UserId = 2,
-                Username = "support1",
-                DisplayName = "Robert Williams",
-                Source = "site",
+                UserId = 2, Username = "support1", DisplayName = "M. Jahanbakhsh", Source = "site",
                 PasswordHash = "Tbx1ar3apCdhYLcYXKqmO5klUr35ehupfPI0pAAsDlesD91YgTwFawmWURhtO7IzJNvtAJx67FYT05uVEtKYGw",
-                PasswordSalt = "air_o",
-                InsertDate = DateTime.Now,
-                InsertUserId = 1,
-                UserImage = "UserImage/00000/00000002_w4gahj6vvfqga.jpg",
-                IsActive = 1
+                PasswordSalt = "air_o", InsertDate = DateTime.Now, InsertUserId = 1,
+                UserImage = "UserImage/00000/00000002_w4gahj6vvfqga.jpg", IsActive = 1
             })
             .Row(new
             {
-                UserId = 3,
-                Username = "develop1",
-                DisplayName = "Brian Johnson",
-                Source = "site",
+                UserId = 3, Username = "develop1", DisplayName = "Mojtaba J.", Source = "site",
                 PasswordHash = "Tbx1ar3apCdhYLcYXKqmO5klUr35ehupfPI0pAAsDlesD91YgTwFawmWURhtO7IzJNvtAJx67FYT05uVEtKYGw",
-                PasswordSalt = "air_o",
-                InsertDate = DateTime.Now,
-                UserImage = "UserImage/00000/00000003_b6yina7xbsa7m.jpeg",
-                InsertUserId = 1,
-                IsActive = 1,
-                SystemId = 1
+                PasswordSalt = "air_o", InsertDate = DateTime.Now,
+                UserImage = "UserImage/00000/00000003_b6yina7xbsa7m.jpeg", InsertUserId = 1, IsActive = 1, SystemId = 1
             })
             .Row(new
             {
-                UserId = 4,
-                Username = "supervisor1",
-                DisplayName = "Stephen Phillips",
-                Source = "site",
+                UserId = 4, Username = "supervisor1", DisplayName = "Mojtaba", Source = "site",
                 PasswordHash = "Tbx1ar3apCdhYLcYXKqmO5klUr35ehupfPI0pAAsDlesD91YgTwFawmWURhtO7IzJNvtAJx67FYT05uVEtKYGw",
-                PasswordSalt = "air_o",
-                InsertDate = DateTime.Now,
-                UserImage = "UserImage/00000/00000003_b6yina7xbsa7m.jpeg",
-                InsertUserId = 1,
-                IsActive = 1
+                PasswordSalt = "air_o", InsertDate = DateTime.Now, 
+                UserImage = "UserImage/00000/00000003_b6yina7xbsa7m.jpeg", InsertUserId = 1, IsActive = 1
             })
             .Row(new
             {
-                UserId = 5,
-                Username = "user1",
-                DisplayName = "John Hong",
-                Source = "site",
+                UserId = 5, Username = "user1", DisplayName = "Jahanbakhsh", Source = "site",
                 PasswordHash = "Tbx1ar3apCdhYLcYXKqmO5klUr35ehupfPI0pAAsDlesD91YgTwFawmWURhtO7IzJNvtAJx67FYT05uVEtKYGw",
-                PasswordSalt = "air_o",
-                InsertDate = DateTime.Now,
-                UserImage = "UserImage/00000/00000002_w4gahj6vvfqga.jpg",
-                InsertUserId = 1,
-                IsActive = 1
+                PasswordSalt = "air_o", InsertDate = DateTime.Now, 
+                UserImage = "UserImage/00000/00000002_w4gahj6vvfqga.jpg", InsertUserId = 1, IsActive = 1
             });
 
         Insert.IntoTable("UserRoles")
