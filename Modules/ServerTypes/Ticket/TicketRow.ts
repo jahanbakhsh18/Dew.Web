@@ -1,4 +1,5 @@
 ﻿import { fieldsProxy } from "@serenity-is/corelib";
+import { AvailableAction } from "./AvailableAction";
 import { CommentRow } from "./CommentRow";
 
 export interface TicketRow {
@@ -22,12 +23,13 @@ export interface TicketRow {
     TimeFlagColor?: string;
     CreatorUsername?: string;
     CommentList?: CommentRow[];
+    AvailableActions?: AvailableAction[];
 }
 
 export abstract class TicketRow {
     static readonly idProperty = 'Id';
     static readonly localTextPrefix = 'Ticket.Ticket';
-    static readonly deletePermission = 'Dew:Ticket:Update';
+    static readonly deletePermission = 'Dew:Ticket:Admin';
     static readonly insertPermission = 'Dew:Ticket:Create';
     static readonly readPermission = 'Dew:Ticket:View';
     static readonly updatePermission = 'Dew:Ticket:Update';

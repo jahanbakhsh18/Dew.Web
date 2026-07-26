@@ -1,4 +1,4 @@
-﻿import { EntityGrid } from '@serenity-is/corelib';
+﻿import { EntityGrid, ToolbarButton, ToolButton } from '@serenity-is/corelib';
 import { LogColumns, LogRow, LogService } from '../../ServerTypes/Ticket';
 import { LogDialog } from './LogDialog';
 
@@ -28,4 +28,11 @@ export class LogGrid extends EntityGrid<LogRow> {
     protected override getGridCanLoad() {
         return super.getGridCanLoad() && !!this.TicketId;
     }
+
+    protected override createToolbar(buttons: ToolButton[]): void { }
+
+    /*protected override getButtons(): ToolButton[] {
+        const buttons = super.getButtons();
+        return buttons.filter(b => b.action !== '...');
+    }*/
 }

@@ -1,4 +1,4 @@
-﻿import { initFormType, LookupEditor, MultipleImageUploadEditor, PrefixedContext, TextAreaEditor } from "@serenity-is/corelib";
+﻿import { initFormType, LookupEditor, MultipleImageUploadEditor, PrefixedContext, StringEditor, TextAreaEditor } from "@serenity-is/corelib";
 import { CommentListEditor } from "../../Ticket/Comment/CommentListEditor";
 
 export interface TicketForm {
@@ -9,6 +9,7 @@ export interface TicketForm {
     FilesPath: MultipleImageUploadEditor;
     StatusId: LookupEditor;
     LastActionId: LookupEditor;
+    AvailableActions: StringEditor;
 }
 
 export class TicketForm extends PrefixedContext {
@@ -25,6 +26,7 @@ export class TicketForm extends PrefixedContext {
             var w1 = TextAreaEditor;
             var w2 = CommentListEditor;
             var w3 = MultipleImageUploadEditor;
+            var w4 = StringEditor;
 
             initFormType(TicketForm, [
                 'SystemId', w0,
@@ -33,7 +35,8 @@ export class TicketForm extends PrefixedContext {
                 'CommentList', w2,
                 'FilesPath', w3,
                 'StatusId', w0,
-                'LastActionId', w0
+                'LastActionId', w0,
+                'AvailableActions', w4
             ]);
         }
     }

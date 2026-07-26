@@ -17,4 +17,5 @@ public class UserDefinition : IUserDefinition, IHasPassword
     public DateTime? LastDirectoryUpdate { get; set; }
     public bool HasPassword => PasswordSalt != "unassigned";
     public string[] RoleNames { get; set; }
+    public int[] RoleIds { get; set; }
 }

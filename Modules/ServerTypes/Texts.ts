@@ -108,7 +108,6 @@ namespace texts {
                 export const StatusId: string;
                 export const StatusName: string;
                 export const TicketId: string;
-                export const TicketTitle: string;
                 export const UserId: string;
                 export const Username: string;
             }
@@ -148,6 +147,7 @@ namespace texts {
             namespace Ticket {
                 export function asKey(): typeof Ticket;
                 export function asTry(): typeof Ticket;
+                export const AvailableActions: string;
                 export const CommentList: string;
                 export const CreatorUserId: string;
                 export const CreatorUsername: string;

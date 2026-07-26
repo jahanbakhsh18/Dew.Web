@@ -1,4 +1,5 @@
-﻿export * from "./Ticket/CommentColumns";
+﻿export * from "./Ticket/AvailableAction";
+export * from "./Ticket/CommentColumns";
 export * from "./Ticket/CommentForm";
 export * from "./Ticket/CommentRow";
 export * from "./Ticket/CommentService";

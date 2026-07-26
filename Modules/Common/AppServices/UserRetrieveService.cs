@@ -24,6 +24,12 @@ public class UserRetrieveService(ITwoLevelCache cache, ISqlConnections sqlConnec
         };
     }
 
+    private class UserRoleInfo
+    {
+        public string RoleName { get; set; }
+        public int RoleId { get; set; }
+    }
+
     protected override IUserDefinition LoadByCriteria(IDbConnection connection, BaseCriteria criteria)
     {
         var userDef = base.LoadByCriteria(connection, criteria) as UserDefinition;
@@ -36,13 +42,17 @@ public class UserRetrieveService(ITwoLevelCache cache, ISqlConnections sqlConnec
         var query = new SqlQuery()
             .From(userRoleFields)
             .Select(roleFields.RoleName)
+            .Select(roleFields.RoleId)
             .InnerJoin(roleFields,
                 userRoleFields.RoleId == roleFields.RoleId)
             .Where(userRoleFields.UserId == userDef.UserId);
 
-        var roleNames = connection.Query<string>(query).ToList();
+        var rows = connection.Query<UserRoleInfo>(query).ToList();
 
-        userDef.RoleNames = roleNames.ToArray();
+
+        userDef.RoleNames = rows.Select(r => r.RoleName).ToArray();
+        userDef.RoleIds = rows.Select(r => r.RoleId).ToArray();
+        
         return userDef;
     }
 

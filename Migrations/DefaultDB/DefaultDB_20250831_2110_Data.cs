@@ -18,9 +18,9 @@ public class DefaultDB_20250815_2001_Data : AutoReversingMigration
         ");
 
         Insert.IntoTable("Action").InSchema("wf").WithIdentityInsert()
-            .Row(new { Id = 1, Name = "Start" })
-            .Row(new { Id = 2, Name = "Accept" })
-            .Row(new { Id = 3, Name = "Reject" });
+            .Row(new { Id = 1, Name = "Create Ticket" })
+            .Row(new { Id = 2, Name = "Problem Resolved" })
+            .Row(new { Id = 3, Name = "Not Resolved" });
 
         Insert.IntoTable("Status").InSchema("wf")
             .Row(new { Id = 1, Name = "Creating" })

@@ -4,11 +4,11 @@
 [DisplayName("Log"), InstanceName("Log")]
 [ReadPermission(PermissionKeys.Ticket.View)]
 [ModifyPermission(PermissionKeys.Ticket.Update)]
+[DeletePermission(PermissionKeys.Ticket.Admin)]
 public sealed class LogRow : Row<LogRow.RowFields>, IIdRow
 {
     const string jStatus = nameof(jStatus);
     const string jAction = nameof(jAction);
-    const string jTicket = nameof(jTicket);
     const string jUser = nameof(jUser);
 
     [DisplayName("Id"), NotNull, IdProperty]
@@ -22,7 +22,7 @@ public sealed class LogRow : Row<LogRow.RowFields>, IIdRow
     [LookupEditor(typeof(WorkFlow.ActionRow), Async = true)]
     public int? ActionId { get => fields.ActionId[this]; set => fields.ActionId[this] = value; }
 
-    [DisplayName("Ticket Id"), NotNull, ForeignKey(typeof(TicketRow)), LeftJoin(jTicket), TextualField(nameof(TicketTitle))]
+    [DisplayName("Ticket Id"), NotNull, ForeignKey(typeof(TicketRow))]
     [ServiceLookupEditor(typeof(TicketRow))]
     public int? TicketId { get => fields.TicketId[this]; set => fields.TicketId[this] = value; }
 
@@ -39,9 +39,6 @@ public sealed class LogRow : Row<LogRow.RowFields>, IIdRow
     [DisplayName("Action Name"), Expression($"{jAction}.[Name]")]
     public string ActionName { get => fields.ActionName[this]; set => fields.ActionName[this] = value; }
 
-    [DisplayName("Ticket Title"), Expression($"{jTicket}.[Title]")]
-    public string TicketTitle { get => fields.TicketTitle[this]; set => fields.TicketTitle[this] = value; }
-
     [DisplayName("User Username"), Origin(jUser, nameof(Administration.UserRow.Username))]
     public string Username { get => fields.Username[this]; set => fields.Username[this] = value; }
 
@@ -56,7 +53,6 @@ public sealed class LogRow : Row<LogRow.RowFields>, IIdRow
 
         public StringField StatusName;
         public StringField ActionName;
-        public StringField TicketTitle;
         public StringField Username;
     }
 }

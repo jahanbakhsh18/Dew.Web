@@ -23,4 +23,7 @@ public class TicketForm
     public int StatusId { get; set; }
     [HalfWidth]
     public int LastActionId { get; set; }
+    [Hidden]
+    public List<AvailableAction> AvailableActions { get; set; }
+
 }

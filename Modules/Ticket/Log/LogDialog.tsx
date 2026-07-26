@@ -9,4 +9,10 @@ export class LogDialog extends EntityDialog<LogRow, any> {
     protected override getService() { return LogService.baseUrl; }
 
     protected form = new LogForm(this.idPrefix);
+
+    constructor() {
+        super();
+        
+        this.readOnly = true;
+    }
 }

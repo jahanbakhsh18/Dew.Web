@@ -1,12 +1,11 @@
-﻿using System.IO;
-
-namespace Dew.Ticket;
+﻿namespace Dew.Ticket;
 
 [ConnectionKey("Default"), Module("Ticket"), TableName("[tkt].[Ticket]")]
 [DisplayName("Ticket"), InstanceName("Ticket")]
 [ReadPermission(PermissionKeys.Ticket.View)]
 [ModifyPermission(PermissionKeys.Ticket.Update)]
 [InsertPermission(PermissionKeys.Ticket.Create)]
+[DeletePermission(PermissionKeys.Ticket.Admin)]
 [ServiceLookupPermission(PermissionKeys.General)]
 public sealed class TicketRow : Row<TicketRow.RowFields>, IIdRow
 {
@@ -85,6 +84,9 @@ public sealed class TicketRow : Row<TicketRow.RowFields>, IIdRow
     [MinSelectLevel(SelectLevel.Explicit)]
     public List<CommentRow> CommentList { get => fields.CommentList[this]; set => fields.CommentList[this] = value; }
 
+    [NotMapped]
+    public List<AvailableAction> AvailableActions { get => fields.AvailableActions[this]; set => fields.AvailableActions[this] = value; }
+
     public class RowFields : RowFieldsBase
     {
         public Int32Field Id;
@@ -108,5 +110,12 @@ public sealed class TicketRow : Row<TicketRow.RowFields>, IIdRow
         public StringField TimeFlagColor;
         public StringField CreatorUsername;
         public RowListField<CommentRow> CommentList;
+        public ListField<AvailableAction> AvailableActions;
     }
+}
+
+public class AvailableAction
+{
+    public int ActionId { get; set; }
+    public string Name { get; set; }
 }
