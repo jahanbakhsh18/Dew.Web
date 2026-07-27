@@ -24,6 +24,7 @@ export interface TicketRow {
     CreatorUsername?: string;
     CommentList?: CommentRow[];
     AvailableActions?: AvailableAction[];
+    HasAvailableActions?: boolean;
 }
 
 export abstract class TicketRow {

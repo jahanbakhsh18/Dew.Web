@@ -16,7 +16,7 @@ A demonstration project that showcases:
 The following diagram represents the ticket lifecycle and workflow process:
 <p> <img src="Documents/Dew-Workflow.png" width="700" /> </p>
 
-## 🚀 Running the Project
+## Running the Project
 
 ```bash
 $ dotnet restore
@@ -27,9 +27,23 @@ $ dotnet run
 $ docker-compose up --build
 ```
 
-# 🏗️ Tech Stack
+# Tech Stack
 - Backend: ASP.NET Core
 - Frontend: TypeScript
 - Framework: Serenity
 - Database: (PostgreSQL / SQL Server)
 - Containerization: Docker & Docker Compose
+
+## Known Limitations
+This application is a demonstration prototype. For enterprise-level deployment, the following enhancements are recommended:
+- Client-level service definitions instead of admin CRUD-level definitions.
+- Push notifications for mobile users and a real-time mechanism (e.g., WebSockets) for online users.
+- Security hardening.
+- Enterprise-level theming.
+- Comprehensive reporting modules.
+- Role-based customised dashboards.
+- Separation of user roles from system roles.
+
+## 📄 License
+
+MIT — see [`LICENSE`](LICENSE).

@@ -5,16 +5,21 @@ namespace Dew.Ticket;
 
 public interface ITicketSaveHandler : ISaveHandler<MyRow, SaveRequest<MyRow>, SaveResponse> { }
 
-public class TicketSaveHandler(IRequestContext context) :
+public class TicketSaveHandler(IRequestContext context, IUserRetrieveService userRetrieveService) :
     SaveRequestHandler<MyRow, SaveRequest<MyRow>, SaveResponse>(context),
     ITicketSaveHandler
 {
+    protected IUserRetrieveService _userRetrieveService { get; } =
+       userRetrieveService ?? throw new ArgumentNullException(nameof(userRetrieveService));
     int userId = Convert.ToInt32(context.User.GetIdentifier());
 
     protected override void ValidateEditableFields(HashSet<Field> editable)
     {
-        var roleIds = Connection.List<UserRoleRow>()
-            .Where(x => x.UserId == userId).Select(x => x.RoleId).ToList();
+        if (IsUpdate && Row.StatusId != Old.StatusId)
+            throw new ValidationError("AccessDenied", "The client status is not synced with the server!");
+
+        var userDef = _userRetrieveService.ById(userId.ToString()) as UserDefinition;
+        var roleIds = userDef.RoleIds?.ToList() ?? new List<int>();
 
         // Workflow
         var nextStatus = Connection.List<WorkFlow.RuleRow>().FirstOrDefault(t =>

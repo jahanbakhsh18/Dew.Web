@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file.
 
+
+## [1.0.1] - 2026-07-27
+
+### Added
+- Introduced `HasAvailableActions` as an indicator for role-based work-items in tickets. The `AvailableAction` list is excluded from the `ListHandler` to optimise bandwidth for very large ticket or action lists. However, to support inline buttons in lists, a `Dictionary` can be used instead of a `HashSet` for performance.
+- Added known limitations section to `README.md`.
+
+### Changed
+- Improved performance in `TicketListHandler` and `TicketSaveHandler` by reading `roleIds` from `UserRetrieveService`.
+
+### Fixed
+- Fixed a bug in the workflow by preventing the acceptance of a changed `StatusId`.
+
+---
+
 ## [1.0.0] - 2026-07-26
 
 ### Added

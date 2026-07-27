@@ -84,6 +84,9 @@ public sealed class TicketRow : Row<TicketRow.RowFields>, IIdRow
     [MinSelectLevel(SelectLevel.Explicit)]
     public List<CommentRow> CommentList { get => fields.CommentList[this]; set => fields.CommentList[this] = value; }
 
+    [DisplayName("Has Actions"), NotMapped]
+    public bool? HasAvailableActions { get => fields.HasAvailableActions[this]; set => fields.HasAvailableActions[this] = value; }
+
     [NotMapped]
     public List<AvailableAction> AvailableActions { get => fields.AvailableActions[this]; set => fields.AvailableActions[this] = value; }
 
@@ -111,6 +114,7 @@ public sealed class TicketRow : Row<TicketRow.RowFields>, IIdRow
         public StringField CreatorUsername;
         public RowListField<CommentRow> CommentList;
         public ListField<AvailableAction> AvailableActions;
+        public BooleanField HasAvailableActions;
     }
 }
 

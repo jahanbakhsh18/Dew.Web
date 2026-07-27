@@ -159,6 +159,7 @@ namespace texts {
                 export const EntitySingular: string;
                 export const ExpireDate: string;
                 export const FilesPath: string;
+                export const HasAvailableActions: string;
                 export const Id: string;
                 export const LastActionId: string;
                 export const LastActionName: string;

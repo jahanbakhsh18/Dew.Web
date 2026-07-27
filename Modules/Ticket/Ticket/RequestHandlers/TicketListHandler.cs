@@ -5,11 +5,12 @@ namespace Dew.Ticket;
 
 public interface ITicketListHandler : IListHandler<MyRow, ListRequest, ListResponse<MyRow>> { }
 
-public class TicketListHandler(IRequestContext context, ITwoLevelCache cache) :
-    ListRequestHandler<MyRow, ListRequest, ListResponse<MyRow>>(context),
-    ITicketListHandler
+public class TicketListHandler(IRequestContext context, ITwoLevelCache cache, IUserRetrieveService userRetrieveService) :
+    ListRequestHandler<MyRow, ListRequest, ListResponse<MyRow>>(context), ITicketListHandler
 {
-    private int userId = Convert.ToInt32(context.User.GetIdentifier());
+    protected IUserRetrieveService _userRetrieveService { get; } =
+        userRetrieveService ?? throw new ArgumentNullException(nameof(userRetrieveService));
+    private string userId = context.User.GetIdentifier();
     private readonly ITwoLevelCache cache = cache ?? throw new ArgumentNullException(nameof(cache));
     private static readonly object RefreshLock = new object();
     private static readonly TimeSpan RefreshInterval = TimeSpan.FromMinutes(10);
@@ -17,20 +18,55 @@ public class TicketListHandler(IRequestContext context, ITwoLevelCache cache) :
     protected override void ApplyFilters(SqlQuery query)
     {
         base.ApplyFilters(query);
-        
-        // Querying UserRoleRow for every list request can be expensive
-        var roleIds = Connection.List<UserRoleRow>()
-            .Where(x => x.UserId == userId).Select(x => x.RoleId).ToList();
+
+        var userDef = _userRetrieveService.ById(userId) as UserDefinition;
+        var roleIds = userDef.RoleIds?.ToList() ?? new List<int>();
 
         if (roleIds != null && roleIds.Count == 1 && roleIds.Contains(5))
-            query.Where(MyRow.Fields.CreatorUserId == userId);
+            query.Where(MyRow.Fields.CreatorUserId == Convert.ToInt32(userId));
+    }
+
+    protected override void OnAfterExecuteQuery()
+    {
+        base.OnAfterExecuteQuery();
+
+        if (Response?.Entities == null || Response.Entities.Count == 0)
+            return;
+
+        var userDef = _userRetrieveService.ById(userId) as UserDefinition;
+        var roleIds = userDef?.RoleIds?.ToList() ?? new List<int>();
+        bool isAdmin = roleIds.Contains(1);
+
+        var rule = WorkFlow.RuleRow.Fields.As("r");
+
+        BaseCriteria whereCriteria = null;
+        if (!isAdmin)
+        {
+            whereCriteria = whereCriteria && rule.RoleId.In(roleIds);
+        }
+
+        var statusQuery = new SqlQuery()
+            .From(rule)
+            .Select(rule.CurrentStatusId)
+            .Where(whereCriteria)
+            .Distinct(true);
+
+        // Execute the query once to get a HashSet of StatusIds
+        var statusesWithActions = Connection.Query<int>(statusQuery).ToHashSet();
+
+        // Iterate through the response entities and set the flag
+        foreach (var item in Response.Entities)
+        {
+            item.HasAvailableActions = 
+                item.StatusId.HasValue && statusesWithActions.Contains(item.StatusId.Value);
+        }
     }
 
     protected override void OnBeforeExecuteQuery()
     {
         base.OnBeforeExecuteQuery();
 
-        cache.GetLocalStoreOnly( "TicketTimeFlagLastRefresh", RefreshInterval, "TicketTimeFlagRefreshGroup",
+        cache.GetLocalStoreOnly("TicketTimeFlagLastRefresh", RefreshInterval, "TicketTimeFlagRefreshGroup",
             loader: () =>
             {
                 RefreshTimeFlags();
