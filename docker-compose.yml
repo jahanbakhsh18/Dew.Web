@@ -3,7 +3,7 @@
 services:
   dew_web:
     container_name: dew_web
-    image: dew_web:1.1.0
+    image: dew-web:1.0.0
     restart: unless-stopped
     environment:
       TZ: Asia/Tehran
@@ -27,42 +27,76 @@ networks:
 
 #volumes:
 #  app:
-#    driver: local      
+#    driver: local
 
 
+# # Local dockerized database
+# services:
+#   postgres-db:
+#     image: postgres:16-alpine
+#     container_name: dew-postgres
+#     environment:
+#       POSTGRES_USER: web3session
+#       POSTGRES_PASSWORD: web3session_dev
+#       POSTGRES_DB: Dew
+#     ports:
+#       - "5432:5432"
+#     volumes:
+#       - postgres_data:/var/lib/postgresql/data
+#     networks:
+#       - my_network
+#     healthcheck:
+#       test: ["CMD-SHELL", "pg_isready -U web3session -d Dew"]
+#       interval: 10s
+#       timeout: 5s
+#       retries: 5
 
-## Local dockerized database
-##version: '3.9'
+#   app:
+#     build: .
+#     container_name: dew_web
+#     environment:
+#       # IMPORTANT: Use service name 'postgres-db' as host, not localhost
+#       #- ConnectionStrings__Default=Host=postgres-db;Port=5432;Database=Dew;Username=web3session;Password=web3session_dev
+#       # Alternative if your app uses ASP.NET Core standard format:
+#       - ConnectionStrings:Default=Host=postgres-db;Port=5432;Database=Dew;Username=web3session;Password=web3session_dev
+#       - ASPNETCORE_ENVIRONMENT=Development
+#       - ASPNETCORE_URLS=http://+:5000
+#     ports:
+#       - "5000:5000"
+#     depends_on:
+#       postgres-db:
+#         condition: service_healthy
+#     networks:
+#       - my_network
+#     # Optional: Add this if you need to run migrations on startup
+#     # command: dotnet Dew.Web.dll --migrate-database
 
-#services:
-#  postgres-db:
-#    image: postgres:16-alpine
-#    container_name: web3session-postgres
-#    environment:
-#      POSTGRES_USER: web3session
-#      POSTGRES_PASSWORD: web3session_dev
-#      POSTGRES_DB: Dew
-#    ports:
-#      - "5432:5432"
-#    volumes:
-#      - postgres_data:/var/lib/postgresql/data
-#    networks:
-#      - my_network
-#
-#  app:
-#    build: .
-#    container_name: dew_web
-#    #environment:
-#    #  - ConnectionStrings__Default=Host=postgres-db;Port=5432;Database=Dew;Username=web3session;Password=web3session_dev
-#    ports:
-#      - "5000:5000"
-#    depends_on:
-#      - postgres-db
-#    networks:
-#      - my_network
-#
-#networks:
-#  my_network:
-#
-#volumes:
-#  postgres_data:
+# networks:
+#   my_network:
+#     driver: bridge
+
+# volumes:
+#   postgres_data:
+
+# services:
+#   app:
+#     build: .
+#     container_name: dew_web
+#     environment:
+#       # Use host.docker.internal on Windows/Mac, or 172.17.0.1 on Linux
+#       # For Linux: - ConnectionStrings__Default=Host=172.17.0.1;Port=5432;Database=Dew;Username=web3session;Password=web3session_dev
+#       - ConnectionStrings__Default=Host=host.docker.internal;Port=5432;Database=Dew;Username=web3session;Password=web3session_dev
+#       - ASPNETCORE_ENVIRONMENT=Development
+#       - ASPNETCORE_URLS=http://+:5000
+#     ports:
+#       - "5000:5000"
+#     #networks:
+#     #  - my_network
+#     # Don't use depends_on since the container already exists
+#     # No networks needed - uses host's network
+#     extra_hosts:
+#       - "host.docker.internal:host-gateway" # For Linux
+
+# networks:
+#   my_network:
+#     driver: bridge
