@@ -25,7 +25,7 @@ WORKDIR "/src/Dew"
 COPY . .
 
 # npm with caching - this will use the mounted volume. Skip cache clean in development to preserve cache
-RUN --mount=type=cache,id=npm,target=/root/.npm npm install --legacy-peer-deps --no-fund --no-audit
+RUN --mount=type=cache,id=npm,target=/root/.npm npm install --legacy-peer-deps --no-fund --no-audit --allow-remote
 
 # npm with global cache mount
 #RUN --mount=type=cache,id=npm-global,target=/root/.npm --mount=type=cache,id=npm-cache,target=/root/.cache/npm \
