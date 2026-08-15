@@ -175,7 +175,16 @@ public partial class Startup
 
         ConfigureTestPipeline?.Invoke(app);
 
-        app.UseDynamicScripts();
+        // app.UseDynamicScripts();
+        // Call UseCssWatching & UseScriptWatching only at devel
+        app.ApplicationServices.UseDynamicScriptTypes();
+        if (env.IsDevelopment())
+        {
+            app.ApplicationServices.UseCssWatching();
+            app.ApplicationServices.UseScriptWatching();
+        }
+        app.UseDynamicScriptMiddleware();
+        //
 
         app.UseEndpoints(endpoints =>
         {
